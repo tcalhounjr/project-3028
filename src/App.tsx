@@ -604,7 +604,7 @@ export default function App() {
     <BrowserRouter>
       <DataContext.Provider value={data}>
         <Routes>
-          <Route path="/" element={<LegacyAppContent />} />
+          <Route path="/" element={<GlobalOverviewPage />} />
           <Route path="/country/:iso" element={<CountryPageRoute />} />
           <Route path="/compare" element={<ComparePageRoute />} />
         </Routes>
