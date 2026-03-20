@@ -39,6 +39,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Sidebar, TopBar, StatusBadge, ScoreDisplay, cn } from './components/Layout';
 import GlobalOverviewPage from './pages/GlobalOverview';
 import CountryPageRoute from './pages/CountryPage';
+import ComparePageRoute from './pages/ComparePage';
 import type { DataJson } from './types/country';
 import { MOCK_COUNTRIES } from './constants/legacyMockData'
 
@@ -491,26 +492,6 @@ const CountryDetail = ({ country, onBack }: { country: LegacyCountryData, onBack
 };
 
 // ---------------------------------------------------------------------------
-// ComparePage — /compare route stub. Full implementation deferred to v1.
-// Renders the Sidebar and a placeholder panel so the route is not a 404.
-// ---------------------------------------------------------------------------
-
-function ComparePage() {
-  return (
-    <div className="flex min-h-screen bg-[#f9f9f9]">
-      <Sidebar activeTab="compare" onTabChange={() => {}} />
-      <main className="flex-1 ml-64 min-h-screen">
-        <TopBar title="Compare Mode" subtitle="Select countries to compare" />
-        <div className="p-8 max-w-7xl mx-auto flex flex-col items-center justify-center h-[60vh] text-slate-400">
-          <Activity size={48} className="mb-4 opacity-20" />
-          <p className="text-sm font-bold uppercase tracking-widest">Compare Mode — Coming in v1</p>
-        </div>
-      </main>
-    </div>
-  );
-}
-
-// ---------------------------------------------------------------------------
 // LegacyAppContent — Sprint 1 tab-based shell.
 // Rendered on the "/" route so existing App.test.tsx assertions continue to pass.
 // ---------------------------------------------------------------------------
@@ -625,7 +606,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<LegacyAppContent />} />
           <Route path="/country/:iso" element={<CountryPageRoute />} />
-          <Route path="/compare" element={<ComparePage />} />
+          <Route path="/compare" element={<ComparePageRoute />} />
         </Routes>
       </DataContext.Provider>
     </BrowserRouter>
