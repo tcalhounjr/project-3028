@@ -13,93 +13,10 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
 // ---------------------------------------------------------------------------
-// Mock geminiService — it tries to import @google/genai which is not in devDeps
+// Note: src/mockData.ts was deleted in Sprint 3 (PRO-21) — MOCK_COUNTRIES is
+// now inlined directly in App.tsx. The geminiService was removed in Sprint 2.
+// Tests below use the real inline data (Brazil, Norway, Hungary, India).
 // ---------------------------------------------------------------------------
-
-vi.mock('../../../src/services/geminiService', () => ({
-  generateNarrativeSummary: vi.fn().mockResolvedValue('Mocked AI summary.'),
-  CountryData: {},
-}))
-
-// ---------------------------------------------------------------------------
-// Mock mockData — it re-exports CountryData from geminiService
-// ---------------------------------------------------------------------------
-
-vi.mock('../../../src/mockData', () => ({
-  MOCK_COUNTRIES: [
-    {
-      name: 'Testland',
-      isoCode: 'TST',
-      currentScore: 60,
-      status: 'Elevated',
-      indicators: {
-        mediaFreedom: 55,
-        judicialIndependence: 62,
-        civilSociety: 58,
-        electionQuality: 75,
-        executiveConstraints: 52,
-        rhetoricRadar: 45,
-        civicProtests: 60,
-      },
-      history: [
-        { year: 2020, score: 65 },
-        { year: 2021, score: 62 },
-        { year: 2022, score: 60 },
-      ],
-      events: [],
-      narrative: 'Test narrative',
-    },
-    {
-      name: 'Criticaland',
-      isoCode: 'CRT',
-      currentScore: 25,
-      status: 'Critical',
-      indicators: {
-        mediaFreedom: 20,
-        judicialIndependence: 22,
-        civilSociety: 18,
-        electionQuality: 30,
-        executiveConstraints: 15,
-        rhetoricRadar: 20,
-        civicProtests: 25,
-      },
-      history: [
-        { year: 2020, score: 40 },
-        { year: 2021, score: 35 },
-        { year: 2022, score: 25 },
-      ],
-      events: [
-        { type: 'legal', date: '2022-01', title: 'Law passed', description: 'A law was passed.' },
-        { type: 'political', date: '2022-06', title: 'Political event', description: 'Political shift.' },
-        { type: 'protest', date: '2022-09', title: 'Protests', description: 'Mass protests.' },
-        { type: 'unknown', date: '2022-11', title: 'Unknown event', description: 'Unknown type.' },
-      ],
-      narrative: 'Critical narrative',
-    },
-    {
-      name: 'Stablonia',
-      isoCode: 'STB',
-      currentScore: 82,
-      status: 'Stable',
-      indicators: {
-        mediaFreedom: 85,
-        judicialIndependence: 80,
-        civilSociety: 83,
-        electionQuality: 88,
-        executiveConstraints: 79,
-        rhetoricRadar: 82,
-        civicProtests: 84,
-      },
-      history: [
-        { year: 2020, score: 80 },
-        { year: 2021, score: 81 },
-        { year: 2022, score: 82 },
-      ],
-      events: [],
-      narrative: 'Stable narrative',
-    },
-  ],
-}))
 
 // ---------------------------------------------------------------------------
 // Mock recharts to avoid SVG issues in jsdom
@@ -155,12 +72,14 @@ describe('App (legacy monolith)', () => {
 
   it('renders country rows from MOCK_COUNTRIES in the overview', () => {
     render(<App />)
-    expect(screen.getAllByText('Testland').length).toBeGreaterThanOrEqual(1)
+    // MOCK_COUNTRIES is now inlined in App.tsx — Brazil is the first country
+    expect(screen.getAllByText('Brazil').length).toBeGreaterThanOrEqual(1)
   })
 
-  it('renders the Criticaland country in the list', () => {
+  it('renders a Critical-tier country in the list', () => {
     render(<App />)
-    expect(screen.getAllByText('Criticaland').length).toBeGreaterThanOrEqual(1)
+    // Hungary is Critical in the inline MOCK_COUNTRIES data
+    expect(screen.getAllByText('Hungary').length).toBeGreaterThanOrEqual(1)
   })
 
   it('renders the "Global Status" section in the overview', () => {
@@ -193,8 +112,8 @@ describe('App (legacy monolith)', () => {
     // The App renders country rows as buttons — find all buttons that contain a country name
     const allButtons = screen.getAllByRole('button')
     const countryRowButton = allButtons.find(btn =>
-      btn.querySelector?.('h3')?.textContent?.includes('Criticaland') ||
-      Array.from(btn.childNodes).some(n => (n as Element).textContent?.includes('Criticaland'))
+      btn.querySelector?.('h3')?.textContent?.includes('Hungary') ||
+      Array.from(btn.childNodes).some(n => (n as Element).textContent?.includes('Hungary'))
     )
     if (countryRowButton) {
       fireEvent.click(countryRowButton)
@@ -214,7 +133,7 @@ describe('App (legacy monolith)', () => {
     // Click a country to enter detail view
     const allButtons = screen.getAllByRole('button')
     const countryRowButton = allButtons.find(btn =>
-      Array.from(btn.childNodes).some(n => (n as Element).textContent?.includes('Criticaland'))
+      Array.from(btn.childNodes).some(n => (n as Element).textContent?.includes('Hungary'))
     )
     if (countryRowButton) {
       fireEvent.click(countryRowButton)
