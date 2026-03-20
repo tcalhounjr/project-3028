@@ -1,6 +1,6 @@
 import 'leaflet/dist/leaflet.css'
 import React from 'react'
-import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, CircleMarker, Tooltip } from 'react-leaflet'
 import { useNavigate } from 'react-router-dom'
 import type { CountryData, Tier } from '../../types/country'
 
@@ -180,7 +180,7 @@ export default function Map({ countries }: MapProps) {
                 }
               }}
             >
-              <Popup>
+              <Tooltip sticky>
                 <div
                   style={{
                     fontFamily: 'Manrope, Inter, ui-sans-serif, system-ui, sans-serif',
@@ -246,7 +246,6 @@ export default function Map({ countries }: MapProps) {
                       </span>
                     </div>
                   </div>
-                  {/* Click-to-navigate hint */}
                   <div
                     style={{
                       marginTop: '10px',
@@ -254,20 +253,13 @@ export default function Map({ countries }: MapProps) {
                       borderTop: '1px solid #F2F2F7',
                       fontSize: '11px',
                       color: '#1A237E',
-                      cursor: 'pointer',
                       fontWeight: 600,
                     }}
-                    onClick={() => navigate(`/country/${country.iso}`)}
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter') navigate(`/country/${country.iso}`)
-                    }}
                   >
-                    View country page →
+                    Click to view country →
                   </div>
                 </div>
-              </Popup>
+              </Tooltip>
             </CircleMarker>
           )
         })}
