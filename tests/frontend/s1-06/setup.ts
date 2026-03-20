@@ -188,6 +188,9 @@ vi.mock('react-leaflet', () => {
   const Popup = ({ children }: { children?: React.ReactNode }) =>
     React.createElement('div', { 'data-testid': 'map-popup' }, children)
 
+  const Tooltip = ({ children }: { children?: React.ReactNode }) =>
+    React.createElement('div', { 'data-testid': 'map-tooltip' }, children)
+
   /**
    * useMap — returns a minimal map stub so components that call useMap() do
    * not throw
@@ -201,5 +204,5 @@ vi.mock('react-leaflet', () => {
     off: vi.fn(),
   }))
 
-  return { MapContainer, TileLayer, Marker, CircleMarker, Popup, useMap }
+  return { MapContainer, TileLayer, Marker, CircleMarker, Popup, Tooltip, useMap }
 })
