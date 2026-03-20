@@ -45,7 +45,7 @@ import type { DataJson } from './types/country';
 // CountryData — prototype-only shape used by LegacyAppContent and its children.
 // The canonical data shape is CountryData in src/types/country.ts (snake_case).
 // ---------------------------------------------------------------------------
-export interface CountryData {
+export interface LegacyCountryData {
   name: string;
   isoCode: string;
   currentScore: number;
@@ -77,7 +77,7 @@ export const DataContext = createContext<DataJson | null>(null);
 // Sprint 2 pages use DataContext and public/data.json instead.
 // ---------------------------------------------------------------------------
 
-const MOCK_COUNTRIES: CountryData[] = [
+const MOCK_COUNTRIES: LegacyCountryData[] = [
   {
     name: "Brazil",
     isoCode: "BRA",
@@ -190,7 +190,7 @@ const MOCK_COUNTRIES: CountryData[] = [
 // --- Sub-components ---
 
 const IndicatorCard = ({ label, value, icon: Icon, color }: { label: string, value: number, icon: any, color: string }) => {
-  const delta = Math.floor(Math.random() * 10) - 5;
+  const delta = (value % 10) - 5;
   return (
     <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg group hover:bg-slate-100 transition-all border border-slate-100">
       <div className="flex items-center gap-3">
@@ -234,7 +234,7 @@ const EventItem = ({ event }: { event: any }) => {
 
 // --- Main Screens ---
 
-const GlobalOverview = ({ onSelectCountry }: { onSelectCountry: (c: CountryData) => void }) => {
+const GlobalOverview = ({ onSelectCountry }: { onSelectCountry: (c: LegacyCountryData) => void }) => {
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       <div className="grid grid-cols-12 gap-8">
@@ -320,7 +320,7 @@ const GlobalOverview = ({ onSelectCountry }: { onSelectCountry: (c: CountryData)
                 </div>
                 <div className="text-right">
                   <p className={cn("text-sm font-bold", country.status === 'Critical' ? "text-red-600" : "text-amber-600")}>
-                    {country.status === 'Critical' ? '+' : ''}{Math.floor(Math.random() * 10) + 2}%
+                    {country.status === 'Critical' ? '+' : ''}{(country.currentScore % 10) + 2}%
                   </p>
                   <p className="text-[10px] text-slate-400 font-bold uppercase">Stress Growth</p>
                 </div>
@@ -355,7 +355,7 @@ const GlobalOverview = ({ onSelectCountry }: { onSelectCountry: (c: CountryData)
                           src={`https://flagcdn.com/w40/${country.isoCode.toLowerCase().slice(0, 2)}.png`}
                           alt={country.name}
                           className="w-6 h-4 object-cover rounded-sm shadow-sm"
-                          onError={(e) => (e.currentTarget.src = 'https://via.placeholder.com/24x16')}
+                          onError={(e) => (e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='16' viewBox='0 0 24 16'%3E%3Crect width='24' height='16' fill='%23e5e7eb'/%3E%3C/svg%3E")}
                         />
                         <span className="font-bold text-sm text-navy-900">{country.name}</span>
                       </div>
@@ -385,7 +385,7 @@ const GlobalOverview = ({ onSelectCountry }: { onSelectCountry: (c: CountryData)
   );
 };
 
-const CountryDetail = ({ country, onBack }: { country: CountryData, onBack: () => void }) => {
+const CountryDetail = ({ country, onBack }: { country: LegacyCountryData, onBack: () => void }) => {
   // AI narrative summary — served by the mock aiInsightsService in the real Sprint 2 flow.
   // In this legacy prototype the summary is derived statically from country data;
   // no API key or external service is required.
@@ -416,7 +416,7 @@ const CountryDetail = ({ country, onBack }: { country: CountryData, onBack: () =
               src={`https://flagcdn.com/w80/${country.isoCode.toLowerCase().slice(0, 2)}.png`}
               alt={country.name}
               className="w-16 h-10 object-cover rounded shadow-md"
-              onError={(e) => (e.currentTarget.src = 'https://via.placeholder.com/64x40')}
+              onError={(e) => (e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='40' viewBox='0 0 64 40'%3E%3Crect width='64' height='40' fill='%23e5e7eb'/%3E%3C/svg%3E")}
             />
             <h1 className="text-5xl md:text-6xl font-black font-manrope tracking-tight text-navy-900">{country.name}</h1>
           </div>
@@ -631,7 +631,7 @@ function ComparePage() {
 
 function LegacyAppContent() {
   const [activeTab, setActiveTab] = useState('overview');
-  const [selectedCountry, setSelectedCountry] = useState<CountryData | null>(null);
+  const [selectedCountry, setSelectedCountry] = useState<LegacyCountryData | null>(null);
 
   const handleSelectCountry = (country: CountryData) => {
     setSelectedCountry(country);
