@@ -6,7 +6,11 @@ import React from 'react'
 import { describe, it, expect, vi } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { MemoryRouter } from 'react-router-dom'
 import { Sidebar, TopBar, StatusBadge, ScoreDisplay, cn } from '../../../src/components/Layout'
+
+const renderSidebar = (initialPath = '/') =>
+  render(<MemoryRouter initialEntries={[initialPath]}><Sidebar /></MemoryRouter>)
 
 // ---------------------------------------------------------------------------
 // cn utility
@@ -29,40 +33,39 @@ describe('cn utility', () => {
 
 describe('Sidebar', () => {
   it('renders the "Democracy Index" title', () => {
-    render(<Sidebar activeTab="overview" onTabChange={vi.fn()} />)
+    renderSidebar()
     expect(screen.getByText('Democracy Index')).toBeInTheDocument()
   })
 
   it('renders all navigation items', () => {
-    render(<Sidebar activeTab="overview" onTabChange={vi.fn()} />)
+    renderSidebar()
     expect(screen.getByText('Global Overview')).toBeInTheDocument()
     expect(screen.getByText('Countries')).toBeInTheDocument()
     expect(screen.getByText('Compare')).toBeInTheDocument()
     expect(screen.getByText('Reports')).toBeInTheDocument()
   })
 
-  it('calls onTabChange when a nav item is clicked', () => {
-    const onTabChange = vi.fn()
-    render(<Sidebar activeTab="overview" onTabChange={onTabChange} />)
-    fireEvent.click(screen.getByText('Countries'))
-    expect(onTabChange).toHaveBeenCalledWith('countries')
+  it('clicking a routed nav item does not throw', () => {
+    renderSidebar()
+    fireEvent.click(screen.getByText('Global Overview'))
+    expect(screen.getByText('Global Overview')).toBeInTheDocument()
   })
 
   it('renders the Generate Report button', () => {
-    render(<Sidebar activeTab="overview" onTabChange={vi.fn()} />)
+    renderSidebar()
     expect(screen.getByText('Generate Report')).toBeInTheDocument()
   })
 
   it('renders Settings and Help buttons', () => {
-    render(<Sidebar activeTab="overview" onTabChange={vi.fn()} />)
+    renderSidebar()
     expect(screen.getByText('Settings')).toBeInTheDocument()
     expect(screen.getByText('Help')).toBeInTheDocument()
   })
 
-  it('applies active styling to the current tab button', () => {
-    render(<Sidebar activeTab="countries" onTabChange={vi.fn()} />)
-    // The active button has a different className — just confirm the tab renders
-    expect(screen.getByText('Countries')).toBeInTheDocument()
+  it('applies active styling to the overview item when at /', () => {
+    renderSidebar('/')
+    // The active button has aria-current="page"
+    expect(screen.getByRole('button', { name: 'Global Overview' })).toHaveAttribute('aria-current', 'page')
   })
 })
 

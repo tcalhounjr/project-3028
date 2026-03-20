@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { AlertTriangle, ChevronLeft } from 'lucide-react'
 import { DataContext } from '../App'
+import { Sidebar, TopBar } from '../components/Layout'
 import type { DataJson } from '../types/country'
 import ScoreBadge from '../components/GlobalOverview/ScoreBadge'
 import StressTimeline from '../components/CountryPage/StressTimeline'
@@ -26,19 +27,24 @@ const cardStyle: React.CSSProperties = {
 // Country Page
 // ---------------------------------------------------------------------------
 
+const shell = (title: string, subtitle: string, content: React.ReactNode) => (
+  <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#F5F7FA' }}>
+    <Sidebar />
+    <div style={{ flex: 1, marginLeft: '240px', minHeight: '100vh' }}>
+      <TopBar title={title} subtitle={subtitle} />
+      {content}
+    </div>
+  </div>
+)
+
 export default function CountryPage() {
   const { iso } = useParams<{ iso: string }>()
   const data = useContext(DataContext) as DataJson | null
 
-  // Loading state
   if (!data) {
-    return (
-      <main
-        className="p-6"
-        aria-labelledby="page-heading-country"
-        aria-busy="true"
-        style={{ fontFamily: 'Manrope, ui-sans-serif, system-ui, sans-serif' }}
-      >
+    return shell('Country', 'Democratic Stress Dashboard',
+      <main aria-labelledby="page-heading-country" aria-busy="true"
+        style={{ fontFamily: 'Manrope, ui-sans-serif, system-ui, sans-serif', padding: '32px' }}>
         <p style={{ color: '#6C6C70', fontSize: '14px' }}>Loading data…</p>
       </main>
     )
@@ -46,50 +52,29 @@ export default function CountryPage() {
 
   const country = data.countries.find((c) => c.iso === iso?.toUpperCase())
 
-  // Error state — ISO not found
   if (!country) {
-    return (
-      <main
-        className="p-6"
-        aria-labelledby="page-heading-country"
+    return shell('Country Not Found', 'Democratic Stress Dashboard',
+      <main aria-labelledby="page-heading-country"
         style={{
           fontFamily: 'Manrope, ui-sans-serif, system-ui, sans-serif',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          paddingTop: '80px',
-        }}
-      >
-        <p
-          style={{
-            fontSize: '20px',
-            fontWeight: 600,
-            color: '#C62828',
-            marginBottom: '16px',
-          }}
-        >
+          display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '80px',
+        }}>
+        <p style={{ fontSize: '20px', fontWeight: 600, color: '#C62828', marginBottom: '16px' }}>
           Country data not available
         </p>
-        <Link
-          to="/"
-          style={{
-            color: '#1565C0',
-            fontSize: '14px',
-            textDecoration: 'none',
-          }}
-        >
+        <Link to="/" style={{ color: '#1565C0', fontSize: '14px', textDecoration: 'none' }}>
           Back to Global Overview
         </Link>
       </main>
     )
   }
 
-  return (
+  return shell(country.name, country.current_tier_label,
     <main
-      className="p-6"
       aria-labelledby="page-heading-country"
       style={{
         fontFamily: 'Manrope, ui-sans-serif, system-ui, sans-serif',
+        padding: '32px',
         maxWidth: '1600px',
       }}
     >
@@ -305,3 +290,4 @@ export default function CountryPage() {
     </main>
   )
 }
+

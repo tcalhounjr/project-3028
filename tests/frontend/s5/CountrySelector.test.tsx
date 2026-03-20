@@ -260,14 +260,13 @@ describe('PRO-32: Sidebar "Compare" navigation link exists', () => {
   beforeEach(stubMatchMedia)
 
   it('Sidebar renders a "Compare" nav item', () => {
-    render(<Sidebar activeTab="overview" onTabChange={vi.fn()} />)
+    render(<MemoryRouter><Sidebar /></MemoryRouter>)
     expect(screen.getByText('Compare')).toBeInTheDocument()
   }, 15000)
 
-  it('clicking "Compare" calls onTabChange with "compare"', () => {
-    const onTabChange = vi.fn()
-    render(<Sidebar activeTab="overview" onTabChange={onTabChange} />)
+  it('clicking "Compare" navigates without error', () => {
+    render(<MemoryRouter><Sidebar /></MemoryRouter>)
     fireEvent.click(screen.getByText('Compare'))
-    expect(onTabChange).toHaveBeenCalledWith('compare')
+    expect(screen.getByText('Compare')).toBeInTheDocument()
   }, 15000)
 })

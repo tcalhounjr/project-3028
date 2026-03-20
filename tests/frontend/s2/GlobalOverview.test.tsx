@@ -111,7 +111,7 @@ describe('GlobalOverview', () => {
   it('renders the "Global Overview" heading when data is available', () => {
     const data = makeDataJson([makeCountry('NIC', 'Nicaragua'), makeCountry('HUN', 'Hungary')])
     renderWithContext(data)
-    expect(screen.getByRole('heading', { name: 'Global Overview' })).toBeInTheDocument()
+    expect(screen.getAllByRole('heading', { name: 'Global Overview' }).length).toBeGreaterThanOrEqual(1)
   })
 
   it('renders the Map component with countries when data is available', () => {

@@ -37,7 +37,7 @@ export default function ComparePage() {
         fontFamily: 'Manrope, ui-sans-serif, system-ui, sans-serif',
       }}
     >
-      <Sidebar activeTab="compare" onTabChange={() => {}} />
+      <Sidebar />
 
       <main
         style={{ flex: 1, marginLeft: '240px', minHeight: '100vh' }}

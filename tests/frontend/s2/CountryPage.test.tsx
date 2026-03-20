@@ -135,7 +135,7 @@ describe('CountryPage', () => {
   it('renders the country name when found', () => {
     const data = makeDataJson([makeCountry()])
     renderPage('NIC', data)
-    expect(screen.getByRole('heading', { name: 'Nicaragua' })).toBeInTheDocument()
+    expect(screen.getAllByRole('heading', { name: 'Nicaragua' }).length).toBeGreaterThanOrEqual(1)
   })
 
   it('renders the country score', () => {
@@ -233,7 +233,7 @@ describe('CountryPage', () => {
   it('ISO lookup is case-insensitive (lowercase iso in URL)', () => {
     const data = makeDataJson([makeCountry({ iso: 'NIC' })])
     renderPage('nic', data)
-    expect(screen.getByRole('heading', { name: 'Nicaragua' })).toBeInTheDocument()
+    expect(screen.getAllByRole('heading', { name: 'Nicaragua' }).length).toBeGreaterThanOrEqual(1)
   })
 
   it('renders the "Active Risk Flags" section label', () => {
