@@ -1,5 +1,6 @@
 import React from 'react'
 import type { CountryData } from '../../types/country'
+import { toW40Url } from '../../utils/flagUrl'
 
 // ---------------------------------------------------------------------------
 // Props
@@ -15,8 +16,6 @@ interface TopMoversProps {
 
 interface MoverRowProps {
   country: CountryData
-  // React's `key` prop is reserved and not passed through; declared here only
-  // to satisfy TypeScript when the component is used with a key attribute.
   key?: React.Key
 }
 
@@ -33,12 +32,13 @@ function MoverRow({ country }: MoverRowProps) {
         justifyContent: 'space-between',
         gap: '12px',
         padding: '8px 0',
-        borderBottom: '1px solid #F2F2F7',
+        borderBottom: '1px solid #F5F7FA',
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', minWidth: 0 }}>
+        {/* PRO-29: display flag at w40 */}
         <img
-          src={country.flag_url}
+          src={toW40Url(country.flag_url)}
           alt={`Flag of ${country.name}`}
           width={40}
           style={{
@@ -51,7 +51,7 @@ function MoverRow({ country }: MoverRowProps) {
         />
         <span
           style={{
-            fontFamily: 'Manrope, ui-sans-serif, system-ui, sans-serif',
+            fontFamily: 'Manrope, Inter, ui-sans-serif, system-ui, sans-serif',
             fontSize: '14px',
             fontWeight: 500,
             color: '#1C1C1E',
@@ -80,17 +80,17 @@ function MoverRow({ country }: MoverRowProps) {
 }
 
 // ---------------------------------------------------------------------------
-// Section header style — type.label
+// Section label style — type.label
 // ---------------------------------------------------------------------------
 
 const sectionLabelStyle: React.CSSProperties = {
-  fontFamily: 'Manrope, ui-sans-serif, system-ui, sans-serif',
+  fontFamily: 'Manrope, Inter, ui-sans-serif, system-ui, sans-serif',
   fontSize: '11px',
   fontWeight: 600,
   lineHeight: 1.2,
   letterSpacing: '0.8px',
   textTransform: 'uppercase',
-  color: '#6C6C70',
+  color: '#78909C',
   marginBottom: '8px',
 }
 
@@ -116,7 +116,7 @@ export default function TopMovers({ countries }: TopMoversProps) {
       {/* Card title */}
       <h2
         style={{
-          fontFamily: 'Manrope, ui-sans-serif, system-ui, sans-serif',
+          fontFamily: 'Manrope, Inter, ui-sans-serif, system-ui, sans-serif',
           fontSize: '20px',
           fontWeight: 600,
           lineHeight: 1.4,

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import type { CountryData, Tier } from '../../types/country'
 
 // ---------------------------------------------------------------------------
-// Constants
+// Constants — Civic Vigil status colors (PRO-26)
 // ---------------------------------------------------------------------------
 
 const TIER_COLORS: Record<Tier, string> = {
@@ -20,6 +20,15 @@ const TIER_LABELS: Record<Tier, string> = {
   elevated: 'Elevated',
   stable: 'Stable',
   rapid_erosion: 'Rapid Erosion',
+}
+
+// PRO-27: text colors for tier labels in popups (must meet 4.5:1 on white background)
+// #F9A825 on white fails — use #E65100 for elevated text
+const TIER_TEXT_COLORS: Record<Tier, string> = {
+  critical: '#C62828',
+  elevated: '#E65100',
+  stable: '#546E7A',
+  rapid_erosion: '#B71C1C',
 }
 
 // Static coordinates keyed by ISO alpha-3
@@ -81,13 +90,13 @@ function TierLegend() {
           />
           <span
             style={{
-              fontFamily: 'Manrope, ui-sans-serif, system-ui, sans-serif',
+              fontFamily: 'Manrope, Inter, ui-sans-serif, system-ui, sans-serif',
               fontSize: '11px',
               fontWeight: 600,
               lineHeight: 1.2,
               letterSpacing: '0.8px',
               textTransform: 'uppercase',
-              color: '#6C6C70',
+              color: '#546E7A', /* #546E7A on white = 4.6:1 — WCAG AA */
             }}
           >
             {label}
@@ -135,6 +144,7 @@ export default function Map({ countries }: MapProps) {
 
           const fillColor = TIER_COLORS[country.current_tier] ?? '#78909C'
           const tierLabel = TIER_LABELS[country.current_tier] ?? country.current_tier_label
+          const tierTextColor = TIER_TEXT_COLORS[country.current_tier] ?? '#546E7A'
           const changeSign = country.one_year_change >= 0 ? '+' : ''
           const changeDisplay = `${changeSign}${country.one_year_change.toFixed(1)}`
           const ariaLabel = `${country.name} — ${tierLabel}`
@@ -152,17 +162,20 @@ export default function Map({ countries }: MapProps) {
               }}
               eventHandlers={{
                 click: () => navigate(`/country/${country.iso}`),
+                keydown: (e) => {
+                  // PRO-27: keyboard activation for map markers
+                  if ((e as unknown as KeyboardEvent).key === 'Enter') {
+                    navigate(`/country/${country.iso}`)
+                  }
+                },
               }}
-              // aria-label applied via eventHandlers workaround — Leaflet renders
-              // SVG path elements; we set the attribute via ref on the layer.
               ref={(layer) => {
                 if (layer) {
                   const el = layer.getElement()
                   if (el) {
                     el.setAttribute('aria-label', ariaLabel)
-                    el.setAttribute('role', 'img')
+                    el.setAttribute('role', 'button')
                     el.setAttribute('tabindex', '0')
-                    el.setAttribute('focusable', 'true')
                   }
                 }
               }}
@@ -170,7 +183,7 @@ export default function Map({ countries }: MapProps) {
               <Popup>
                 <div
                   style={{
-                    fontFamily: 'Manrope, ui-sans-serif, system-ui, sans-serif',
+                    fontFamily: 'Manrope, Inter, ui-sans-serif, system-ui, sans-serif',
                     minWidth: '160px',
                   }}
                 >
@@ -186,7 +199,7 @@ export default function Map({ countries }: MapProps) {
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', gap: '16px' }}>
-                      <span style={{ fontSize: '11px', color: '#6C6C70', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px' }}>
+                      <span style={{ fontSize: '11px', color: '#546E7A', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px' }}>
                         Score
                       </span>
                       <span
@@ -201,14 +214,15 @@ export default function Map({ countries }: MapProps) {
                       </span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', gap: '16px' }}>
-                      <span style={{ fontSize: '11px', color: '#6C6C70', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px' }}>
+                      <span style={{ fontSize: '11px', color: '#546E7A', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px' }}>
                         Tier
                       </span>
+                      {/* PRO-27: use accessible text color for tier, not raw TIER_COLORS */}
                       <span
                         style={{
                           fontSize: '11px',
                           fontWeight: 600,
-                          color: fillColor,
+                          color: tierTextColor,
                           textTransform: 'uppercase',
                           letterSpacing: '0.8px',
                         }}
@@ -217,7 +231,7 @@ export default function Map({ countries }: MapProps) {
                       </span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', gap: '16px' }}>
-                      <span style={{ fontSize: '11px', color: '#6C6C70', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px' }}>
+                      <span style={{ fontSize: '11px', color: '#546E7A', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px' }}>
                         1-Year
                       </span>
                       <span
@@ -239,10 +253,16 @@ export default function Map({ countries }: MapProps) {
                       paddingTop: '8px',
                       borderTop: '1px solid #F2F2F7',
                       fontSize: '11px',
-                      color: '#1565C0',
+                      color: '#1A237E',
                       cursor: 'pointer',
+                      fontWeight: 600,
                     }}
                     onClick={() => navigate(`/country/${country.iso}`)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') navigate(`/country/${country.iso}`)
+                    }}
                   >
                     View country page →
                   </div>

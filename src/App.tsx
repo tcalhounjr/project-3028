@@ -40,6 +40,7 @@ import { Sidebar, TopBar, StatusBadge, ScoreDisplay, cn } from './components/Lay
 import GlobalOverviewPage from './pages/GlobalOverview';
 import CountryPageRoute from './pages/CountryPage';
 import type { DataJson } from './types/country';
+import { MOCK_COUNTRIES } from './constants/legacyMockData'
 
 // ---------------------------------------------------------------------------
 // CountryData — prototype-only shape used by LegacyAppContent and its children.
@@ -71,121 +72,6 @@ export interface LegacyCountryData {
 
 export const DataContext = createContext<DataJson | null>(null);
 
-// ---------------------------------------------------------------------------
-// MOCK_COUNTRIES — legacy prototype data used only by LegacyAppContent.
-// Inlined here so src/mockData.ts can be deleted (required by s1-01 tests).
-// Sprint 2 pages use DataContext and public/data.json instead.
-// ---------------------------------------------------------------------------
-
-const MOCK_COUNTRIES: LegacyCountryData[] = [
-  {
-    name: "Brazil",
-    isoCode: "BRA",
-    currentScore: 58,
-    status: "Elevated" as const,
-    indicators: {
-      mediaFreedom: 55,
-      judicialIndependence: 62,
-      civilSociety: 58,
-      electionQuality: 75,
-      executiveConstraints: 52,
-      rhetoricRadar: 45,
-      civicProtests: 60,
-    },
-    history: [
-      { year: 2010, score: 78 },
-      { year: 2012, score: 82 },
-      { year: 2014, score: 75 },
-      { year: 2016, score: 68 },
-      { year: 2018, score: 72 },
-      { year: 2020, score: 65 },
-      { year: 2022, score: 60 },
-      { year: 2024, score: 58 },
-    ],
-    events: [
-      { date: "Oct 2023", title: "Supreme Court powers curtailed", description: "Legislative amendment passed limiting individual justice injunctions.", type: "legal" as const },
-      { date: "June 2023", title: "Mass anti-corruption protests", description: "Public demonstrations in 14 cities highlighting institutional trust erosion.", type: "protest" as const },
-      { date: "Jan 2023", title: "New Transparency Law", description: "Executive order mandating real-time budget disclosure for municipalities.", type: "legal" as const },
-    ],
-  },
-  {
-    name: "Norway",
-    isoCode: "NOR",
-    currentScore: 94,
-    status: "Stable" as const,
-    indicators: {
-      mediaFreedom: 98,
-      judicialIndependence: 95,
-      civilSociety: 96,
-      electionQuality: 97,
-      executiveConstraints: 94,
-      rhetoricRadar: 92,
-      civicProtests: 90,
-    },
-    history: [
-      { year: 2010, score: 95 },
-      { year: 2015, score: 94 },
-      { year: 2020, score: 95 },
-      { year: 2024, score: 94 },
-    ],
-    events: [
-      { date: "Dec 2023", title: "Freedom of Press Award", description: "National media association recognized for investigative excellence.", type: "political" as const },
-    ],
-  },
-  {
-    name: "Hungary",
-    isoCode: "HUN",
-    currentScore: 34,
-    status: "Critical" as const,
-    indicators: {
-      mediaFreedom: 18,
-      judicialIndependence: 12,
-      civilSociety: 42,
-      electionQuality: 56,
-      executiveConstraints: 25,
-      rhetoricRadar: 15,
-      civicProtests: 39,
-    },
-    history: [
-      { year: 2010, score: 72 },
-      { year: 2012, score: 65 },
-      { year: 2014, score: 55 },
-      { year: 2016, score: 48 },
-      { year: 2018, score: 42 },
-      { year: 2020, score: 38 },
-      { year: 2022, score: 35 },
-      { year: 2024, score: 34 },
-    ],
-    events: [
-      { date: "Nov 2023", title: "Sovereignty Protection Act", description: "New law targeting foreign funding for NGOs and media outlets.", type: "legal" as const },
-      { date: "Sept 2023", title: "Judicial Council Restructuring", description: "Government-appointed members now hold majority in key oversight body.", type: "legal" as const },
-    ],
-  },
-  {
-    name: "India",
-    isoCode: "IND",
-    currentScore: 52,
-    status: "Elevated" as const,
-    indicators: {
-      mediaFreedom: 41,
-      judicialIndependence: 58,
-      civilSociety: 45,
-      electionQuality: 68,
-      executiveConstraints: 54,
-      rhetoricRadar: 38,
-      civicProtests: 55,
-    },
-    history: [
-      { year: 2010, score: 75 },
-      { year: 2015, score: 68 },
-      { year: 2020, score: 58 },
-      { year: 2024, score: 52 },
-    ],
-    events: [
-      { date: "Aug 2023", title: "Digital Personal Data Protection Act", description: "Concerns raised over government exemptions for data access.", type: "legal" as const },
-    ],
-  },
-];
 
 // --- Sub-components ---
 

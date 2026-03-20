@@ -3,6 +3,7 @@ import { ChevronUp, ChevronDown } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import type { CountryData } from '../../types/country'
 import ScoreBadge from './ScoreBadge'
+import { toW40Url } from '../../utils/flagUrl'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -58,6 +59,15 @@ function sortCountries(countries: CountryData[], sort: SortState): CountryData[]
 }
 
 // ---------------------------------------------------------------------------
+// Zebra row colors — referenced in initial style prop, onMouseLeave restore,
+// and hover. Defined as constants to avoid duplication.
+// ---------------------------------------------------------------------------
+
+const ROW_COLOR_EVEN = '#FFFFFF'
+const ROW_COLOR_ODD = '#F5F7FA'
+const ROW_COLOR_HOVER = '#EEF2FF'
+
+// ---------------------------------------------------------------------------
 // Props
 // ---------------------------------------------------------------------------
 
@@ -96,7 +106,7 @@ export default function CountryTable({ countries }: CountryTableProps) {
         style={{
           width: '100%',
           borderCollapse: 'collapse',
-          fontFamily: 'Manrope, ui-sans-serif, system-ui, sans-serif',
+          fontFamily: 'Manrope, Inter, ui-sans-serif, system-ui, sans-serif',
         }}
         aria-label="Country stress scores"
       >
@@ -124,7 +134,7 @@ export default function CountryTable({ countries }: CountryTableProps) {
                     lineHeight: 1.2,
                     letterSpacing: '0.8px',
                     textTransform: 'uppercase',
-                    color: isActive ? '#1A237E' : '#6C6C70',
+                    color: isActive ? '#1A237E' : '#78909C',
                     borderBottom: '1px solid #F2F2F7',
                     cursor: 'pointer',
                     userSelect: 'none',
@@ -144,7 +154,12 @@ export default function CountryTable({ countries }: CountryTableProps) {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '4px',
-                      justifyContent: col.align === 'right' ? 'flex-end' : col.align === 'center' ? 'center' : 'flex-start',
+                      justifyContent:
+                        col.align === 'right'
+                          ? 'flex-end'
+                          : col.align === 'center'
+                          ? 'center'
+                          : 'flex-start',
                       width: '100%',
                     }}
                   >
@@ -164,6 +179,22 @@ export default function CountryTable({ countries }: CountryTableProps) {
         </thead>
 
         <tbody>
+          {sorted.length === 0 && (
+            <tr>
+              <td
+                colSpan={COLUMNS.length}
+                style={{
+                  padding: '48px 16px',
+                  textAlign: 'center',
+                  fontFamily: 'Manrope, Inter, ui-sans-serif, system-ui, sans-serif',
+                  fontSize: '14px',
+                  color: '#78909C',
+                }}
+              >
+                No tracked countries in this region. The current dataset covers Americas, Europe, and Asia.
+              </td>
+            </tr>
+          )}
           {sorted.map((country, idx) => {
             const isEven = idx % 2 === 0
             const changeSign = country.one_year_change >= 0 ? '+' : ''
@@ -174,22 +205,23 @@ export default function CountryTable({ countries }: CountryTableProps) {
               <tr
                 key={country.iso}
                 style={{
-                  backgroundColor: isEven ? '#FFFFFF' : '#F2F2F7',
+                  backgroundColor: isEven ? ROW_COLOR_EVEN : ROW_COLOR_ODD,
                   height: '52px',
                   transition: 'background-color 100ms ease',
                 }}
                 onMouseEnter={(e) => {
-                  ;(e.currentTarget as HTMLTableRowElement).style.backgroundColor = 'rgba(26,35,126,0.04)'
+                  ;(e.currentTarget as HTMLTableRowElement).style.backgroundColor = ROW_COLOR_HOVER
                 }}
                 onMouseLeave={(e) => {
-                  ;(e.currentTarget as HTMLTableRowElement).style.backgroundColor = isEven ? '#FFFFFF' : '#F2F2F7'
+                  ;(e.currentTarget as HTMLTableRowElement).style.backgroundColor = isEven ? ROW_COLOR_EVEN : ROW_COLOR_ODD
                 }}
               >
-                {/* Country column: flag + name (linked to country page) */}
+                {/* Country column: flag (w40) + name (linked to country page) */}
                 <td style={{ padding: '0 16px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    {/* PRO-29: display flag at w40 */}
                     <img
-                      src={country.flag_url}
+                      src={toW40Url(country.flag_url)}
                       alt={`Flag of ${country.name}`}
                       width={40}
                       style={{
