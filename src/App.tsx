@@ -633,7 +633,7 @@ function LegacyAppContent() {
   const [activeTab, setActiveTab] = useState('overview');
   const [selectedCountry, setSelectedCountry] = useState<LegacyCountryData | null>(null);
 
-  const handleSelectCountry = (country: CountryData) => {
+  const handleSelectCountry = (country: LegacyCountryData) => {
     setSelectedCountry(country);
     setActiveTab('country-detail');
   };
