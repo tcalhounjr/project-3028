@@ -8,7 +8,7 @@ import { INDICATOR_LABELS } from '../../constants/indicators'
 // Defined outside JSX so it is not recreated on every render.
 // ---------------------------------------------------------------------------
 
-const isSafeUrl = (url: string) => /^https?:\/\//.test(url)
+const isSafeUrl = (url: string) => /^https:\/\//.test(url)
 
 // ---------------------------------------------------------------------------
 // Props
