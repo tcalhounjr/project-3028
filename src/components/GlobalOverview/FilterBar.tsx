@@ -55,7 +55,6 @@ export default function FilterBar() {
         </label>
         <select
           id="filter-region"
-          aria-label="Region"
           value={filters.region}
           onChange={(e) => setRegion(e.target.value as Region)}
           style={selectStyle}
@@ -86,7 +85,6 @@ export default function FilterBar() {
         </label>
         <select
           id="filter-tier"
-          aria-label="Score Tier"
           value={filters.tier}
           onChange={(e) => setTier(e.target.value as TierFilter)}
           style={selectStyle}

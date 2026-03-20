@@ -1,13 +1,6 @@
 import React from 'react'
 import type { CountryData } from '../../types/country'
-
-// ---------------------------------------------------------------------------
-// PRO-29: flag URL helper — data.json stores w80; movers list displays at 40px.
-// ---------------------------------------------------------------------------
-
-function toW40Url(flagUrl: string): string {
-  return flagUrl.replace('/w80/', '/w40/')
-}
+import { toW40Url } from '../../utils/flagUrl'
 
 // ---------------------------------------------------------------------------
 // Props

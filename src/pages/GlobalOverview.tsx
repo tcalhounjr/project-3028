@@ -25,13 +25,27 @@ export default function GlobalOverview() {
 
   // ---------------------------------------------------------------------------
   // Filter state — lifted here so Map and CountryTable share the same source.
+  // All hooks are declared before any conditional return (Rules of Hooks).
   // ---------------------------------------------------------------------------
   const [filters, setFilters] = useState<FilterState>({ region: 'All', tier: 'All' })
 
   const setRegion = (region: Region) => setFilters((prev) => ({ ...prev, region }))
   const setTier = (tier: TierFilter) => setFilters((prev) => ({ ...prev, tier }))
 
-  // Loading state
+  // Derived filtered country list — shared by Map and CountryTable.
+  // Uses data?.countries ?? [] so it is safe when data is null.
+  const filteredCountries = useMemo(() => {
+    const countries = data?.countries ?? []
+    return countries.filter((c) => {
+      const regionMatch =
+        filters.region === 'All' || ISO_REGION_MAP[c.iso] === filters.region
+      const tierMatch =
+        filters.tier === 'All' || TIER_TO_FILTER[c.current_tier] === filters.tier
+      return regionMatch && tierMatch
+    })
+  }, [data, filters])
+
+  // Loading state — returned AFTER all hooks are declared.
   if (!data) {
     return (
       <main
@@ -59,17 +73,6 @@ export default function GlobalOverview() {
   }
 
   const { countries } = data
-
-  // Derived filtered country list — shared by Map and CountryTable.
-  const filteredCountries = useMemo(() => {
-    return countries.filter((c) => {
-      const regionMatch =
-        filters.region === 'All' || ISO_REGION_MAP[c.iso] === filters.region
-      const tierMatch =
-        filters.tier === 'All' || TIER_TO_FILTER[c.current_tier] === filters.tier
-      return regionMatch && tierMatch
-    })
-  }, [countries, filters])
 
   return (
     <FilterContext.Provider value={{ filters, setRegion, setTier }}>

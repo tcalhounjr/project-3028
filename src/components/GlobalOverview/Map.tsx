@@ -176,7 +176,6 @@ export default function Map({ countries }: MapProps) {
                     el.setAttribute('aria-label', ariaLabel)
                     el.setAttribute('role', 'button')
                     el.setAttribute('tabindex', '0')
-                    el.setAttribute('focusable', 'true')
                   }
                 }
               }}

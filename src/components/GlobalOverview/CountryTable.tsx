@@ -3,6 +3,7 @@ import { ChevronUp, ChevronDown } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import type { CountryData } from '../../types/country'
 import ScoreBadge from './ScoreBadge'
+import { toW40Url } from '../../utils/flagUrl'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -58,12 +59,13 @@ function sortCountries(countries: CountryData[], sort: SortState): CountryData[]
 }
 
 // ---------------------------------------------------------------------------
-// PRO-29: flag URL helper — data.json stores w80; table displays at 40px width.
+// Zebra row colors — referenced in initial style prop, onMouseLeave restore,
+// and hover. Defined as constants to avoid duplication.
 // ---------------------------------------------------------------------------
 
-function toW40Url(flagUrl: string): string {
-  return flagUrl.replace('/w80/', '/w40/')
-}
+const ROW_COLOR_EVEN = '#FFFFFF'
+const ROW_COLOR_ODD = '#F5F7FA'
+const ROW_COLOR_HOVER = '#EEF2FF'
 
 // ---------------------------------------------------------------------------
 // Props
@@ -189,7 +191,7 @@ export default function CountryTable({ countries }: CountryTableProps) {
                   color: '#78909C',
                 }}
               >
-                No countries match the selected filters.
+                No tracked countries in this region. The current dataset covers Americas, Europe, and Asia.
               </td>
             </tr>
           )}
@@ -203,15 +205,15 @@ export default function CountryTable({ countries }: CountryTableProps) {
               <tr
                 key={country.iso}
                 style={{
-                  backgroundColor: isEven ? '#FFFFFF' : '#F5F7FA',
+                  backgroundColor: isEven ? ROW_COLOR_EVEN : ROW_COLOR_ODD,
                   height: '52px',
                   transition: 'background-color 100ms ease',
                 }}
                 onMouseEnter={(e) => {
-                  ;(e.currentTarget as HTMLTableRowElement).style.backgroundColor = 'rgba(26,35,126,0.04)'
+                  ;(e.currentTarget as HTMLTableRowElement).style.backgroundColor = ROW_COLOR_HOVER
                 }}
                 onMouseLeave={(e) => {
-                  ;(e.currentTarget as HTMLTableRowElement).style.backgroundColor = isEven ? '#FFFFFF' : '#F5F7FA'
+                  ;(e.currentTarget as HTMLTableRowElement).style.backgroundColor = isEven ? ROW_COLOR_EVEN : ROW_COLOR_ODD
                 }}
               >
                 {/* Country column: flag (w40) + name (linked to country page) */}
