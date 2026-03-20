@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard,
   Flag,
@@ -24,12 +25,30 @@ export function cn(...inputs: ClassValue[]) {
 // Nav item height: 48px.
 // ---------------------------------------------------------------------------
 
-export const Sidebar = ({ activeTab, onTabChange }: { activeTab: string, onTabChange: (tab: string) => void }) => {
+// Route map: nav item id → path. Items without a route are shown but disabled.
+const NAV_ROUTES: Record<string, string> = {
+  overview: '/',
+  compare: '/compare',
+}
+
+// Derive the active tab id from the current pathname.
+function pathToTab(pathname: string): string {
+  if (pathname === '/') return 'overview'
+  if (pathname.startsWith('/compare')) return 'compare'
+  if (pathname.startsWith('/country')) return 'countries'
+  return ''
+}
+
+export const Sidebar = ({ activeTab: _activeTabProp, onTabChange: _onTabChange }: { activeTab?: string, onTabChange?: (tab: string) => void }) => {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const activeTab = pathToTab(location.pathname)
+
   const navItems = [
     { id: 'overview', label: 'Global Overview', icon: LayoutDashboard },
-    { id: 'countries', label: 'Countries', icon: Flag },
+    { id: 'countries', label: 'Countries', icon: Flag, disabled: true },
     { id: 'compare', label: 'Compare', icon: ArrowLeftRight },
-    { id: 'reports', label: 'Reports', icon: FileText },
+    { id: 'reports', label: 'Reports', icon: FileText, disabled: true },
   ];
 
   return (
@@ -94,12 +113,16 @@ export const Sidebar = ({ activeTab, onTabChange }: { activeTab: string, onTabCh
       >
         {navItems.map((item) => {
           const isActive = activeTab === item.id;
+          const isDisabled = (item as { disabled?: boolean }).disabled === true;
+          const route = NAV_ROUTES[item.id];
           return (
             <button
               key={item.id}
-              onClick={() => onTabChange(item.id)}
+              onClick={() => { if (route && !isDisabled) navigate(route) }}
               aria-current={isActive ? 'page' : undefined}
               aria-label={item.label}
+              aria-disabled={isDisabled}
+              disabled={isDisabled}
               style={{
                 width: '100%',
                 display: 'flex',
@@ -114,19 +137,19 @@ export const Sidebar = ({ activeTab, onTabChange }: { activeTab: string, onTabCh
                 borderBottom: 'none',
                 borderLeft: isActive ? '3px solid #FFFFFF' : '3px solid transparent',
                 backgroundColor: isActive ? '#3949AB' : 'transparent',
-                color: isActive ? '#FFFFFF' : 'rgba(255,255,255,0.7)',
-                cursor: 'pointer',
+                color: isDisabled ? 'rgba(255,255,255,0.3)' : isActive ? '#FFFFFF' : 'rgba(255,255,255,0.7)',
+                cursor: isDisabled ? 'not-allowed' : 'pointer',
                 transition: 'background-color 250ms ease-in-out, color 250ms ease-in-out',
                 textAlign: 'left',
               }}
               onMouseEnter={(e) => {
-                if (!isActive) {
+                if (!isActive && !isDisabled) {
                   (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#283593';
                   (e.currentTarget as HTMLButtonElement).style.color = '#FFFFFF';
                 }
               }}
               onMouseLeave={(e) => {
-                if (!isActive) {
+                if (!isActive && !isDisabled) {
                   (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'transparent';
                   (e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.7)';
                 }

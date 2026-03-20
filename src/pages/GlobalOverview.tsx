@@ -1,6 +1,7 @@
 import React, { useContext, useState, useMemo } from 'react'
 import { DataContext } from '../App'
 import type { DataJson } from '../types/country'
+import { Sidebar, TopBar } from '../components/Layout'
 import Map from '../components/GlobalOverview/Map'
 import TopMovers from '../components/GlobalOverview/TopMovers'
 import CountryTable from '../components/GlobalOverview/CountryTable'
@@ -46,27 +47,24 @@ export default function GlobalOverview() {
   }, [data, filters])
 
   // Loading state — returned AFTER all hooks are declared.
+  const shell = (content: React.ReactNode) => (
+    <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#F5F7FA' }}>
+      <Sidebar />
+      <div style={{ flex: 1, marginLeft: '240px', minHeight: '100vh' }}>
+        <TopBar title="Global Overview" subtitle="Democratic Stress Dashboard" />
+        {content}
+      </div>
+    </div>
+  )
+
   if (!data) {
-    return (
+    return shell(
       <main
         className="p-6"
         aria-labelledby="page-heading-overview"
         aria-busy="true"
-        style={{ fontFamily: 'Manrope, Inter, ui-sans-serif, system-ui, sans-serif' }}
+        style={{ fontFamily: 'Manrope, Inter, ui-sans-serif, system-ui, sans-serif', padding: '32px' }}
       >
-        <h1
-          id="page-heading-overview"
-          style={{
-            fontSize: '32px',
-            fontWeight: 700,
-            lineHeight: 1.2,
-            letterSpacing: '-0.5px',
-            color: '#1A237E',
-            marginBottom: '24px',
-          }}
-        >
-          Global Overview
-        </h1>
         <p style={{ color: '#6C6C70', fontSize: '14px' }}>Loading data…</p>
       </main>
     )
@@ -74,26 +72,25 @@ export default function GlobalOverview() {
 
   const { countries } = data
 
-  return (
+  return shell(
     <FilterContext.Provider value={{ filters, setRegion, setTier }}>
       <main
-        className="p-6"
         aria-labelledby="page-heading-overview"
         style={{
           fontFamily: 'Manrope, Inter, ui-sans-serif, system-ui, sans-serif',
+          padding: '32px',
           maxWidth: '1600px',
         }}
       >
-        {/* Page title */}
         <h1
           id="page-heading-overview"
           style={{
-            fontSize: '32px',
-            fontWeight: 700,
-            lineHeight: 1.2,
-            letterSpacing: '-0.5px',
-            color: '#1A237E',
-            marginBottom: '16px',
+            position: 'absolute',
+            width: '1px',
+            height: '1px',
+            overflow: 'hidden',
+            clip: 'rect(0,0,0,0)',
+            whiteSpace: 'nowrap',
           }}
         >
           Global Overview
