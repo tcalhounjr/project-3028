@@ -312,10 +312,12 @@ export const TopBar = ({ title, subtitle }: { title: string, subtitle?: string }
             size={16}
             aria-hidden="true"
           />
+          {/* TODO: wire to GlobalOverview filter state in a future sprint — must use React controlled state and text-node rendering, never innerHTML */}
           <input
             type="search"
             placeholder="Search countries or regions..."
             aria-label="Search countries or regions"
+            disabled
             style={{
               paddingLeft: '36px',
               paddingRight: '16px',
@@ -328,6 +330,8 @@ export const TopBar = ({ title, subtitle }: { title: string, subtitle?: string }
               fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif',
               color: '#1C1C1E',
               width: '256px',
+              opacity: 0.5,
+              cursor: 'not-allowed',
             }}
           />
         </div>
