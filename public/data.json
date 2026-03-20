@@ -1,0 +1,3582 @@
+{
+  "meta": {
+    "generated_at": "2026-03-19T16:36:31.638856",
+    "year_range": [
+      2009,
+      2024
+    ],
+    "countries": 10,
+    "indicators": {
+      "media_freedom": "Media Freedom",
+      "judicial_independence": "Judicial Independence",
+      "civil_society_space": "Civil Society Space",
+      "election_quality": "Election Quality",
+      "executive_constraints": "Executive Constraints",
+      "rhetoric_radar": "Rhetoric Radar",
+      "civic_protests": "Civic Protests"
+    },
+    "vdem_version": "v14",
+    "normalization": "global_minmax",
+    "weights": {
+      "media_freedom": 1.0,
+      "judicial_independence": 1.0,
+      "civil_society_space": 1.0,
+      "election_quality": 1.0,
+      "executive_constraints": 1.0,
+      "rhetoric_radar": 1.0,
+      "civic_protests": 1.0
+    }
+  },
+  "countries": [
+    {
+      "iso": "NIC",
+      "name": "Nicaragua",
+      "flag_url": "https://flagcdn.com/w80/ni.png",
+      "current_score": 37.8,
+      "current_tier": "critical",
+      "current_tier_label": "Critical",
+      "one_year_change": -4.4,
+      "five_year_change": -6.4,
+      "latest_year": 2023,
+      "flags": [
+        {
+          "flag": "checks_balances",
+          "label": "Checks & Balances Breakdown",
+          "description": "Executive Constraints and Judicial Independence both declined in 2013.",
+          "year_triggered": 2013
+        },
+        {
+          "flag": "sustained_erosion",
+          "label": "Sustained Erosion",
+          "description": "3 indicators have trended downward for 3+ years through 2022.",
+          "year_triggered": 2022
+        }
+      ],
+      "indicators": {
+        "media_freedom": {
+          "label": "Media Freedom",
+          "value": 100.0,
+          "trend": "improving"
+        },
+        "judicial_independence": {
+          "label": "Judicial Independence",
+          "value": 0.0,
+          "trend": "rapidly_declining"
+        },
+        "civil_society_space": {
+          "label": "Civil Society Space",
+          "value": 100.0,
+          "trend": "improving"
+        },
+        "election_quality": {
+          "label": "Election Quality",
+          "value": 7.5,
+          "trend": "declining"
+        },
+        "executive_constraints": {
+          "label": "Executive Constraints",
+          "value": 0.5,
+          "trend": "stable"
+        },
+        "rhetoric_radar": {
+          "label": "Rhetoric Radar",
+          "value": 56.7,
+          "trend": "stable"
+        },
+        "civic_protests": {
+          "label": "Civic Protests",
+          "value": 0.0,
+          "trend": "rapidly_declining"
+        }
+      },
+      "timeline": [
+        {
+          "year": 2009,
+          "composite": 39.4,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 36.5,
+            "judicial_independence": 20.5,
+            "civil_society_space": 51.1,
+            "election_quality": 44.3,
+            "executive_constraints": 25.3,
+            "rhetoric_radar": 39.5,
+            "civic_protests": 58.7
+          }
+        },
+        {
+          "year": 2010,
+          "composite": 39.0,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 36.5,
+            "judicial_independence": 20.5,
+            "civil_society_space": 51.1,
+            "election_quality": 43.0,
+            "executive_constraints": 25.3,
+            "rhetoric_radar": 39.5,
+            "civic_protests": 57.3
+          }
+        },
+        {
+          "year": 2011,
+          "composite": 39.1,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 36.5,
+            "judicial_independence": 20.5,
+            "civil_society_space": 51.1,
+            "election_quality": 40.5,
+            "executive_constraints": 25.3,
+            "rhetoric_radar": 42.5,
+            "civic_protests": 57.3
+          }
+        },
+        {
+          "year": 2012,
+          "composite": 35.4,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 36.5,
+            "judicial_independence": 20.5,
+            "civil_society_space": 51.1,
+            "election_quality": 26.5,
+            "executive_constraints": 15.5,
+            "rhetoric_radar": 40.2,
+            "civic_protests": 57.3
+          }
+        },
+        {
+          "year": 2013,
+          "composite": 38.9,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 51.2,
+            "judicial_independence": 17.4,
+            "civil_society_space": 68.0,
+            "election_quality": 25.1,
+            "executive_constraints": 3.1,
+            "rhetoric_radar": 50.7,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2014,
+          "composite": 38.9,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 51.2,
+            "judicial_independence": 17.4,
+            "civil_society_space": 68.0,
+            "election_quality": 25.1,
+            "executive_constraints": 3.1,
+            "rhetoric_radar": 50.7,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2015,
+          "composite": 38.9,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 51.2,
+            "judicial_independence": 17.4,
+            "civil_society_space": 68.0,
+            "election_quality": 25.1,
+            "executive_constraints": 3.1,
+            "rhetoric_radar": 50.7,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2016,
+          "composite": 39.1,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 51.2,
+            "judicial_independence": 17.4,
+            "civil_society_space": 70.3,
+            "election_quality": 24.1,
+            "executive_constraints": 1.8,
+            "rhetoric_radar": 52.0,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2017,
+          "composite": 36.7,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 52.2,
+            "judicial_independence": 17.4,
+            "civil_society_space": 65.7,
+            "election_quality": 18.1,
+            "executive_constraints": 1.8,
+            "rhetoric_radar": 52.0,
+            "civic_protests": 50.0
+          }
+        },
+        {
+          "year": 2018,
+          "composite": 44.2,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 90.8,
+            "judicial_independence": 15.8,
+            "civil_society_space": 86.5,
+            "election_quality": 16.0,
+            "executive_constraints": 2.2,
+            "rhetoric_radar": 59.5,
+            "civic_protests": 39.0
+          }
+        },
+        {
+          "year": 2019,
+          "composite": 42.6,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 82.4,
+            "judicial_independence": 15.8,
+            "civil_society_space": 87.4,
+            "election_quality": 16.0,
+            "executive_constraints": 2.2,
+            "rhetoric_radar": 59.5,
+            "civic_protests": 34.8
+          }
+        },
+        {
+          "year": 2020,
+          "composite": 42.7,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 94.8,
+            "judicial_independence": 11.0,
+            "civil_society_space": 82.0,
+            "election_quality": 16.0,
+            "executive_constraints": 1.1,
+            "rhetoric_radar": 59.5,
+            "civic_protests": 34.8
+          }
+        },
+        {
+          "year": 2021,
+          "composite": 43.6,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 98.0,
+            "judicial_independence": 0.0,
+            "civil_society_space": 97.2,
+            "election_quality": 14.7,
+            "executive_constraints": 0.0,
+            "rhetoric_radar": 65.3,
+            "civic_protests": 29.7
+          }
+        },
+        {
+          "year": 2022,
+          "composite": 42.2,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 99.0,
+            "judicial_independence": 0.0,
+            "civil_society_space": 100.0,
+            "election_quality": 7.5,
+            "executive_constraints": 2.5,
+            "rhetoric_radar": 60.7,
+            "civic_protests": 25.6
+          }
+        },
+        {
+          "year": 2023,
+          "composite": 37.8,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 100.0,
+            "judicial_independence": 0.0,
+            "civil_society_space": 100.0,
+            "election_quality": 7.5,
+            "executive_constraints": 0.5,
+            "rhetoric_radar": 56.7,
+            "civic_protests": 0.0
+          }
+        }
+      ],
+      "events": [
+        {
+          "date": "2009-01",
+          "description": "President Daniel Ortega amended the constitution via a Supreme Court ruling to allow indefinite re-election, bypassing the National Assembly. The decision was widely condemned by opposition parties and civil society as an unconstitutional power grab.",
+          "affected_indicators": [
+            "executive_constraints",
+            "judicial_independence"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2009_Nicaraguan_constitutional_crisis"
+        },
+        {
+          "date": "2013-01",
+          "description": "The National Assembly passed constitutional reforms eliminating presidential term limits and enabling Ortega to run for consecutive terms. The reforms also allowed the president to rule by decree during legislative recesses, significantly concentrating executive power.",
+          "affected_indicators": [
+            "executive_constraints",
+            "election_quality"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2014_amendments_to_the_Constitution_of_Nicaragua"
+        },
+        {
+          "date": "2018-04",
+          "description": "Mass protests erupted across Nicaragua following the government's attempt to reform social security, with police and pro-government paramilitaries violently suppressing demonstrators. The crackdown, which killed over 300 people according to the Inter-American Commission on Human Rights, triggered a severe clampdown on civil society and media.",
+          "affected_indicators": [
+            "civic_protests",
+            "civil_society_space",
+            "media_freedom"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2018%E2%80%93present_Nicaraguan_protests"
+        },
+        {
+          "date": "2020-12",
+          "description": "The Ortega government enacted the Foreign Agents Regulation Law, requiring individuals receiving foreign funding to register as foreign agents and restricting their political activity. Human rights groups condemned the law as a tool to silence civil society and opposition voices.",
+          "affected_indicators": [
+            "civil_society_space",
+            "media_freedom"
+          ],
+          "source_url": "https://www.hrw.org/news/2020/12/22/nicaragua-foreign-agent-law-threatens-civil-society"
+        },
+        {
+          "date": "2021-06",
+          "description": "Ahead of the November 2021 presidential election, the government arrested seven major opposition presidential candidates, including Cristiana Chamorro. The election proceeded without meaningful competition, and Ortega won a fourth consecutive term in a vote rejected as illegitimate by the United States, the European Union, and the Organization of American States.",
+          "affected_indicators": [
+            "election_quality",
+            "civil_society_space",
+            "executive_constraints"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2021_Nicaraguan_general_election"
+        }
+      ],
+      "ml_score": {
+        "value": null,
+        "label": "Beta",
+        "description": "ML erosion probability \u2014 beta feature, stub value for PoC.",
+        "unit": "probability_0_to_100",
+        "is_stub": true
+      },
+      "narrative": {
+        "headline": "Democratic stress: critical and falling due to collapsed institutional constraints and deteriorating electoral integrity",
+        "summary": "Nicaragua's composite Democratic Stress Score stands at 37.8/100 in 2023, placing it in the Critical tier following a decline of 4.4 points over the past year and 6.4 points over five years since 2018. Structural indicators reveal near-total erosion of institutional checks: Judicial Independence has reached 0.0/100 with a rapidly declining trend, Executive Constraints sit at 0.5/100, and Election Quality registers 7.5/100 on a declining trajectory, collectively signaling a systemic breakdown in the mechanisms that regulate state power. Civic Protests have also fallen to 0.0/100 with a rapidly declining trend, reflecting severely constrained conditions for public political expression, while three indicators have trended downward for three or more consecutive years.",
+        "bullets": [
+          "Judicial Independence and Executive Constraints score 0.0/100 and 0.5/100 respectively, with active risk flags confirming a Checks & Balances Breakdown affecting both indicators.",
+          "Election Quality stands at 7.5/100 on a declining trend, indicating that electoral processes provide minimal competitive or procedural integrity.",
+          "The composite score has fallen 6.4 points over five years (44.2 in 2018 to 37.8 in 2023), with three indicators sustaining downward trends for three or more years, meeting the Sustained Erosion risk threshold."
+        ],
+        "trend_direction": "falling"
+      },
+      "flag_url_large": "https://flagcdn.com/w160/ni.png",
+      "region": "Americas"
+    },
+    {
+      "iso": "RUS",
+      "name": "Russia",
+      "flag_url": "https://flagcdn.com/w80/ru.png",
+      "current_score": 38.0,
+      "current_tier": "critical",
+      "current_tier_label": "Critical",
+      "one_year_change": 0.0,
+      "five_year_change": 3.1,
+      "latest_year": 2023,
+      "flags": [
+        {
+          "flag": "sustained_erosion",
+          "label": "Sustained Erosion",
+          "description": "3 indicators have trended downward for 3+ years through 2023.",
+          "year_triggered": 2023
+        }
+      ],
+      "indicators": {
+        "media_freedom": {
+          "label": "Media Freedom",
+          "value": 72.5,
+          "trend": "improving"
+        },
+        "judicial_independence": {
+          "label": "Judicial Independence",
+          "value": 11.8,
+          "trend": "stable"
+        },
+        "civil_society_space": {
+          "label": "Civil Society Space",
+          "value": 99.2,
+          "trend": "improving"
+        },
+        "election_quality": {
+          "label": "Election Quality",
+          "value": 18.0,
+          "trend": "rapidly_declining"
+        },
+        "executive_constraints": {
+          "label": "Executive Constraints",
+          "value": 3.9,
+          "trend": "rapidly_declining"
+        },
+        "rhetoric_radar": {
+          "label": "Rhetoric Radar",
+          "value": 41.3,
+          "trend": "improving"
+        },
+        "civic_protests": {
+          "label": "Civic Protests",
+          "value": 19.6,
+          "trend": "rapidly_declining"
+        }
+      },
+      "timeline": [
+        {
+          "year": 2009,
+          "composite": 32.3,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 20.2,
+            "judicial_independence": 31.5,
+            "civil_society_space": 58.8,
+            "election_quality": 35.2,
+            "executive_constraints": 17.6,
+            "rhetoric_radar": 32.6,
+            "civic_protests": 30.4
+          }
+        },
+        {
+          "year": 2010,
+          "composite": 31.8,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 22.8,
+            "judicial_independence": 25.0,
+            "civil_society_space": 59.5,
+            "election_quality": 35.2,
+            "executive_constraints": 17.9,
+            "rhetoric_radar": 31.5,
+            "civic_protests": 30.4
+          }
+        },
+        {
+          "year": 2011,
+          "composite": 32.1,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 22.8,
+            "judicial_independence": 25.0,
+            "civil_society_space": 62.6,
+            "election_quality": 33.8,
+            "executive_constraints": 18.0,
+            "rhetoric_radar": 31.5,
+            "civic_protests": 31.2
+          }
+        },
+        {
+          "year": 2012,
+          "composite": 33.9,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 35.6,
+            "judicial_independence": 23.5,
+            "civil_society_space": 68.2,
+            "election_quality": 28.2,
+            "executive_constraints": 16.2,
+            "rhetoric_radar": 32.6,
+            "civic_protests": 32.8
+          }
+        },
+        {
+          "year": 2013,
+          "composite": 32.8,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 36.9,
+            "judicial_independence": 13.4,
+            "civil_society_space": 70.4,
+            "election_quality": 29.5,
+            "executive_constraints": 16.2,
+            "rhetoric_radar": 32.6,
+            "civic_protests": 30.7
+          }
+        },
+        {
+          "year": 2014,
+          "composite": 34.5,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 51.0,
+            "judicial_independence": 13.4,
+            "civil_society_space": 70.4,
+            "election_quality": 29.2,
+            "executive_constraints": 15.5,
+            "rhetoric_radar": 32.6,
+            "civic_protests": 29.4
+          }
+        },
+        {
+          "year": 2015,
+          "composite": 34.8,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 51.0,
+            "judicial_independence": 15.9,
+            "civil_society_space": 70.6,
+            "election_quality": 28.9,
+            "executive_constraints": 15.3,
+            "rhetoric_radar": 32.6,
+            "civic_protests": 29.4
+          }
+        },
+        {
+          "year": 2016,
+          "composite": 34.2,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 51.8,
+            "judicial_independence": 10.9,
+            "civil_society_space": 70.9,
+            "election_quality": 28.3,
+            "executive_constraints": 15.3,
+            "rhetoric_radar": 32.6,
+            "civic_protests": 29.4
+          }
+        },
+        {
+          "year": 2017,
+          "composite": 33.9,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 51.8,
+            "judicial_independence": 5.6,
+            "civil_society_space": 70.9,
+            "election_quality": 28.5,
+            "executive_constraints": 18.5,
+            "rhetoric_radar": 32.6,
+            "civic_protests": 29.4
+          }
+        },
+        {
+          "year": 2018,
+          "composite": 34.9,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 51.8,
+            "judicial_independence": 11.8,
+            "civil_society_space": 70.9,
+            "election_quality": 29.8,
+            "executive_constraints": 17.9,
+            "rhetoric_radar": 32.6,
+            "civic_protests": 29.4
+          }
+        },
+        {
+          "year": 2019,
+          "composite": 34.2,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 49.5,
+            "judicial_independence": 11.8,
+            "civil_society_space": 70.9,
+            "election_quality": 29.9,
+            "executive_constraints": 14.4,
+            "rhetoric_radar": 32.6,
+            "civic_protests": 30.6
+          }
+        },
+        {
+          "year": 2020,
+          "composite": 34.8,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 53.2,
+            "judicial_independence": 11.8,
+            "civil_society_space": 70.9,
+            "election_quality": 28.9,
+            "executive_constraints": 14.4,
+            "rhetoric_radar": 32.6,
+            "civic_protests": 31.8
+          }
+        },
+        {
+          "year": 2021,
+          "composite": 35.2,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 57.6,
+            "judicial_independence": 11.8,
+            "civil_society_space": 74.5,
+            "election_quality": 25.4,
+            "executive_constraints": 13.6,
+            "rhetoric_radar": 32.6,
+            "civic_protests": 30.8
+          }
+        },
+        {
+          "year": 2022,
+          "composite": 38.0,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 72.5,
+            "judicial_independence": 11.8,
+            "civil_society_space": 85.3,
+            "election_quality": 19.0,
+            "executive_constraints": 6.3,
+            "rhetoric_radar": 44.5,
+            "civic_protests": 26.5
+          }
+        },
+        {
+          "year": 2023,
+          "composite": 38.0,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 72.5,
+            "judicial_independence": 11.8,
+            "civil_society_space": 99.2,
+            "election_quality": 18.0,
+            "executive_constraints": 3.9,
+            "rhetoric_radar": 41.3,
+            "civic_protests": 19.6
+          }
+        }
+      ],
+      "events": [
+        {
+          "date": "2012-05",
+          "description": "Vladimir Putin returned to the presidency for a third term following protests in Moscow and other major cities. The day before his inauguration, police dispersed demonstrators on Bolotnaya Square, arresting hundreds; subsequent prosecutions of protest participants marked the beginning of a sustained crackdown on political opposition.",
+          "affected_indicators": [
+            "civic_protests",
+            "civil_society_space",
+            "executive_constraints"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Bolotnaya_Square_case"
+        },
+        {
+          "date": "2012-07",
+          "description": "Russia enacted a law requiring non-governmental organizations receiving foreign funding and engaged in broadly defined 'political activity' to register as 'foreign agents.' The law imposed heavy bureaucratic burdens and social stigma on civil society groups, and has since been expanded multiple times.",
+          "affected_indicators": [
+            "civil_society_space"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Russian_foreign_agent_laws"
+        },
+        {
+          "date": "2014-04",
+          "description": "Russia passed a law criminalizing the 'rehabilitation of Nazism' and public expressions deemed to discredit Soviet actions in World War II, effectively broadening restrictions on historical debate and political speech. Combined with expanded anti-extremism statutes, the law was used to prosecute journalists and activists.",
+          "affected_indicators": [
+            "media_freedom",
+            "civil_society_space"
+          ],
+          "source_url": "https://www.rferl.org/a/russia-wwii-rehabilitation-nazism-law/25361873.html"
+        },
+        {
+          "date": "2017-03",
+          "description": "Opposition leader Alexei Navalny organized nationwide anti-corruption protests that drew tens of thousands across dozens of Russian cities \u2014 the largest coordinated demonstrations in years. Authorities arrested over 1,000 protesters including Navalny, who was repeatedly imprisoned to prevent his participation in elections.",
+          "affected_indicators": [
+            "civic_protests",
+            "civil_society_space",
+            "election_quality"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2017_Russian_protests"
+        },
+        {
+          "date": "2022-03",
+          "description": "Following Russia's full-scale invasion of Ukraine in February 2022, the government enacted laws criminalizing the public use of the word 'war' to describe the conflict, with penalties of up to 15 years in prison. Thousands were arrested for anti-war protests in the days immediately after the invasion began.",
+          "affected_indicators": [
+            "media_freedom",
+            "civic_protests",
+            "civil_society_space"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Censorship_of_the_2022_Russian_invasion_of_Ukraine"
+        }
+      ],
+      "ml_score": {
+        "value": null,
+        "label": "Beta",
+        "description": "ML erosion probability \u2014 beta feature, stub value for PoC.",
+        "unit": "probability_0_to_100",
+        "is_stub": true
+      },
+      "narrative": {
+        "headline": "Democratic stress: critical and stable due to collapsing executive constraints and deteriorating election quality",
+        "summary": "Russia's composite Democratic Stress Score stands at 38.0/100 in 2023, placing it firmly in the Critical tier with no one-year change, though a marginal five-year increase of 3.1 points from 34.9 in 2018 reflects persistent structural weakness rather than meaningful improvement. The country's most acute vulnerabilities are concentrated in executive constraints (3.9/100, rapidly declining) and judicial independence (11.8/100, stable at near-floor levels), indicating that institutional checks on centralized power remain largely non-functional. Three indicators have trended downward for three or more consecutive years \u2014 election quality (18.0/100), executive constraints, and civic protests (19.6/100) \u2014 confirming a pattern of sustained, multi-dimensional democratic erosion.",
+        "bullets": [
+          "Executive constraints scored 3.9/100 with a rapidly declining trend, indicating near-total absence of institutional checks on executive power.",
+          "Election quality has fallen to 18.0/100 on a rapidly declining trajectory, reflecting deepening concerns about the integrity and competitiveness of electoral processes.",
+          "Civic protests registered 19.6/100 with a rapidly declining trend, suggesting significant contraction in the space for organized public dissent over the observed period."
+        ],
+        "trend_direction": "stable"
+      },
+      "flag_url_large": "https://flagcdn.com/w160/ru.png",
+      "region": "Europe"
+    },
+    {
+      "iso": "VEN",
+      "name": "Venezuela",
+      "flag_url": "https://flagcdn.com/w80/ve.png",
+      "current_score": 41.5,
+      "current_tier": "elevated",
+      "current_tier_label": "Elevated",
+      "one_year_change": 0.4,
+      "five_year_change": -1.3,
+      "latest_year": 2023,
+      "flags": [],
+      "indicators": {
+        "media_freedom": {
+          "label": "Media Freedom",
+          "value": 67.8,
+          "trend": "stable"
+        },
+        "judicial_independence": {
+          "label": "Judicial Independence",
+          "value": 15.7,
+          "trend": "stable"
+        },
+        "civil_society_space": {
+          "label": "Civil Society Space",
+          "value": 69.2,
+          "trend": "stable"
+        },
+        "election_quality": {
+          "label": "Election Quality",
+          "value": 4.9,
+          "trend": "stable"
+        },
+        "executive_constraints": {
+          "label": "Executive Constraints",
+          "value": 3.8,
+          "trend": "declining"
+        },
+        "rhetoric_radar": {
+          "label": "Rhetoric Radar",
+          "value": 82.7,
+          "trend": "rapidly_declining"
+        },
+        "civic_protests": {
+          "label": "Civic Protests",
+          "value": 46.6,
+          "trend": "stable"
+        }
+      },
+      "timeline": [
+        {
+          "year": 2009,
+          "composite": 35.3,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 32.7,
+            "judicial_independence": 9.1,
+            "civil_society_space": 59.6,
+            "election_quality": 46.0,
+            "executive_constraints": 1.1,
+            "rhetoric_radar": 53.7,
+            "civic_protests": 44.8
+          }
+        },
+        {
+          "year": 2010,
+          "composite": 36.3,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 35.5,
+            "judicial_independence": 9.1,
+            "civil_society_space": 59.6,
+            "election_quality": 44.3,
+            "executive_constraints": 1.5,
+            "rhetoric_radar": 56.6,
+            "civic_protests": 47.4
+          }
+        },
+        {
+          "year": 2011,
+          "composite": 36.1,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 35.5,
+            "judicial_independence": 9.1,
+            "civil_society_space": 59.6,
+            "election_quality": 41.3,
+            "executive_constraints": 0.9,
+            "rhetoric_radar": 59.5,
+            "civic_protests": 46.9
+          }
+        },
+        {
+          "year": 2012,
+          "composite": 36.0,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 35.5,
+            "judicial_independence": 9.1,
+            "civil_society_space": 60.0,
+            "election_quality": 40.0,
+            "executive_constraints": 0.9,
+            "rhetoric_radar": 59.5,
+            "civic_protests": 46.9
+          }
+        },
+        {
+          "year": 2013,
+          "composite": 39.1,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 49.1,
+            "judicial_independence": 9.1,
+            "civil_society_space": 63.6,
+            "election_quality": 27.5,
+            "executive_constraints": 0.9,
+            "rhetoric_radar": 72.9,
+            "civic_protests": 51.0
+          }
+        },
+        {
+          "year": 2014,
+          "composite": 39.8,
+          "tier": "critical",
+          "tier_label": "Critical",
+          "indicators": {
+            "media_freedom": 53.3,
+            "judicial_independence": 9.1,
+            "civil_society_space": 66.9,
+            "election_quality": 26.1,
+            "executive_constraints": 0.9,
+            "rhetoric_radar": 72.9,
+            "civic_protests": 49.1
+          }
+        },
+        {
+          "year": 2015,
+          "composite": 42.4,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 53.3,
+            "judicial_independence": 11.6,
+            "civil_society_space": 66.9,
+            "election_quality": 26.1,
+            "executive_constraints": 10.1,
+            "rhetoric_radar": 79.5,
+            "civic_protests": 49.1
+          }
+        },
+        {
+          "year": 2016,
+          "composite": 47.3,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 54.9,
+            "judicial_independence": 11.6,
+            "civil_society_space": 66.9,
+            "election_quality": 24.2,
+            "executive_constraints": 28.1,
+            "rhetoric_radar": 96.4,
+            "civic_protests": 49.1
+          }
+        },
+        {
+          "year": 2017,
+          "composite": 44.3,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 55.8,
+            "judicial_independence": 12.5,
+            "civil_society_space": 69.4,
+            "election_quality": 4.0,
+            "executive_constraints": 25.5,
+            "rhetoric_radar": 97.5,
+            "civic_protests": 45.2
+          }
+        },
+        {
+          "year": 2018,
+          "composite": 42.8,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 60.9,
+            "judicial_independence": 12.5,
+            "civil_society_space": 69.0,
+            "election_quality": 0.9,
+            "executive_constraints": 11.2,
+            "rhetoric_radar": 99.3,
+            "civic_protests": 45.9
+          }
+        },
+        {
+          "year": 2019,
+          "composite": 43.7,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 63.9,
+            "judicial_independence": 11.5,
+            "civil_society_space": 69.5,
+            "election_quality": 0.0,
+            "executive_constraints": 14.0,
+            "rhetoric_radar": 100.0,
+            "civic_protests": 47.1
+          }
+        },
+        {
+          "year": 2020,
+          "composite": 43.6,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 64.6,
+            "judicial_independence": 15.9,
+            "civil_society_space": 69.5,
+            "election_quality": 0.7,
+            "executive_constraints": 11.1,
+            "rhetoric_radar": 98.2,
+            "civic_protests": 45.4
+          }
+        },
+        {
+          "year": 2021,
+          "composite": 42.4,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 64.6,
+            "judicial_independence": 17.1,
+            "civil_society_space": 69.2,
+            "election_quality": 6.4,
+            "executive_constraints": 5.0,
+            "rhetoric_radar": 88.1,
+            "civic_protests": 46.6
+          }
+        },
+        {
+          "year": 2022,
+          "composite": 41.1,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 62.9,
+            "judicial_independence": 17.1,
+            "civil_society_space": 69.2,
+            "election_quality": 5.5,
+            "executive_constraints": 3.8,
+            "rhetoric_radar": 82.7,
+            "civic_protests": 46.6
+          }
+        },
+        {
+          "year": 2023,
+          "composite": 41.5,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 67.8,
+            "judicial_independence": 15.7,
+            "civil_society_space": 69.2,
+            "election_quality": 4.9,
+            "executive_constraints": 3.8,
+            "rhetoric_radar": 82.7,
+            "civic_protests": 46.6
+          }
+        }
+      ],
+      "events": [
+        {
+          "date": "2009-02",
+          "description": "Venezuelan voters approved a constitutional amendment in a referendum eliminating presidential term limits, allowing Hugo Chavez to seek re-election indefinitely. Critics argued the campaign was conducted with significant state resource advantages and media dominance that compromised the process's fairness.",
+          "affected_indicators": [
+            "election_quality",
+            "executive_constraints"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2009_Venezuelan_constitutional_referendum"
+        },
+        {
+          "date": "2013-04",
+          "description": "Nicolas Maduro narrowly won the presidential election following Hugo Chavez's death, with the government declaring victory before the full count. The opposition alleged widespread fraud; the government-controlled electoral authority rejected an audit, and Maduro assumed power amid street clashes.",
+          "affected_indicators": [
+            "election_quality",
+            "executive_constraints"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2013_Venezuelan_presidential_election"
+        },
+        {
+          "date": "2017-08",
+          "description": "A government-created Constituent Assembly was inaugurated, superseding the opposition-controlled National Assembly and giving President Maduro a parallel legislative body entirely loyal to the executive. The election of constituent assembly members was boycotted by the opposition and condemned by more than 40 countries as illegitimate.",
+          "affected_indicators": [
+            "executive_constraints",
+            "election_quality",
+            "judicial_independence"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2017_Constituent_National_Assembly_(Venezuela)"
+        },
+        {
+          "date": "2018-05",
+          "description": "Presidential elections were held under conditions widely condemned as neither free nor fair, with major opposition candidates barred from running and the process overseen by the government-aligned National Constituent Assembly rather than the independent electoral authority. Maduro was declared the winner and re-elected amid international non-recognition.",
+          "affected_indicators": [
+            "election_quality",
+            "media_freedom",
+            "civil_society_space"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2018_Venezuelan_presidential_election"
+        },
+        {
+          "date": "2024-07",
+          "description": "Presidential elections in July 2024 were claimed as a victory by Maduro despite opposition candidate Edmundo Gonzalez receiving strong documented support. The government's refusal to release voting tallies, suppression of protests, and arrest of opposition figures drew broad international condemnation and triggered a new wave of demonstrations inside Venezuela.",
+          "affected_indicators": [
+            "election_quality",
+            "civic_protests",
+            "rhetoric_radar"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2024_Venezuelan_presidential_election"
+        }
+      ],
+      "ml_score": {
+        "value": null,
+        "label": "Beta",
+        "description": "ML erosion probability \u2014 beta feature, stub value for PoC.",
+        "unit": "probability_0_to_100",
+        "is_stub": true
+      },
+      "narrative": {
+        "headline": "Democratic stress: Elevated and largely stable due to critically weak institutional constraints and deteriorating rhetoric environment",
+        "summary": "Venezuela's Composite Democratic Stress Score stands at 41.5/100 in 2023, reflecting a marginal one-year improvement of 0.4 points but a net decline of 1.3 points over the five-year period since 2018. The country's most acute structural vulnerabilities remain concentrated in electoral integrity and executive constraints, which register at 4.9/100 and 3.8/100 respectively \u2014 both among the lowest observable readings and indicative of severe institutional degradation. A sharp deterioration in the Rhetoric Radar indicator (82.7/100, rapidly declining) compounds concerns about the broader civic environment, even as civil society space (69.2/100) and media freedom (67.8/100) hold at comparatively more moderate levels.",
+        "bullets": [
+          "Executive Constraints scored 3.8/100 with a declining trend, signaling near-total erosion of institutional checks on executive power.",
+          "Election Quality registered 4.9/100, remaining stable but at a critically low level that indicates systemic deficiencies in the integrity of electoral processes.",
+          "The Rhetoric Radar indicator reached 82.7/100 on a rapidly declining trajectory, representing one of the most significant areas of active deterioration across all measured indicators."
+        ],
+        "trend_direction": "stable"
+      },
+      "flag_url_large": "https://flagcdn.com/w160/ve.png",
+      "region": "Americas"
+    },
+    {
+      "iso": "PHL",
+      "name": "Philippines",
+      "flag_url": "https://flagcdn.com/w80/ph.png",
+      "current_score": 41.8,
+      "current_tier": "elevated",
+      "current_tier_label": "Elevated",
+      "one_year_change": -2.8,
+      "five_year_change": -2.6,
+      "latest_year": 2023,
+      "flags": [
+        {
+          "flag": "checks_balances",
+          "label": "Checks & Balances Breakdown",
+          "description": "Executive Constraints and Judicial Independence both declined in 2016.",
+          "year_triggered": 2016
+        },
+        {
+          "flag": "sustained_erosion",
+          "label": "Sustained Erosion",
+          "description": "3 indicators have trended downward for 3+ years through 2017.",
+          "year_triggered": 2017
+        }
+      ],
+      "indicators": {
+        "media_freedom": {
+          "label": "Media Freedom",
+          "value": 40.6,
+          "trend": "improving"
+        },
+        "judicial_independence": {
+          "label": "Judicial Independence",
+          "value": 58.8,
+          "trend": "stable"
+        },
+        "civil_society_space": {
+          "label": "Civil Society Space",
+          "value": 24.7,
+          "trend": "declining"
+        },
+        "election_quality": {
+          "label": "Election Quality",
+          "value": 35.6,
+          "trend": "declining"
+        },
+        "executive_constraints": {
+          "label": "Executive Constraints",
+          "value": 58.2,
+          "trend": "stable"
+        },
+        "rhetoric_radar": {
+          "label": "Rhetoric Radar",
+          "value": 19.4,
+          "trend": "stable"
+        },
+        "civic_protests": {
+          "label": "Civic Protests",
+          "value": 54.9,
+          "trend": "rapidly_declining"
+        }
+      },
+      "timeline": [
+        {
+          "year": 2009,
+          "composite": 45.5,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 25.8,
+            "judicial_independence": 63.4,
+            "civil_society_space": 18.4,
+            "election_quality": 30.7,
+            "executive_constraints": 80.4,
+            "rhetoric_radar": 16.5,
+            "civic_protests": 83.6
+          }
+        },
+        {
+          "year": 2010,
+          "composite": 46.3,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 25.8,
+            "judicial_independence": 75.0,
+            "civil_society_space": 11.5,
+            "election_quality": 41.1,
+            "executive_constraints": 77.7,
+            "rhetoric_radar": 16.5,
+            "civic_protests": 76.4
+          }
+        },
+        {
+          "year": 2011,
+          "composite": 47.4,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 25.8,
+            "judicial_independence": 76.5,
+            "civil_society_space": 11.5,
+            "election_quality": 45.1,
+            "executive_constraints": 79.7,
+            "rhetoric_radar": 16.5,
+            "civic_protests": 76.4
+          }
+        },
+        {
+          "year": 2012,
+          "composite": 47.4,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 25.8,
+            "judicial_independence": 76.5,
+            "civil_society_space": 11.5,
+            "election_quality": 45.1,
+            "executive_constraints": 79.7,
+            "rhetoric_radar": 16.5,
+            "civic_protests": 76.4
+          }
+        },
+        {
+          "year": 2013,
+          "composite": 47.1,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 23.1,
+            "judicial_independence": 70.9,
+            "civil_society_space": 11.5,
+            "election_quality": 44.8,
+            "executive_constraints": 83.4,
+            "rhetoric_radar": 19.7,
+            "civic_protests": 76.4
+          }
+        },
+        {
+          "year": 2014,
+          "composite": 47.1,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 23.1,
+            "judicial_independence": 70.9,
+            "civil_society_space": 11.5,
+            "election_quality": 44.6,
+            "executive_constraints": 83.4,
+            "rhetoric_radar": 19.7,
+            "civic_protests": 76.4
+          }
+        },
+        {
+          "year": 2015,
+          "composite": 47.7,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 27.5,
+            "judicial_independence": 70.9,
+            "civil_society_space": 11.5,
+            "election_quality": 44.6,
+            "executive_constraints": 83.4,
+            "rhetoric_radar": 19.7,
+            "civic_protests": 76.4
+          }
+        },
+        {
+          "year": 2016,
+          "composite": 43.7,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 27.5,
+            "judicial_independence": 57.9,
+            "civil_society_space": 14.8,
+            "election_quality": 47.0,
+            "executive_constraints": 65.6,
+            "rhetoric_radar": 19.4,
+            "civic_protests": 73.3
+          }
+        },
+        {
+          "year": 2017,
+          "composite": 43.0,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 27.5,
+            "judicial_independence": 58.8,
+            "civil_society_space": 14.8,
+            "election_quality": 47.0,
+            "executive_constraints": 65.6,
+            "rhetoric_radar": 19.4,
+            "civic_protests": 67.5
+          }
+        },
+        {
+          "year": 2018,
+          "composite": 44.4,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 36.2,
+            "judicial_independence": 58.8,
+            "civil_society_space": 27.4,
+            "election_quality": 47.0,
+            "executive_constraints": 55.9,
+            "rhetoric_radar": 19.4,
+            "civic_protests": 65.8
+          }
+        },
+        {
+          "year": 2019,
+          "composite": 44.8,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 36.2,
+            "judicial_independence": 58.8,
+            "civil_society_space": 31.4,
+            "election_quality": 43.9,
+            "executive_constraints": 58.2,
+            "rhetoric_radar": 19.4,
+            "civic_protests": 65.8
+          }
+        },
+        {
+          "year": 2020,
+          "composite": 43.3,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 26.7,
+            "judicial_independence": 58.8,
+            "civil_society_space": 31.4,
+            "election_quality": 42.9,
+            "executive_constraints": 58.2,
+            "rhetoric_radar": 19.4,
+            "civic_protests": 65.8
+          }
+        },
+        {
+          "year": 2021,
+          "composite": 43.3,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 26.7,
+            "judicial_independence": 58.8,
+            "civil_society_space": 31.4,
+            "election_quality": 42.9,
+            "executive_constraints": 58.2,
+            "rhetoric_radar": 19.4,
+            "civic_protests": 65.8
+          }
+        },
+        {
+          "year": 2022,
+          "composite": 44.6,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 40.6,
+            "judicial_independence": 58.8,
+            "civil_society_space": 31.4,
+            "election_quality": 38.2,
+            "executive_constraints": 58.2,
+            "rhetoric_radar": 19.4,
+            "civic_protests": 65.8
+          }
+        },
+        {
+          "year": 2023,
+          "composite": 41.8,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 40.6,
+            "judicial_independence": 58.8,
+            "civil_society_space": 24.7,
+            "election_quality": 35.6,
+            "executive_constraints": 58.2,
+            "rhetoric_radar": 19.4,
+            "civic_protests": 54.9
+          }
+        }
+      ],
+      "events": [
+        {
+          "date": "2016-06",
+          "description": "Rodrigo Duterte won the presidential election on a platform centered on a violent drug war and law-and-order rhetoric. His victory marked a sharp shift in executive style; within weeks he launched an anti-drug campaign that human rights organizations documented as resulting in thousands of extrajudicial killings.",
+          "affected_indicators": [
+            "executive_constraints",
+            "judicial_independence",
+            "rhetoric_radar"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2016_Philippine_presidential_election"
+        },
+        {
+          "date": "2018-01",
+          "description": "The Philippine government revoked the broadcast franchise of Rappler, a prominent online news outlet, and its founder Maria Ressa faced a series of criminal charges. Press freedom organizations characterized the action as a coordinated effort to suppress critical journalism using the legal system.",
+          "affected_indicators": [
+            "media_freedom",
+            "civil_society_space"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Maria_Ressa"
+        },
+        {
+          "date": "2020-05",
+          "description": "The Philippine Congress allowed ABS-CBN, the country's largest broadcast network, to go off air after its franchise was not renewed following pressure from the Duterte administration. The shutdown left thousands without employment and reduced independent broadcast coverage across the archipelago.",
+          "affected_indicators": [
+            "media_freedom"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/ABS-CBN_franchise_controversy"
+        },
+        {
+          "date": "2022-05",
+          "description": "Ferdinand Marcos Jr. won the presidential election in a landslide, with Sara Duterte elected as vice-president. The election was notable for a large-scale social media campaign that observers documented as rehabilitating the Marcos family's historical record, raising concerns about information manipulation in the electoral environment.",
+          "affected_indicators": [
+            "election_quality",
+            "media_freedom"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2022_Philippine_presidential_election"
+        },
+        {
+          "date": "2023-09",
+          "description": "The Marcos administration filed terrorism charges against approximately 100 activists, human rights defenders, and church workers in a practice critics labeled 'red-tagging,' in which individuals are publicly labeled as communist sympathizers. The Inter-American Commission on Human Rights and UN special rapporteurs expressed serious concern about the chilling effect on civil society.",
+          "affected_indicators": [
+            "civil_society_space",
+            "civic_protests"
+          ],
+          "source_url": "https://www.hrw.org/world-report/2024/country-chapters/philippines"
+        }
+      ],
+      "ml_score": {
+        "value": null,
+        "label": "Beta",
+        "description": "ML erosion probability \u2014 beta feature, stub value for PoC.",
+        "unit": "probability_0_to_100",
+        "is_stub": true
+      },
+      "narrative": {
+        "headline": "Democratic stress: Elevated and deteriorating due to civil society contraction and declining civic engagement",
+        "summary": "The Philippines registers a Composite Democratic Stress Score of 41.8/100 in 2023, reflecting an Elevated status tier and a decline of 2.8 points over the past year and 2.6 points over five years from a 2018 baseline of 44.4. The most acute structural weaknesses are concentrated in civil society space (24.7/100, declining) and the Rhetoric Radar indicator (19.4/100, stable at a critically low level), while civic protest activity has undergone a rapid decline, signaling a contraction in popular democratic expression. Partially offsetting these pressures, judicial independence (58.8/100) and executive constraints (58.2/100) remain stable, and media freedom (40.6/100) shows a modest improving trend.",
+        "bullets": [
+          "Civil society space scores 24.7/100 on a declining trajectory, representing one of the most compromised indicators in the country's democratic profile and contributing to an active risk flag of sustained erosion across three or more indicators over a multi-year period.",
+          "Civic protest activity is rapidly declining from a baseline score of 54.9/100, indicating a measurable reduction in organized public democratic participation over the assessment period.",
+          "Election quality stands at 35.6/100 on a declining trend, compounding concerns raised by the active Checks & Balances Breakdown flag, which notes simultaneous declines in executive constraints and judicial independence recorded in 2016."
+        ],
+        "trend_direction": "falling"
+      },
+      "flag_url_large": "https://flagcdn.com/w160/ph.png",
+      "region": "Asia-Pacific"
+    },
+    {
+      "iso": "HUN",
+      "name": "Hungary",
+      "flag_url": "https://flagcdn.com/w80/hu.png",
+      "current_score": 44.9,
+      "current_tier": "elevated",
+      "current_tier_label": "Elevated",
+      "one_year_change": -1.2,
+      "five_year_change": -3.7,
+      "latest_year": 2023,
+      "flags": [
+        {
+          "flag": "checks_balances",
+          "label": "Checks & Balances Breakdown",
+          "description": "Executive Constraints and Judicial Independence both declined in 2010.",
+          "year_triggered": 2010
+        },
+        {
+          "flag": "sustained_erosion",
+          "label": "Sustained Erosion",
+          "description": "3 indicators have trended downward for 3+ years through 2013.",
+          "year_triggered": 2013
+        },
+        {
+          "flag": "media_risk",
+          "label": "Media Risk",
+          "description": "Media Freedom fell 17.2 points between 2019 and 2021.",
+          "year_triggered": 2021
+        }
+      ],
+      "indicators": {
+        "media_freedom": {
+          "label": "Media Freedom",
+          "value": 5.2,
+          "trend": "stable"
+        },
+        "judicial_independence": {
+          "label": "Judicial Independence",
+          "value": 36.2,
+          "trend": "stable"
+        },
+        "civil_society_space": {
+          "label": "Civil Society Space",
+          "value": 55.7,
+          "trend": "stable"
+        },
+        "election_quality": {
+          "label": "Election Quality",
+          "value": 60.4,
+          "trend": "stable"
+        },
+        "executive_constraints": {
+          "label": "Executive Constraints",
+          "value": 52.2,
+          "trend": "declining"
+        },
+        "rhetoric_radar": {
+          "label": "Rhetoric Radar",
+          "value": 62.3,
+          "trend": "stable"
+        },
+        "civic_protests": {
+          "label": "Civic Protests",
+          "value": 42.5,
+          "trend": "stable"
+        }
+      },
+      "timeline": [
+        {
+          "year": 2009,
+          "composite": 57.3,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.1,
+            "judicial_independence": 82.9,
+            "civil_society_space": 31.5,
+            "election_quality": 96.1,
+            "executive_constraints": 92.5,
+            "rhetoric_radar": 39.0,
+            "civic_protests": 56.2
+          }
+        },
+        {
+          "year": 2010,
+          "composite": 55.7,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.1,
+            "judicial_independence": 74.6,
+            "civil_society_space": 35.6,
+            "election_quality": 96.1,
+            "executive_constraints": 75.8,
+            "rhetoric_radar": 48.3,
+            "civic_protests": 56.2
+          }
+        },
+        {
+          "year": 2011,
+          "composite": 55.6,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.1,
+            "judicial_independence": 69.6,
+            "civil_society_space": 36.8,
+            "election_quality": 94.6,
+            "executive_constraints": 73.8,
+            "rhetoric_radar": 54.7,
+            "civic_protests": 56.2
+          }
+        },
+        {
+          "year": 2012,
+          "composite": 53.5,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.1,
+            "judicial_independence": 59.2,
+            "civil_society_space": 36.8,
+            "election_quality": 94.6,
+            "executive_constraints": 70.2,
+            "rhetoric_radar": 54.7,
+            "civic_protests": 56.2
+          }
+        },
+        {
+          "year": 2013,
+          "composite": 51.9,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.1,
+            "judicial_independence": 54.3,
+            "civil_society_space": 40.6,
+            "election_quality": 93.6,
+            "executive_constraints": 66.6,
+            "rhetoric_radar": 57.4,
+            "civic_protests": 47.7
+          }
+        },
+        {
+          "year": 2014,
+          "composite": 50.1,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.1,
+            "judicial_independence": 52.5,
+            "civil_society_space": 42.1,
+            "election_quality": 80.6,
+            "executive_constraints": 66.7,
+            "rhetoric_radar": 60.1,
+            "civic_protests": 45.6
+          }
+        },
+        {
+          "year": 2015,
+          "composite": 49.8,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.1,
+            "judicial_independence": 52.5,
+            "civil_society_space": 43.6,
+            "election_quality": 76.0,
+            "executive_constraints": 65.0,
+            "rhetoric_radar": 60.1,
+            "civic_protests": 48.1
+          }
+        },
+        {
+          "year": 2016,
+          "composite": 50.0,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.1,
+            "judicial_independence": 54.9,
+            "civil_society_space": 43.5,
+            "election_quality": 76.0,
+            "executive_constraints": 64.0,
+            "rhetoric_radar": 60.1,
+            "civic_protests": 48.1
+          }
+        },
+        {
+          "year": 2017,
+          "composite": 50.8,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.1,
+            "judicial_independence": 54.9,
+            "civil_society_space": 50.7,
+            "election_quality": 75.7,
+            "executive_constraints": 63.1,
+            "rhetoric_radar": 60.1,
+            "civic_protests": 48.1
+          }
+        },
+        {
+          "year": 2018,
+          "composite": 48.6,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.1,
+            "judicial_independence": 50.4,
+            "civil_society_space": 52.1,
+            "election_quality": 65.4,
+            "executive_constraints": 58.8,
+            "rhetoric_radar": 65.0,
+            "civic_protests": 45.2
+          }
+        },
+        {
+          "year": 2019,
+          "composite": 50.4,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 22.4,
+            "judicial_independence": 47.8,
+            "civil_society_space": 50.0,
+            "election_quality": 62.3,
+            "executive_constraints": 58.8,
+            "rhetoric_radar": 66.5,
+            "civic_protests": 45.2
+          }
+        },
+        {
+          "year": 2020,
+          "composite": 47.1,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 5.2,
+            "judicial_independence": 40.5,
+            "civil_society_space": 52.5,
+            "election_quality": 62.3,
+            "executive_constraints": 57.7,
+            "rhetoric_radar": 66.1,
+            "civic_protests": 45.4
+          }
+        },
+        {
+          "year": 2021,
+          "composite": 47.7,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 5.2,
+            "judicial_independence": 43.7,
+            "civil_society_space": 53.9,
+            "election_quality": 62.5,
+            "executive_constraints": 56.7,
+            "rhetoric_radar": 66.6,
+            "civic_protests": 45.4
+          }
+        },
+        {
+          "year": 2022,
+          "composite": 46.1,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 5.2,
+            "judicial_independence": 36.2,
+            "civil_society_space": 53.9,
+            "election_quality": 60.6,
+            "executive_constraints": 55.7,
+            "rhetoric_radar": 65.9,
+            "civic_protests": 45.4
+          }
+        },
+        {
+          "year": 2023,
+          "composite": 44.9,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 5.2,
+            "judicial_independence": 36.2,
+            "civil_society_space": 55.7,
+            "election_quality": 60.4,
+            "executive_constraints": 52.2,
+            "rhetoric_radar": 62.3,
+            "civic_protests": 42.5
+          }
+        }
+      ],
+      "events": [
+        {
+          "date": "2010-04",
+          "description": "Viktor Orban's Fidesz party won a two-thirds parliamentary supermajority in national elections, giving it the votes needed to rewrite the constitution without opposition support. The new Basic Law, adopted in 2011, restructured the Constitutional Court, reduced parliamentary checks, and embedded governing-party preferences into the legal architecture.",
+          "affected_indicators": [
+            "executive_constraints",
+            "judicial_independence"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2010_Hungarian_parliamentary_election"
+        },
+        {
+          "date": "2011-12",
+          "description": "Hungary's new media law established the National Media and Infocommunications Authority, a government-dominated body with broad powers to regulate and fine public and private broadcasters. The Council of Europe, European Commission, and OSCE all issued critical assessments of the law's threat to editorial independence.",
+          "affected_indicators": [
+            "media_freedom"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Media_in_Hungary"
+        },
+        {
+          "date": "2017-04",
+          "description": "Parliament amended the National Higher Education Act in a measure widely known as the 'Lex CEU,' which imposed conditions specifically targeting Central European University (CEU). The university, founded by George Soros, was effectively forced to relocate its US-accredited programs to Vienna by 2019 after the government refused to ratify the necessary bilateral agreement.",
+          "affected_indicators": [
+            "civil_society_space"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Central_European_University_controversy"
+        },
+        {
+          "date": "2018-06",
+          "description": "Hungary enacted the 'Stop Soros' package of laws, criminalizing activities by individuals or organizations that assist asylum seekers and require non-governmental organizations receiving more than 25% of their funding from abroad to register with authorities and pay a 25% tax on that funding. The law was found to violate EU law by the Court of Justice of the European Union in 2021.",
+          "affected_indicators": [
+            "civil_society_space"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Stop_Soros_laws"
+        },
+        {
+          "date": "2022-04",
+          "description": "Fidesz won a fourth consecutive parliamentary supermajority despite an unprecedented opposition coalition, in an election the OSCE mission found to have been characterized by a significant media advantage for the ruling party and a lack of separation between state resources and campaign activities.",
+          "affected_indicators": [
+            "election_quality",
+            "media_freedom"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2022_Hungarian_parliamentary_election"
+        }
+      ],
+      "ml_score": {
+        "value": null,
+        "label": "Beta",
+        "description": "ML erosion probability \u2014 beta feature, stub value for PoC.",
+        "unit": "probability_0_to_100",
+        "is_stub": true
+      },
+      "narrative": {
+        "headline": "Democratic stress: elevated and falling due to weakened executive constraints, low media freedom, and sustained institutional erosion",
+        "summary": "Hungary's Composite Democratic Stress Score stands at 44.9/100 in 2023, reflecting a decline of 1.2 points over the past year and 3.7 points over the past five years from a 2018 baseline of 48.6. The country's most acute structural vulnerabilities are concentrated in media freedom, which registers a critically low 5.2/100, and judicial independence at 36.2/100, both of which are stable at depressed levels following earlier periods of sharp decline. Executive constraints, currently at 52.2/100, remain on a declining trend, reinforcing a pattern of weakening institutional checks that has persisted over the medium term.",
+        "bullets": [
+          "Media Freedom is scored at 5.2/100 \u2014 the lowest individual indicator \u2014 having fallen 17.2 points between 2019 and 2021 before stabilizing at its current depressed level.",
+          "Judicial Independence stands at 36.2/100, and alongside Executive Constraints, was flagged for a Checks & Balances Breakdown event traced to 2010, pointing to long-running structural deficits in oversight mechanisms.",
+          "The five-year composite decline of 3.7 points (from 48.6 in 2018 to 44.9 in 2023) is accompanied by a Sustained Erosion flag, with three indicators having trended downward for three or more consecutive years through 2013, indicating that current weaknesses reflect accumulated, not sudden, institutional change."
+        ],
+        "trend_direction": "falling"
+      },
+      "flag_url_large": "https://flagcdn.com/w160/hu.png",
+      "region": "Europe"
+    },
+    {
+      "iso": "POL",
+      "name": "Poland",
+      "flag_url": "https://flagcdn.com/w80/pl.png",
+      "current_score": 48.6,
+      "current_tier": "elevated",
+      "current_tier_label": "Elevated",
+      "one_year_change": 0.7,
+      "five_year_change": -0.8,
+      "latest_year": 2023,
+      "flags": [
+        {
+          "flag": "checks_balances",
+          "label": "Checks & Balances Breakdown",
+          "description": "Executive Constraints and Judicial Independence both declined in 2015.",
+          "year_triggered": 2015
+        }
+      ],
+      "indicators": {
+        "media_freedom": {
+          "label": "Media Freedom",
+          "value": 23.1,
+          "trend": "stable"
+        },
+        "judicial_independence": {
+          "label": "Judicial Independence",
+          "value": 39.0,
+          "trend": "declining"
+        },
+        "civil_society_space": {
+          "label": "Civil Society Space",
+          "value": 38.2,
+          "trend": "stable"
+        },
+        "election_quality": {
+          "label": "Election Quality",
+          "value": 73.8,
+          "trend": "stable"
+        },
+        "executive_constraints": {
+          "label": "Executive Constraints",
+          "value": 85.0,
+          "trend": "improving"
+        },
+        "rhetoric_radar": {
+          "label": "Rhetoric Radar",
+          "value": 24.1,
+          "trend": "stable"
+        },
+        "civic_protests": {
+          "label": "Civic Protests",
+          "value": 56.8,
+          "trend": "stable"
+        }
+      },
+      "timeline": [
+        {
+          "year": 2009,
+          "composite": 55.5,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 10.8,
+            "judicial_independence": 97.9,
+            "civil_society_space": 23.9,
+            "election_quality": 99.2,
+            "executive_constraints": 93.3,
+            "rhetoric_radar": 6.7,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2010,
+          "composite": 55.7,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 10.8,
+            "judicial_independence": 97.9,
+            "civil_society_space": 23.9,
+            "election_quality": 99.6,
+            "executive_constraints": 94.3,
+            "rhetoric_radar": 6.7,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2011,
+          "composite": 55.8,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 10.8,
+            "judicial_independence": 99.9,
+            "civil_society_space": 23.9,
+            "election_quality": 99.9,
+            "executive_constraints": 94.3,
+            "rhetoric_radar": 4.7,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2012,
+          "composite": 55.8,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 10.8,
+            "judicial_independence": 99.9,
+            "civil_society_space": 23.9,
+            "election_quality": 100.0,
+            "executive_constraints": 94.3,
+            "rhetoric_radar": 4.7,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2013,
+          "composite": 56.1,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 10.8,
+            "judicial_independence": 99.9,
+            "civil_society_space": 23.9,
+            "election_quality": 99.8,
+            "executive_constraints": 94.3,
+            "rhetoric_radar": 7.0,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2014,
+          "composite": 55.9,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 10.8,
+            "judicial_independence": 99.9,
+            "civil_society_space": 23.9,
+            "election_quality": 98.4,
+            "executive_constraints": 94.3,
+            "rhetoric_radar": 7.0,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2015,
+          "composite": 53.9,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 10.8,
+            "judicial_independence": 87.1,
+            "civil_society_space": 23.9,
+            "election_quality": 99.0,
+            "executive_constraints": 88.1,
+            "rhetoric_radar": 11.5,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2016,
+          "composite": 53.7,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 10.8,
+            "judicial_independence": 76.9,
+            "civil_society_space": 31.7,
+            "election_quality": 98.9,
+            "executive_constraints": 79.1,
+            "rhetoric_radar": 21.8,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2017,
+          "composite": 51.6,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 10.8,
+            "judicial_independence": 62.8,
+            "civil_society_space": 35.4,
+            "election_quality": 97.2,
+            "executive_constraints": 76.6,
+            "rhetoric_radar": 21.8,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2018,
+          "composite": 49.4,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 10.8,
+            "judicial_independence": 49.7,
+            "civil_society_space": 35.4,
+            "election_quality": 96.9,
+            "executive_constraints": 76.6,
+            "rhetoric_radar": 19.4,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2019,
+          "composite": 49.3,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 10.8,
+            "judicial_independence": 49.7,
+            "civil_society_space": 35.5,
+            "election_quality": 94.2,
+            "executive_constraints": 75.8,
+            "rhetoric_radar": 22.2,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2020,
+          "composite": 48.1,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 23.1,
+            "judicial_independence": 47.2,
+            "civil_society_space": 38.2,
+            "election_quality": 75.7,
+            "executive_constraints": 73.9,
+            "rhetoric_radar": 22.2,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2021,
+          "composite": 48.2,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 23.1,
+            "judicial_independence": 47.2,
+            "civil_society_space": 38.2,
+            "election_quality": 73.9,
+            "executive_constraints": 73.6,
+            "rhetoric_radar": 24.5,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2022,
+          "composite": 47.9,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 23.1,
+            "judicial_independence": 47.2,
+            "civil_society_space": 38.2,
+            "election_quality": 72.9,
+            "executive_constraints": 72.4,
+            "rhetoric_radar": 24.5,
+            "civic_protests": 56.8
+          }
+        },
+        {
+          "year": 2023,
+          "composite": 48.6,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 23.1,
+            "judicial_independence": 39.0,
+            "civil_society_space": 38.2,
+            "election_quality": 73.8,
+            "executive_constraints": 85.0,
+            "rhetoric_radar": 24.1,
+            "civic_protests": 56.8
+          }
+        }
+      ],
+      "events": [
+        {
+          "date": "2015-10",
+          "description": "Law and Justice (PiS) won an outright parliamentary majority in national elections, becoming the first party to do so since Poland's transition to democracy. Its subsequent refusal to seat constitutional judges nominated by the previous parliament triggered a months-long constitutional tribunal crisis.",
+          "affected_indicators": [
+            "judicial_independence",
+            "executive_constraints"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2015_Polish_parliamentary_election"
+        },
+        {
+          "date": "2016-01",
+          "description": "The PiS-led government passed laws restructuring public broadcasters, allowing the government to appoint and dismiss their chief executives, effectively turning public television and radio into government mouthpieces. The Venice Commission and European Commission criticized the changes as incompatible with European standards.",
+          "affected_indicators": [
+            "media_freedom"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Media_freedom_in_Poland"
+        },
+        {
+          "date": "2017-07",
+          "description": "President Duda signed judicial reform legislation that gave the ruling party power over the Supreme Court and the National Council of the Judiciary, prompting massive street protests across Poland. The European Commission opened Article 7 proceedings against Poland for breach of EU rule-of-law values.",
+          "affected_indicators": [
+            "judicial_independence",
+            "civic_protests"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2017_Polish_protests"
+        },
+        {
+          "date": "2020-10",
+          "description": "Poland's Constitutional Tribunal \u2014 reconstituted with government-aligned judges \u2014 ruled that abortion due to fetal abnormality was unconstitutional, triggering the largest nationwide protests in decades under the 'Women's Strike' movement. The ruling further highlighted concerns about the tribunal's independence from political direction.",
+          "affected_indicators": [
+            "civic_protests",
+            "judicial_independence"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2020_Polish_women%27s_strike"
+        },
+        {
+          "date": "2023-10",
+          "description": "Opposition parties won a combined majority in parliamentary elections, ending PiS's eight-year hold on government. Donald Tusk formed a coalition government in December 2023, but an ongoing dispute with the PiS-aligned president over judicial appointments and public broadcaster leadership complicated the transition back toward rule-of-law norms.",
+          "affected_indicators": [
+            "election_quality",
+            "judicial_independence",
+            "executive_constraints"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2023_Polish_parliamentary_election"
+        }
+      ],
+      "ml_score": {
+        "value": null,
+        "label": "Beta",
+        "description": "ML erosion probability \u2014 beta feature, stub value for PoC.",
+        "unit": "probability_0_to_100",
+        "is_stub": true
+      },
+      "narrative": {
+        "headline": "Democratic stress: elevated and stable due to persistent judicial independence concerns and low media freedom",
+        "summary": "Poland's Composite Democratic Stress Score stands at 48.6/100 in 2023, placing it in the Elevated tier with a marginal one-year improvement of 0.7 points, though the five-year trajectory reflects a slight net decline of 0.8 points from 49.4 in 2018. The country's democratic profile is defined by a pronounced divergence between relatively strong electoral processes (73.8/100) and executive constraints (85.0/100, trend improving) on one hand, and structurally weak scores in media freedom (23.1/100) and judicial independence (39.0/100, trend declining) on the other. An active risk flag noting the concurrent decline of executive constraints and judicial independence since 2015 underscores ongoing concerns about the integrity of institutional checks and balances.",
+        "bullets": [
+          "Judicial Independence scores 39.0/100 on a declining trend, with a longstanding risk flag citing simultaneous deterioration of both judicial and executive constraint mechanisms beginning in 2015.",
+          "Media Freedom registers 23.1/100 \u2014 among the lowest individual indicator scores in the profile \u2014 and remains stable, indicating an entrenched rather than acute structural constraint on the information environment.",
+          "Election Quality (73.8/100) and Executive Constraints (85.0/100, improving) represent relative institutional strengths, suggesting competitive electoral processes and legislative oversight remain comparatively functional."
+        ],
+        "trend_direction": "stable"
+      },
+      "flag_url_large": "https://flagcdn.com/w160/pl.png",
+      "region": "Europe"
+    },
+    {
+      "iso": "TUR",
+      "name": "Turkey",
+      "flag_url": "https://flagcdn.com/w80/tr.png",
+      "current_score": 51.6,
+      "current_tier": "elevated",
+      "current_tier_label": "Elevated",
+      "one_year_change": -1.6,
+      "five_year_change": -1.9,
+      "latest_year": 2023,
+      "flags": [
+        {
+          "flag": "checks_balances",
+          "label": "Checks & Balances Breakdown",
+          "description": "Executive Constraints and Judicial Independence both declined in 2010.",
+          "year_triggered": 2010
+        },
+        {
+          "flag": "sustained_erosion",
+          "label": "Sustained Erosion",
+          "description": "3 indicators have trended downward for 3+ years through 2014.",
+          "year_triggered": 2014
+        },
+        {
+          "flag": "media_risk",
+          "label": "Media Risk",
+          "description": "Media Freedom fell 12.9 points between 2016 and 2018.",
+          "year_triggered": 2018
+        },
+        {
+          "flag": "authoritarian_consolidation",
+          "label": "Authoritarian Consolidation",
+          "description": "Rhetoric became more hostile and Civil Society Space shrank in 2019.",
+          "year_triggered": 2019
+        }
+      ],
+      "indicators": {
+        "media_freedom": {
+          "label": "Media Freedom",
+          "value": 62.6,
+          "trend": "stable"
+        },
+        "judicial_independence": {
+          "label": "Judicial Independence",
+          "value": 59.7,
+          "trend": "stable"
+        },
+        "civil_society_space": {
+          "label": "Civil Society Space",
+          "value": 70.5,
+          "trend": "stable"
+        },
+        "election_quality": {
+          "label": "Election Quality",
+          "value": 36.9,
+          "trend": "stable"
+        },
+        "executive_constraints": {
+          "label": "Executive Constraints",
+          "value": 15.8,
+          "trend": "declining"
+        },
+        "rhetoric_radar": {
+          "label": "Rhetoric Radar",
+          "value": 72.3,
+          "trend": "stable"
+        },
+        "civic_protests": {
+          "label": "Civic Protests",
+          "value": 43.5,
+          "trend": "declining"
+        }
+      },
+      "timeline": [
+        {
+          "year": 2009,
+          "composite": 62.3,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 42.5,
+            "judicial_independence": 86.5,
+            "civil_society_space": 49.2,
+            "election_quality": 74.4,
+            "executive_constraints": 63.6,
+            "rhetoric_radar": 52.5,
+            "civic_protests": 67.4
+          }
+        },
+        {
+          "year": 2010,
+          "composite": 61.9,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 50.6,
+            "judicial_independence": 79.6,
+            "civil_society_space": 54.6,
+            "election_quality": 74.2,
+            "executive_constraints": 57.1,
+            "rhetoric_radar": 52.2,
+            "civic_protests": 64.9
+          }
+        },
+        {
+          "year": 2011,
+          "composite": 61.7,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 50.6,
+            "judicial_independence": 79.6,
+            "civil_society_space": 54.6,
+            "election_quality": 72.9,
+            "executive_constraints": 56.8,
+            "rhetoric_radar": 52.2,
+            "civic_protests": 64.9
+          }
+        },
+        {
+          "year": 2012,
+          "composite": 62.0,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 50.3,
+            "judicial_independence": 79.6,
+            "civil_society_space": 55.2,
+            "election_quality": 70.8,
+            "executive_constraints": 56.1,
+            "rhetoric_radar": 56.7,
+            "civic_protests": 65.2
+          }
+        },
+        {
+          "year": 2013,
+          "composite": 61.2,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 56.4,
+            "judicial_independence": 79.6,
+            "civil_society_space": 61.4,
+            "election_quality": 69.5,
+            "executive_constraints": 48.5,
+            "rhetoric_radar": 56.1,
+            "civic_protests": 57.0
+          }
+        },
+        {
+          "year": 2014,
+          "composite": 59.8,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 65.2,
+            "judicial_independence": 74.7,
+            "civil_society_space": 61.4,
+            "election_quality": 62.8,
+            "executive_constraints": 39.9,
+            "rhetoric_radar": 57.5,
+            "civic_protests": 57.0
+          }
+        },
+        {
+          "year": 2015,
+          "composite": 58.4,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 65.2,
+            "judicial_independence": 72.7,
+            "civil_society_space": 67.0,
+            "election_quality": 50.0,
+            "executive_constraints": 38.8,
+            "rhetoric_radar": 57.5,
+            "civic_protests": 57.5
+          }
+        },
+        {
+          "year": 2016,
+          "composite": 60.6,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 78.6,
+            "judicial_independence": 67.3,
+            "civil_society_space": 83.1,
+            "election_quality": 40.3,
+            "executive_constraints": 28.3,
+            "rhetoric_radar": 76.9,
+            "civic_protests": 49.4
+          }
+        },
+        {
+          "year": 2017,
+          "composite": 55.2,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 72.9,
+            "judicial_independence": 58.1,
+            "civil_society_space": 81.9,
+            "election_quality": 40.1,
+            "executive_constraints": 13.8,
+            "rhetoric_radar": 71.6,
+            "civic_protests": 47.7
+          }
+        },
+        {
+          "year": 2018,
+          "composite": 53.5,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 65.7,
+            "judicial_independence": 58.1,
+            "civil_society_space": 78.3,
+            "election_quality": 38.1,
+            "executive_constraints": 15.1,
+            "rhetoric_radar": 71.6,
+            "civic_protests": 47.4
+          }
+        },
+        {
+          "year": 2019,
+          "composite": 53.0,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 65.7,
+            "judicial_independence": 58.1,
+            "civil_society_space": 74.3,
+            "election_quality": 36.6,
+            "executive_constraints": 18.9,
+            "rhetoric_radar": 68.4,
+            "civic_protests": 49.1
+          }
+        },
+        {
+          "year": 2020,
+          "composite": 53.2,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 62.6,
+            "judicial_independence": 56.9,
+            "civil_society_space": 75.4,
+            "election_quality": 36.6,
+            "executive_constraints": 23.6,
+            "rhetoric_radar": 68.4,
+            "civic_protests": 49.1
+          }
+        },
+        {
+          "year": 2021,
+          "composite": 54.0,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 62.6,
+            "judicial_independence": 57.9,
+            "civil_society_space": 75.4,
+            "election_quality": 36.6,
+            "executive_constraints": 23.8,
+            "rhetoric_radar": 72.4,
+            "civic_protests": 49.1
+          }
+        },
+        {
+          "year": 2022,
+          "composite": 53.2,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 62.6,
+            "judicial_independence": 57.9,
+            "civil_society_space": 74.9,
+            "election_quality": 34.6,
+            "executive_constraints": 20.2,
+            "rhetoric_radar": 73.7,
+            "civic_protests": 48.7
+          }
+        },
+        {
+          "year": 2023,
+          "composite": 51.6,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 62.6,
+            "judicial_independence": 59.7,
+            "civil_society_space": 70.5,
+            "election_quality": 36.9,
+            "executive_constraints": 15.8,
+            "rhetoric_radar": 72.3,
+            "civic_protests": 43.5
+          }
+        }
+      ],
+      "events": [
+        {
+          "date": "2013-06",
+          "description": "Millions of Turks participated in the Gezi Park protests, which began as opposition to the redevelopment of Taksim Gezi Park in Istanbul and rapidly expanded into broad anti-government demonstrations. The government's forceful suppression, which used tear gas and water cannons on peaceful protesters, was condemned by the Council of Europe and drew international criticism.",
+          "affected_indicators": [
+            "civic_protests",
+            "civil_society_space"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Gezi_Park_protests"
+        },
+        {
+          "date": "2016-07",
+          "description": "A faction within the Turkish military attempted a coup d'etat against the government of President Recep Tayyip Erdogan. Following the coup's failure, the government declared a state of emergency and conducted a sweeping purge: more than 150,000 people were arrested, detained, or dismissed from state positions including the military, judiciary, police, academia, and media.",
+          "affected_indicators": [
+            "judicial_independence",
+            "civil_society_space",
+            "media_freedom",
+            "executive_constraints"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2016_Turkish_coup_d%27%C3%A9tat_attempt"
+        },
+        {
+          "date": "2017-04",
+          "description": "Turkish voters narrowly approved a constitutional referendum converting Turkey from a parliamentary to a presidential system, eliminating the post of prime minister and concentrating executive authority in the presidency. The OSCE/ODIHR found the referendum was conducted under unequal campaign conditions, with the 'Yes' side benefiting from state resources.",
+          "affected_indicators": [
+            "executive_constraints",
+            "election_quality"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2017_Turkish_constitutional_referendum"
+        },
+        {
+          "date": "2019-03",
+          "description": "Turkish authorities removed elected mayors from the opposition Republican People's Party (CHP) in Istanbul, Ankara, and other major cities and replaced them with government-appointed trustees. The action was taken over terrorism-related charges that opposition parties and international observers characterized as politically motivated.",
+          "affected_indicators": [
+            "executive_constraints",
+            "election_quality"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Removal_of_elected_mayors_in_Turkey"
+        },
+        {
+          "date": "2022-10",
+          "description": "Turkey's Radio and Television Supreme Council (RTUK) imposed a broadcast ban on Voice of America and the BBC's Turkish service for failing to obtain broadcasting licenses, a requirement critics argued was selectively applied to foreign outlets critical of the government. By 2022, Reporters Without Borders ranked Turkey among the world's worst jailers of journalists.",
+          "affected_indicators": [
+            "media_freedom"
+          ],
+          "source_url": "https://rsf.org/en/country/turkey"
+        }
+      ],
+      "ml_score": {
+        "value": null,
+        "label": "Beta",
+        "description": "ML erosion probability \u2014 beta feature, stub value for PoC.",
+        "unit": "probability_0_to_100",
+        "is_stub": true
+      },
+      "narrative": {
+        "headline": "Democratic stress: elevated and falling due to weakening executive constraints and declining civic space",
+        "summary": "Turkey's Composite Democratic Stress Score stands at 51.6/100 in 2023, reflecting an Elevated status tier and a decline of 1.6 points over the past year and 1.9 points over the past five years from a 2018 baseline of 53.5. The most acute structural concern is the Executive Constraints indicator, which registers a critically low 15.8/100 on a declining trend, pointing to persistent limitations on institutional checks over executive authority. Compounding this, Election Quality scores a notably weak 36.9/100 and Civic Protests have declined to 43.5/100, suggesting constrained channels for both formal and informal political accountability.",
+        "bullets": [
+          "Executive Constraints scored 15.8/100 on a declining trend \u2014 the lowest individual indicator recorded \u2014 consistent with active risk flags citing checks and balances deterioration dating to 2010.",
+          "Election Quality registered 36.9/100, the second-lowest indicator score, raising structural concerns about the integrity of formal democratic competition.",
+          "Media Freedom declined 12.9 points between 2016 and 2018 per active risk flags, and currently sits at 62.6/100 on a stable trend, indicating constrained but not further deteriorating press conditions."
+        ],
+        "trend_direction": "falling"
+      },
+      "flag_url_large": "https://flagcdn.com/w160/tr.png",
+      "region": "Europe"
+    },
+    {
+      "iso": "IND",
+      "name": "India",
+      "flag_url": "https://flagcdn.com/w80/in.png",
+      "current_score": 52.2,
+      "current_tier": "elevated",
+      "current_tier_label": "Elevated",
+      "one_year_change": -0.3,
+      "five_year_change": -5.5,
+      "latest_year": 2023,
+      "flags": [
+        {
+          "flag": "sustained_erosion",
+          "label": "Sustained Erosion",
+          "description": "3 indicators have trended downward for 3+ years through 2015.",
+          "year_triggered": 2015
+        },
+        {
+          "flag": "checks_balances",
+          "label": "Checks & Balances Breakdown",
+          "description": "Executive Constraints and Judicial Independence both declined in 2019.",
+          "year_triggered": 2019
+        }
+      ],
+      "indicators": {
+        "media_freedom": {
+          "label": "Media Freedom",
+          "value": 55.7,
+          "trend": "stable"
+        },
+        "judicial_independence": {
+          "label": "Judicial Independence",
+          "value": 69.2,
+          "trend": "stable"
+        },
+        "civil_society_space": {
+          "label": "Civil Society Space",
+          "value": 64.3,
+          "trend": "improving"
+        },
+        "election_quality": {
+          "label": "Election Quality",
+          "value": 48.7,
+          "trend": "stable"
+        },
+        "executive_constraints": {
+          "label": "Executive Constraints",
+          "value": 62.2,
+          "trend": "stable"
+        },
+        "rhetoric_radar": {
+          "label": "Rhetoric Radar",
+          "value": 13.0,
+          "trend": "stable"
+        },
+        "civic_protests": {
+          "label": "Civic Protests",
+          "value": 52.6,
+          "trend": "rapidly_declining"
+        }
+      },
+      "timeline": [
+        {
+          "year": 2009,
+          "composite": 60.2,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 42.4,
+            "judicial_independence": 81.7,
+            "civil_society_space": 40.2,
+            "election_quality": 76.9,
+            "executive_constraints": 87.6,
+            "rhetoric_radar": 13.6,
+            "civic_protests": 79.3
+          }
+        },
+        {
+          "year": 2010,
+          "composite": 60.2,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 43.8,
+            "judicial_independence": 82.0,
+            "civil_society_space": 40.2,
+            "election_quality": 74.7,
+            "executive_constraints": 88.0,
+            "rhetoric_radar": 13.6,
+            "civic_protests": 79.3
+          }
+        },
+        {
+          "year": 2011,
+          "composite": 60.2,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 43.8,
+            "judicial_independence": 82.0,
+            "civil_society_space": 40.2,
+            "election_quality": 74.7,
+            "executive_constraints": 88.0,
+            "rhetoric_radar": 13.6,
+            "civic_protests": 79.3
+          }
+        },
+        {
+          "year": 2012,
+          "composite": 61.3,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 48.7,
+            "judicial_independence": 82.0,
+            "civil_society_space": 41.0,
+            "election_quality": 74.7,
+            "executive_constraints": 88.1,
+            "rhetoric_radar": 13.6,
+            "civic_protests": 80.8
+          }
+        },
+        {
+          "year": 2013,
+          "composite": 61.1,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 48.7,
+            "judicial_independence": 82.0,
+            "civil_society_space": 42.1,
+            "election_quality": 72.1,
+            "executive_constraints": 87.7,
+            "rhetoric_radar": 14.4,
+            "civic_protests": 80.8
+          }
+        },
+        {
+          "year": 2014,
+          "composite": 58.7,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 47.6,
+            "judicial_independence": 82.3,
+            "civil_society_space": 43.7,
+            "election_quality": 70.0,
+            "executive_constraints": 85.9,
+            "rhetoric_radar": 14.4,
+            "civic_protests": 67.2
+          }
+        },
+        {
+          "year": 2015,
+          "composite": 57.8,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 51.5,
+            "judicial_independence": 80.1,
+            "civil_society_space": 49.0,
+            "election_quality": 66.7,
+            "executive_constraints": 78.6,
+            "rhetoric_radar": 15.8,
+            "civic_protests": 63.0
+          }
+        },
+        {
+          "year": 2016,
+          "composite": 57.4,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 51.5,
+            "judicial_independence": 78.6,
+            "civil_society_space": 49.0,
+            "election_quality": 66.7,
+            "executive_constraints": 77.0,
+            "rhetoric_radar": 15.8,
+            "civic_protests": 63.0
+          }
+        },
+        {
+          "year": 2017,
+          "composite": 57.1,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 53.2,
+            "judicial_independence": 77.7,
+            "civil_society_space": 51.3,
+            "election_quality": 63.8,
+            "executive_constraints": 74.7,
+            "rhetoric_radar": 15.8,
+            "civic_protests": 63.0
+          }
+        },
+        {
+          "year": 2018,
+          "composite": 57.7,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 54.1,
+            "judicial_independence": 82.1,
+            "civil_society_space": 53.3,
+            "election_quality": 63.4,
+            "executive_constraints": 70.9,
+            "rhetoric_radar": 15.8,
+            "civic_protests": 64.3
+          }
+        },
+        {
+          "year": 2019,
+          "composite": 56.9,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 60.5,
+            "judicial_independence": 78.1,
+            "civil_society_space": 55.0,
+            "election_quality": 52.3,
+            "executive_constraints": 67.6,
+            "rhetoric_radar": 15.8,
+            "civic_protests": 68.7
+          }
+        },
+        {
+          "year": 2020,
+          "composite": 54.5,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 59.6,
+            "judicial_independence": 71.8,
+            "civil_society_space": 59.2,
+            "election_quality": 48.1,
+            "executive_constraints": 63.9,
+            "rhetoric_radar": 13.5,
+            "civic_protests": 65.2
+          }
+        },
+        {
+          "year": 2021,
+          "composite": 54.1,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 57.6,
+            "judicial_independence": 71.8,
+            "civil_society_space": 58.4,
+            "election_quality": 48.0,
+            "executive_constraints": 71.2,
+            "rhetoric_radar": 7.8,
+            "civic_protests": 64.0
+          }
+        },
+        {
+          "year": 2022,
+          "composite": 52.5,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 54.5,
+            "judicial_independence": 72.2,
+            "civil_society_space": 58.4,
+            "election_quality": 48.0,
+            "executive_constraints": 65.8,
+            "rhetoric_radar": 4.7,
+            "civic_protests": 64.0
+          }
+        },
+        {
+          "year": 2023,
+          "composite": 52.2,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 55.7,
+            "judicial_independence": 69.2,
+            "civil_society_space": 64.3,
+            "election_quality": 48.7,
+            "executive_constraints": 62.2,
+            "rhetoric_radar": 13.0,
+            "civic_protests": 52.6
+          }
+        }
+      ],
+      "events": [
+        {
+          "date": "2014-05",
+          "description": "Narendra Modi and the Bharatiya Janata Party (BJP) won a commanding parliamentary majority, ending a decade of Congress-led coalition government. The election was the largest in history by voter turnout; international observers noted a generally credible process, though civil society groups flagged campaign-finance transparency concerns.",
+          "affected_indicators": [
+            "election_quality"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2014_Indian_general_election"
+        },
+        {
+          "date": "2016-09",
+          "description": "The Foreign Contribution Regulation Act (FCRA) was amended and enforcement intensified, with the government canceling the licenses of thousands of NGOs receiving foreign funding. Prominent civil society organizations, including Greenpeace India and Amnesty International India, had their FCRA registrations suspended or canceled in subsequent years.",
+          "affected_indicators": [
+            "civil_society_space"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Foreign_Contribution_(Regulation)_Act,_2010"
+        },
+        {
+          "date": "2019-08",
+          "description": "The Indian government revoked the special constitutional status of Jammu and Kashmir under Article 370, simultaneously imposing a weeks-long communications blackout and detaining thousands of political leaders, activists, and ordinary residents. Human rights organizations documented extensive restrictions on freedom of movement, assembly, and expression in the region.",
+          "affected_indicators": [
+            "civil_society_space",
+            "media_freedom",
+            "civic_protests"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2019_revocation_of_the_special_status_of_Jammu_and_Kashmir"
+        },
+        {
+          "date": "2020-02",
+          "description": "The Citizenship Amendment Act (CAA) passed in December 2019 triggered nationwide protests, with demonstrations in Delhi in February 2020 turning violent. The government subsequently arrested numerous student protest leaders, journalists, and civil society activists under the Unlawful Activities Prevention Act (UAPA), drawing criticism from the UN High Commissioner for Human Rights.",
+          "affected_indicators": [
+            "civic_protests",
+            "civil_society_space"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2019%E2%80%932020_protests_against_the_Citizenship_Amendment_Act"
+        },
+        {
+          "date": "2023-10",
+          "description": "The Enforcement Directorate raided the offices of the BBC in India following the broadcaster's release of a documentary critical of Prime Minister Modi's conduct during the 2002 Gujarat riots. Separately, multiple Indian states used a colonial-era sedition law and the IT Rules 2021 to compel social media platforms to take down content critical of the government.",
+          "affected_indicators": [
+            "media_freedom",
+            "civil_society_space"
+          ],
+          "source_url": "https://www.bbc.com/news/world-asia-india-64673947"
+        }
+      ],
+      "ml_score": {
+        "value": null,
+        "label": "Beta",
+        "description": "ML erosion probability \u2014 beta feature, stub value for PoC.",
+        "unit": "probability_0_to_100",
+        "is_stub": true
+      },
+      "narrative": {
+        "headline": "Democratic stress: elevated and gradually deepening due to election quality weaknesses and declining civic protest space",
+        "summary": "India's Composite Democratic Stress Score stands at 52.2/100 in 2023, placing it in the Elevated tier and reflecting a cumulative five-year decline of 5.5 points from 57.7 in 2018, though the one-year change is a marginal -0.3 points. Structural strengths persist in Judicial Independence (69.2/100) and Civil Society Space (64.3/100, trending improving), but these are offset by a notably low Election Quality score (48.7/100) and a Rhetoric Radar reading of 13.0/100, indicating elevated levels of divisive public discourse. The most acute near-term signal is the rapidly declining Civic Protests indicator (52.6/100), which suggests a contraction in the exercise of public mobilization rights over the observed period.",
+        "bullets": [
+          "India's five-year democratic stress deterioration totals 5.5 points (57.7 in 2018 \u2192 52.2 in 2023), with the trajectory sustained across multiple indicator domains.",
+          "Election Quality scores at 48.7/100 \u2014 the lowest among all measured indicators \u2014 and has remained stable rather than recovering, representing a persistent structural vulnerability.",
+          "The Civic Protests indicator (52.6/100) is classified as rapidly declining, while active risk flags note that Executive Constraints and Judicial Independence both registered declines in 2019, signaling a prior episode of simultaneous checks-and-balances pressure."
+        ],
+        "trend_direction": "falling"
+      },
+      "flag_url_large": "https://flagcdn.com/w160/in.png",
+      "region": "Asia-Pacific"
+    },
+    {
+      "iso": "BRA",
+      "name": "Brazil",
+      "flag_url": "https://flagcdn.com/w80/br.png",
+      "current_score": 54.6,
+      "current_tier": "elevated",
+      "current_tier_label": "Elevated",
+      "one_year_change": -4.3,
+      "five_year_change": -1.4,
+      "latest_year": 2023,
+      "flags": [
+        {
+          "flag": "checks_balances",
+          "label": "Checks & Balances Breakdown",
+          "description": "Executive Constraints and Judicial Independence both declined in 2016.",
+          "year_triggered": 2016
+        },
+        {
+          "flag": "media_risk",
+          "label": "Media Risk",
+          "description": "Media Freedom fell 13.7 points between 2020 and 2022.",
+          "year_triggered": 2022
+        },
+        {
+          "flag": "authoritarian_consolidation",
+          "label": "Authoritarian Consolidation",
+          "description": "Rhetoric became more hostile and Civil Society Space shrank in 2023.",
+          "year_triggered": 2023
+        }
+      ],
+      "indicators": {
+        "media_freedom": {
+          "label": "Media Freedom",
+          "value": 8.3,
+          "trend": "rapidly_declining"
+        },
+        "judicial_independence": {
+          "label": "Judicial Independence",
+          "value": 90.8,
+          "trend": "stable"
+        },
+        "civil_society_space": {
+          "label": "Civil Society Space",
+          "value": 12.4,
+          "trend": "rapidly_declining"
+        },
+        "election_quality": {
+          "label": "Election Quality",
+          "value": 85.2,
+          "trend": "stable"
+        },
+        "executive_constraints": {
+          "label": "Executive Constraints",
+          "value": 98.1,
+          "trend": "improving"
+        },
+        "rhetoric_radar": {
+          "label": "Rhetoric Radar",
+          "value": 19.3,
+          "trend": "stable"
+        },
+        "civic_protests": {
+          "label": "Civic Protests",
+          "value": 68.1,
+          "trend": "stable"
+        }
+      },
+      "timeline": [
+        {
+          "year": 2009,
+          "composite": 51.5,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 0.0,
+            "judicial_independence": 84.4,
+            "civil_society_space": 13.8,
+            "election_quality": 95.2,
+            "executive_constraints": 94.3,
+            "rhetoric_radar": 0.0,
+            "civic_protests": 73.0
+          }
+        },
+        {
+          "year": 2010,
+          "composite": 52.1,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 0.0,
+            "judicial_independence": 89.7,
+            "civil_society_space": 11.8,
+            "election_quality": 95.4,
+            "executive_constraints": 94.9,
+            "rhetoric_radar": 0.0,
+            "civic_protests": 73.0
+          }
+        },
+        {
+          "year": 2011,
+          "composite": 51.8,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 0.0,
+            "judicial_independence": 89.7,
+            "civil_society_space": 11.8,
+            "election_quality": 96.0,
+            "executive_constraints": 95.5,
+            "rhetoric_radar": 0.0,
+            "civic_protests": 69.3
+          }
+        },
+        {
+          "year": 2012,
+          "composite": 52.4,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 0.0,
+            "judicial_independence": 94.4,
+            "civil_society_space": 11.8,
+            "election_quality": 96.0,
+            "executive_constraints": 95.5,
+            "rhetoric_radar": 0.0,
+            "civic_protests": 69.3
+          }
+        },
+        {
+          "year": 2013,
+          "composite": 53.4,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 0.0,
+            "judicial_independence": 94.4,
+            "civil_society_space": 11.8,
+            "election_quality": 96.3,
+            "executive_constraints": 97.4,
+            "rhetoric_radar": 5.5,
+            "civic_protests": 68.1
+          }
+        },
+        {
+          "year": 2014,
+          "composite": 53.1,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 0.0,
+            "judicial_independence": 90.5,
+            "civil_society_space": 11.8,
+            "election_quality": 96.2,
+            "executive_constraints": 97.4,
+            "rhetoric_radar": 7.4,
+            "civic_protests": 68.1
+          }
+        },
+        {
+          "year": 2015,
+          "composite": 52.4,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 0.0,
+            "judicial_independence": 88.3,
+            "civil_society_space": 11.8,
+            "election_quality": 95.1,
+            "executive_constraints": 98.0,
+            "rhetoric_radar": 5.2,
+            "civic_protests": 68.1
+          }
+        },
+        {
+          "year": 2016,
+          "composite": 57.7,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 22.4,
+            "judicial_independence": 79.8,
+            "civil_society_space": 27.1,
+            "election_quality": 94.4,
+            "executive_constraints": 87.7,
+            "rhetoric_radar": 24.1,
+            "civic_protests": 68.1
+          }
+        },
+        {
+          "year": 2017,
+          "composite": 56.1,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 22.4,
+            "judicial_independence": 79.8,
+            "civil_society_space": 27.1,
+            "election_quality": 93.6,
+            "executive_constraints": 82.1,
+            "rhetoric_radar": 19.9,
+            "civic_protests": 68.1
+          }
+        },
+        {
+          "year": 2018,
+          "composite": 56.0,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 22.4,
+            "judicial_independence": 79.8,
+            "civil_society_space": 28.0,
+            "election_quality": 91.7,
+            "executive_constraints": 82.1,
+            "rhetoric_radar": 19.9,
+            "civic_protests": 68.1
+          }
+        },
+        {
+          "year": 2019,
+          "composite": 55.7,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 22.0,
+            "judicial_independence": 79.6,
+            "civil_society_space": 28.0,
+            "election_quality": 86.2,
+            "executive_constraints": 83.1,
+            "rhetoric_radar": 22.7,
+            "civic_protests": 68.1
+          }
+        },
+        {
+          "year": 2020,
+          "composite": 56.2,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 22.0,
+            "judicial_independence": 86.8,
+            "civil_society_space": 22.7,
+            "election_quality": 89.0,
+            "executive_constraints": 82.4,
+            "rhetoric_radar": 22.7,
+            "civic_protests": 68.1
+          }
+        },
+        {
+          "year": 2021,
+          "composite": 57.4,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 25.1,
+            "judicial_independence": 87.2,
+            "civil_society_space": 22.7,
+            "election_quality": 89.8,
+            "executive_constraints": 83.1,
+            "rhetoric_radar": 26.0,
+            "civic_protests": 68.1
+          }
+        },
+        {
+          "year": 2022,
+          "composite": 58.9,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 23.0,
+            "judicial_independence": 87.2,
+            "civil_society_space": 24.2,
+            "election_quality": 89.6,
+            "executive_constraints": 87.6,
+            "rhetoric_radar": 32.4,
+            "civic_protests": 68.1
+          }
+        },
+        {
+          "year": 2023,
+          "composite": 54.6,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 8.3,
+            "judicial_independence": 90.8,
+            "civil_society_space": 12.4,
+            "election_quality": 85.2,
+            "executive_constraints": 98.1,
+            "rhetoric_radar": 19.3,
+            "civic_protests": 68.1
+          }
+        }
+      ],
+      "events": [
+        {
+          "date": "2013-06",
+          "description": "Mass protests across Brazil \u2014 triggered by a bus fare increase in S\u00e3o Paulo \u2014 rapidly expanded into nationwide demonstrations against government corruption, inadequate public services, and expenditure on the 2014 World Cup and 2016 Olympics. Millions participated in what became the largest street protests in Brazil in two decades.",
+          "affected_indicators": [
+            "civic_protests"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2013_protests_in_Brazil"
+        },
+        {
+          "date": "2016-08",
+          "description": "President Dilma Rousseff was removed from office following a Senate impeachment vote over her government's use of fiscal accounting maneuvers. Critics characterized the process as a 'parliamentary coup'; the episode intensified political polarization and weakened public confidence in institutional integrity.",
+          "affected_indicators": [
+            "executive_constraints",
+            "election_quality"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Impeachment_of_Dilma_Rousseff"
+        },
+        {
+          "date": "2018-10",
+          "description": "Jair Bolsonaro won the presidential election in a runoff against Workers' Party candidate Fernando Haddad, running on an explicitly anti-establishment and socially conservative platform. During the campaign and in office, Bolsonaro made repeated attacks on the press, the electoral system, and the judiciary, raising concerns among democratic institutions.",
+          "affected_indicators": [
+            "rhetoric_radar",
+            "media_freedom",
+            "civil_society_space"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2018_Brazilian_presidential_election"
+        },
+        {
+          "date": "2022-01",
+          "description": "President Bolsonaro convened a meeting with foreign ambassadors and made unsubstantiated claims that Brazil's electronic voting system was susceptible to fraud. The Superior Electoral Court and the Brazilian military's own audit subsequently found no evidence supporting his claims; the episode was widely seen as laying groundwork to contest the election result.",
+          "affected_indicators": [
+            "election_quality",
+            "rhetoric_radar"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Jair_Bolsonaro%27s_claims_of_electoral_fraud"
+        },
+        {
+          "date": "2023-01",
+          "description": "Thousands of Bolsonaro supporters stormed the buildings of the Brazilian Congress, Supreme Court, and presidential palace in Brasilia, calling for a military coup to reverse the result of the October 2022 election. Federal authorities arrested over 1,500 people, and the Supreme Court opened investigations into those who incited and financed the attack.",
+          "affected_indicators": [
+            "civic_protests",
+            "executive_constraints",
+            "judicial_independence"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2023_Brazilian_Congress_attack"
+        }
+      ],
+      "ml_score": {
+        "value": null,
+        "label": "Beta",
+        "description": "ML erosion probability \u2014 beta feature, stub value for PoC.",
+        "unit": "probability_0_to_100",
+        "is_stub": true
+      },
+      "narrative": {
+        "headline": "Democratic stress: elevated and rising due to declining media freedom and shrinking civil society space",
+        "summary": "Brazil's Composite Democratic Stress Score stands at 54.6/100 in 2023, reflecting an Elevated status tier and a deterioration of 4.3 points over the past year, though the five-year decline remains comparatively modest at 1.4 points from 56.0 in 2018. The country exhibits a notably bifurcated institutional profile: structural constraints on executive power score exceptionally high (98.1/100, improving) and judicial independence remains robust at 90.8/100, while media freedom (8.3/100, rapidly declining) and civil society space (12.4/100, rapidly declining) represent severe and worsening vulnerabilities. The combination of a sharp 13.7-point drop in media freedom between 2020 and 2022, a further contraction of civil society space in 2023, and a low Rhetoric Radar score of 19.3/100 suggests structural pressures on the informational and associational environment persist alongside otherwise stable democratic institutions.",
+        "bullets": [
+          "Executive Constraints scored 98.1/100 (improving) and Judicial Independence held at 90.8/100 (stable), indicating formal institutional checks remain largely intact despite prior concerns flagged from 2016.",
+          "Media Freedom fell to 8.3/100 with a rapidly declining trend, including a documented 13.7-point drop between 2020 and 2022, representing one of the most acute single-indicator vulnerabilities in Brazil's democratic profile.",
+          "Civil Society Space registered 12.4/100 with a rapidly declining trend, and the Rhetoric Radar score of 19.3/100 remained stable but low, with both indicators showing further deterioration in 2023 consistent with an Authoritarian Consolidation risk flag."
+        ],
+        "trend_direction": "rising"
+      },
+      "flag_url_large": "https://flagcdn.com/w160/br.png",
+      "region": "Americas"
+    },
+    {
+      "iso": "USA",
+      "name": "United States",
+      "flag_url": "https://flagcdn.com/w80/us.png",
+      "current_score": 61.4,
+      "current_tier": "elevated",
+      "current_tier_label": "Elevated",
+      "one_year_change": 3.9,
+      "five_year_change": 4.7,
+      "latest_year": 2023,
+      "flags": [
+        {
+          "flag": "sustained_erosion",
+          "label": "Sustained Erosion",
+          "description": "3 indicators have trended downward for 3+ years through 2018.",
+          "year_triggered": 2018
+        }
+      ],
+      "indicators": {
+        "media_freedom": {
+          "label": "Media Freedom",
+          "value": 16.5,
+          "trend": "stable"
+        },
+        "judicial_independence": {
+          "label": "Judicial Independence",
+          "value": 93.1,
+          "trend": "declining"
+        },
+        "civil_society_space": {
+          "label": "Civil Society Space",
+          "value": 13.0,
+          "trend": "improving"
+        },
+        "election_quality": {
+          "label": "Election Quality",
+          "value": 91.9,
+          "trend": "improving"
+        },
+        "executive_constraints": {
+          "label": "Executive Constraints",
+          "value": 96.6,
+          "trend": "stable"
+        },
+        "rhetoric_radar": {
+          "label": "Rhetoric Radar",
+          "value": 25.5,
+          "trend": "improving"
+        },
+        "civic_protests": {
+          "label": "Civic Protests",
+          "value": 93.2,
+          "trend": "stable"
+        }
+      },
+      "timeline": [
+        {
+          "year": 2009,
+          "composite": 59.6,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 5.8,
+            "judicial_independence": 94.9,
+            "civil_society_space": 6.8,
+            "election_quality": 97.4,
+            "executive_constraints": 99.5,
+            "rhetoric_radar": 12.7,
+            "civic_protests": 100.0
+          }
+        },
+        {
+          "year": 2010,
+          "composite": 59.5,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.9,
+            "judicial_independence": 98.4,
+            "civil_society_space": 6.8,
+            "election_quality": 97.3,
+            "executive_constraints": 99.5,
+            "rhetoric_radar": 10.3,
+            "civic_protests": 100.0
+          }
+        },
+        {
+          "year": 2011,
+          "composite": 59.4,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.9,
+            "judicial_independence": 98.4,
+            "civil_society_space": 6.8,
+            "election_quality": 96.7,
+            "executive_constraints": 99.5,
+            "rhetoric_radar": 10.3,
+            "civic_protests": 100.0
+          }
+        },
+        {
+          "year": 2012,
+          "composite": 59.3,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.9,
+            "judicial_independence": 98.4,
+            "civil_society_space": 6.8,
+            "election_quality": 96.8,
+            "executive_constraints": 99.5,
+            "rhetoric_radar": 9.8,
+            "civic_protests": 100.0
+          }
+        },
+        {
+          "year": 2013,
+          "composite": 59.0,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.9,
+            "judicial_independence": 100.0,
+            "civil_society_space": 3.0,
+            "election_quality": 97.2,
+            "executive_constraints": 99.5,
+            "rhetoric_radar": 9.8,
+            "civic_protests": 100.0
+          }
+        },
+        {
+          "year": 2014,
+          "composite": 59.0,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.9,
+            "judicial_independence": 100.0,
+            "civil_society_space": 3.0,
+            "election_quality": 97.0,
+            "executive_constraints": 99.5,
+            "rhetoric_radar": 9.8,
+            "civic_protests": 100.0
+          }
+        },
+        {
+          "year": 2015,
+          "composite": 59.3,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.9,
+            "judicial_independence": 100.0,
+            "civil_society_space": 3.0,
+            "election_quality": 97.3,
+            "executive_constraints": 99.5,
+            "rhetoric_radar": 11.5,
+            "civic_protests": 100.0
+          }
+        },
+        {
+          "year": 2016,
+          "composite": 59.2,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 3.9,
+            "judicial_independence": 100.0,
+            "civil_society_space": 3.0,
+            "election_quality": 96.1,
+            "executive_constraints": 100.0,
+            "rhetoric_radar": 11.5,
+            "civic_protests": 100.0
+          }
+        },
+        {
+          "year": 2017,
+          "composite": 58.2,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 15.1,
+            "judicial_independence": 99.3,
+            "civil_society_space": 1.4,
+            "election_quality": 88.8,
+            "executive_constraints": 91.3,
+            "rhetoric_radar": 11.5,
+            "civic_protests": 100.0
+          }
+        },
+        {
+          "year": 2018,
+          "composite": 56.7,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 15.1,
+            "judicial_independence": 99.3,
+            "civil_society_space": 1.4,
+            "election_quality": 87.6,
+            "executive_constraints": 90.4,
+            "rhetoric_radar": 11.5,
+            "civic_protests": 91.4
+          }
+        },
+        {
+          "year": 2019,
+          "composite": 57.1,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 15.1,
+            "judicial_independence": 99.3,
+            "civil_society_space": 1.4,
+            "election_quality": 87.3,
+            "executive_constraints": 93.9,
+            "rhetoric_radar": 11.5,
+            "civic_protests": 91.4
+          }
+        },
+        {
+          "year": 2020,
+          "composite": 58.1,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 19.0,
+            "judicial_independence": 99.3,
+            "civil_society_space": 1.4,
+            "election_quality": 86.8,
+            "executive_constraints": 93.9,
+            "rhetoric_radar": 15.1,
+            "civic_protests": 91.4
+          }
+        },
+        {
+          "year": 2021,
+          "composite": 57.7,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 15.7,
+            "judicial_independence": 93.1,
+            "civil_society_space": 0.0,
+            "election_quality": 85.2,
+            "executive_constraints": 97.0,
+            "rhetoric_radar": 19.6,
+            "civic_protests": 93.2
+          }
+        },
+        {
+          "year": 2022,
+          "composite": 57.5,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 16.5,
+            "judicial_independence": 93.1,
+            "civil_society_space": 0.0,
+            "election_quality": 86.0,
+            "executive_constraints": 97.0,
+            "rhetoric_radar": 16.8,
+            "civic_protests": 93.2
+          }
+        },
+        {
+          "year": 2023,
+          "composite": 61.4,
+          "tier": "elevated",
+          "tier_label": "Elevated",
+          "indicators": {
+            "media_freedom": 16.5,
+            "judicial_independence": 93.1,
+            "civil_society_space": 13.0,
+            "election_quality": 91.9,
+            "executive_constraints": 96.6,
+            "rhetoric_radar": 25.5,
+            "civic_protests": 93.2
+          }
+        }
+      ],
+      "events": [
+        {
+          "date": "2017-01",
+          "description": "President Donald Trump issued executive orders implementing travel bans affecting nationals of several Muslim-majority countries. Federal courts blocked the initial orders; the episode marked the beginning of extended conflicts between the executive branch and the judiciary over constitutional limits on executive authority.",
+          "affected_indicators": [
+            "executive_constraints",
+            "judicial_independence"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Executive_Order_13769"
+        },
+        {
+          "date": "2018-06",
+          "description": "The Trump administration's 'zero tolerance' immigration policy led to the separation of thousands of migrant children from their parents at the southern border. The policy was reversed following widespread public outcry and legal challenges, but its implementation raised acute concerns about executive unilateralism and the use of administrative power against vulnerable populations.",
+          "affected_indicators": [
+            "executive_constraints",
+            "rhetoric_radar"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Trump_administration_family_separation_policy"
+        },
+        {
+          "date": "2020-11",
+          "description": "Following his defeat in the November 2020 presidential election, President Trump and allied attorneys filed more than 60 lawsuits challenging the results in multiple states. All were dismissed or rejected by courts including the Supreme Court; the Justice Department and Trump's own Attorney General publicly contradicted claims of widespread fraud.",
+          "affected_indicators": [
+            "election_quality",
+            "judicial_independence",
+            "rhetoric_radar"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Attempts_to_overturn_the_2020_United_States_presidential_election"
+        },
+        {
+          "date": "2021-01",
+          "description": "Supporters of President Trump stormed the U.S. Capitol building during the congressional certification of the 2020 presidential election results, resulting in five deaths and halting the democratic transfer of power for several hours. The attack was the most serious breach of the Capitol since 1814 and led to Trump's second impeachment for incitement of insurrection.",
+          "affected_indicators": [
+            "civic_protests",
+            "executive_constraints",
+            "election_quality"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/2021_United_States_Capitol_attack"
+        },
+        {
+          "date": "2023-08",
+          "description": "Former President Trump was indicted by a federal grand jury on four criminal counts related to his efforts to overturn the 2020 election, including conspiracy to defraud the United States. Trump simultaneously faced a parallel state indictment in Georgia under RICO statutes; his campaign characterized the prosecutions as politically motivated, intensifying polarization over the rule of law.",
+          "affected_indicators": [
+            "judicial_independence",
+            "rhetoric_radar"
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Federal_prosecution_of_Donald_Trump_(election_obstruction)"
+        }
+      ],
+      "ml_score": {
+        "value": null,
+        "label": "Beta",
+        "description": "ML erosion probability \u2014 beta feature, stub value for PoC.",
+        "unit": "probability_0_to_100",
+        "is_stub": true
+      },
+      "narrative": {
+        "headline": "Democratic stress: elevated and rising due to media freedom constraints and declining judicial independence",
+        "summary": "The United States registers a Composite Democratic Stress Score of 61.4/100 in 2023, placing it in the Elevated tier and reflecting a 3.9-point increase over the prior year and a 4.7-point increase since 2018. The overall stress profile is shaped by a notable tension between strong institutional constraint scores \u2014 Executive Constraints at 96.6/100, Civic Protests at 93.2/100, and Election Quality at 91.9/100 \u2014 and persistent weaknesses in Media Freedom (16.5/100) and Civil Society Space (13.0/100), the latter of which is improving. A sustained erosion flag is active, noting that three indicators tracked a downward trajectory for three or more consecutive years through 2018, and Judicial Independence, while still high at 93.1/100, continues on a declining trend.",
+        "bullets": [
+          "Media Freedom scores 16.5/100 with a stable trend, representing one of the most significant structural stress contributors in the overall composite.",
+          "Judicial Independence remains relatively high at 93.1/100 but is the only top-tier institutional indicator currently on a declining trajectory, signaling a gradual erosion in that dimension.",
+          "Election Quality (91.9/100) and Civil Society Space (13.0/100) are both on improving trends, partially offsetting broader stress increases over the five-year period from 56.7 in 2018 to 61.4 in 2023."
+        ],
+        "trend_direction": "rising"
+      },
+      "flag_url_large": "https://flagcdn.com/w160/us.png",
+      "region": "Americas"
+    }
+  ]
+}
