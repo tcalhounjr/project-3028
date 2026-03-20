@@ -12,6 +12,7 @@ import {
 } from 'recharts'
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react'
 import type { CountryData, TimelineEntry } from '../../types/country'
+import { INDICATOR_LABELS } from '../../constants/indicators'
 
 // ---------------------------------------------------------------------------
 // prefers-reduced-motion helper
@@ -25,16 +26,6 @@ function prefersReducedMotion(): boolean {
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
-
-const INDICATOR_LABELS: Record<string, string> = {
-  media_freedom: 'Media Freedom',
-  judicial_independence: 'Judicial Independence',
-  civil_society_space: 'Civil Society Space',
-  election_quality: 'Election Quality',
-  executive_constraints: 'Executive Constraints',
-  rhetoric_radar: 'Rhetoric Radar',
-  civic_protests: 'Civic Protests',
-}
 
 const INDICATOR_KEYS = Object.keys(INDICATOR_LABELS)
 

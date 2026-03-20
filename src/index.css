@@ -7,7 +7,7 @@
   --color-navy-900: #1A237E;
   --color-navy-800: #283593;
   --color-navy-700: #303F9F;
-  
+
   --color-critical: #ba1a1a;
   --color-elevated: #f59e0b;
   --color-stable: #64748b;
@@ -38,4 +38,10 @@
 
 .radar-grid {
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-skeleton-line {
+    animation: none;
+  }
 }

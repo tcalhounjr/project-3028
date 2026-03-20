@@ -1,20 +1,14 @@
 import React from 'react'
 import { Calendar } from 'lucide-react'
 import type { CountryEvent } from '../../types/country'
+import { INDICATOR_LABELS } from '../../constants/indicators'
 
 // ---------------------------------------------------------------------------
-// Indicator display label map (same as IndicatorBreakdown)
+// URL safety guard — only permit http(s) hrefs to prevent javascript: XSS.
+// Defined outside JSX so it is not recreated on every render.
 // ---------------------------------------------------------------------------
 
-const INDICATOR_LABELS: Record<string, string> = {
-  media_freedom: 'Media Freedom',
-  judicial_independence: 'Judicial Independence',
-  civil_society_space: 'Civil Society Space',
-  election_quality: 'Election Quality',
-  executive_constraints: 'Executive Constraints',
-  rhetoric_radar: 'Rhetoric Radar',
-  civic_protests: 'Civic Protests',
-}
+const isSafeUrl = (url: string) => /^https?:\/\//.test(url)
 
 // ---------------------------------------------------------------------------
 // Props
@@ -111,7 +105,7 @@ export default function EventsWidget({ events }: EventsWidgetProps) {
                   marginTop: 0,
                 }}
               >
-                {evt.source_url ? (
+                {evt.source_url && isSafeUrl(evt.source_url) ? (
                   <a
                     href={evt.source_url}
                     target="_blank"

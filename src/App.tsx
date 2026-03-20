@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  LineChart, 
-  Line, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
+import React, { useState, useEffect, createContext } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
   ResponsiveContainer,
   Radar,
   RadarChart,
@@ -15,11 +16,11 @@ import {
   AreaChart,
   Area
 } from 'recharts';
-import { 
-  TrendingDown, 
-  TrendingUp, 
-  Download, 
-  Share2, 
+import {
+  TrendingDown,
+  TrendingUp,
+  Download,
+  Share2,
   Sparkles,
   ChevronRight,
   ArrowDown,
@@ -38,6 +39,17 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Sidebar, TopBar, StatusBadge, ScoreDisplay, cn } from './components/Layout';
 import { MOCK_COUNTRIES } from './mockData';
 import { generateNarrativeSummary, CountryData } from './services/geminiService';
+import GlobalOverviewPage from './pages/GlobalOverview';
+import CountryPageRoute from './pages/CountryPage';
+import type { DataJson } from './types/country';
+
+// ---------------------------------------------------------------------------
+// DataContext — named export consumed by Sprint 2 pages (GlobalOverview.tsx,
+// CountryPage.tsx) via useContext(DataContext).
+// Null until the fetch from public/data.json resolves.
+// ---------------------------------------------------------------------------
+
+export const DataContext = createContext<DataJson | null>(null);
 
 // --- Sub-components ---
 
@@ -121,9 +133,9 @@ const GlobalOverview = ({ onSelectCountry }: { onSelectCountry: (c: CountryData)
 
         {/* Map Placeholder */}
         <div className="col-span-12 lg:col-span-9 bg-slate-200 rounded-xl relative overflow-hidden h-[450px] border border-slate-200 shadow-inner">
-          <img 
-            src="https://picsum.photos/seed/worldmap/1200/600?grayscale" 
-            alt="World Map" 
+          <img
+            src="https://picsum.photos/seed/worldmap/1200/600?grayscale"
+            alt="World Map"
             className="w-full h-full object-cover opacity-40 mix-blend-multiply"
             referrerPolicy="no-referrer"
           />
@@ -133,7 +145,7 @@ const GlobalOverview = ({ onSelectCountry }: { onSelectCountry: (c: CountryData)
               <p className="text-xs font-bold text-navy-900/40 uppercase tracking-widest">Interactive Map Layer Loading...</p>
             </div>
           </div>
-          
+
           <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur p-4 rounded-lg border border-slate-200 shadow-xl">
             <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Stress Index Legend</p>
             <div className="flex items-center gap-6">
@@ -158,7 +170,7 @@ const GlobalOverview = ({ onSelectCountry }: { onSelectCountry: (c: CountryData)
           <h3 className="text-xl font-bold text-navy-900 font-manrope">Top Movers</h3>
           <div className="space-y-3">
             {MOCK_COUNTRIES.sort((a, b) => b.currentScore - a.currentScore).slice(0, 4).map((country, idx) => (
-              <button 
+              <button
                 key={country.isoCode}
                 onClick={() => onSelectCountry(country)}
                 className="w-full p-4 bg-white rounded-xl flex items-center justify-between border border-slate-100 hover:border-navy-900/20 hover:shadow-md transition-all group"
@@ -203,9 +215,9 @@ const GlobalOverview = ({ onSelectCountry }: { onSelectCountry: (c: CountryData)
                   <tr key={country.isoCode} className="hover:bg-slate-50 transition-colors group">
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
-                        <img 
-                          src={`https://flagcdn.com/w40/${country.isoCode.toLowerCase().slice(0, 2)}.png`} 
-                          alt={country.name} 
+                        <img
+                          src={`https://flagcdn.com/w40/${country.isoCode.toLowerCase().slice(0, 2)}.png`}
+                          alt={country.name}
                           className="w-6 h-4 object-cover rounded-sm shadow-sm"
                           onError={(e) => (e.currentTarget.src = 'https://via.placeholder.com/24x16')}
                         />
@@ -219,7 +231,7 @@ const GlobalOverview = ({ onSelectCountry }: { onSelectCountry: (c: CountryData)
                       <StatusBadge status={country.status} />
                     </td>
                     <td className="px-6 py-4 text-right">
-                      <button 
+                      <button
                         onClick={() => onSelectCountry(country)}
                         className="text-slate-400 hover:text-navy-900 transition-colors"
                       >
@@ -267,9 +279,9 @@ const CountryDetail = ({ country, onBack }: { country: CountryData, onBack: () =
             <ChevronRight size={14} className="rotate-180" /> Back to Overview
           </button>
           <div className="flex items-center gap-6">
-            <img 
-              src={`https://flagcdn.com/w80/${country.isoCode.toLowerCase().slice(0, 2)}.png`} 
-              alt={country.name} 
+            <img
+              src={`https://flagcdn.com/w80/${country.isoCode.toLowerCase().slice(0, 2)}.png`}
+              alt={country.name}
               className="w-16 h-10 object-cover rounded shadow-md"
               onError={(e) => (e.currentTarget.src = 'https://via.placeholder.com/64x40')}
             />
@@ -318,7 +330,7 @@ const CountryDetail = ({ country, onBack }: { country: CountryData, onBack: () =
             <div className="flex items-center gap-2"><span className="w-3 h-3 bg-slate-100 border border-slate-200 rounded-sm" /> Safe</div>
           </div>
         </div>
-        
+
         <div className="h-80 w-full relative">
           <div className="absolute inset-0 flex flex-col">
             <div className="flex-1 bg-red-50/30 border-b border-red-100/50 relative">
@@ -334,26 +346,26 @@ const CountryDetail = ({ country, onBack }: { country: CountryData, onBack: () =
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={country.history}>
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-              <XAxis 
-                dataKey="year" 
-                axisLine={false} 
-                tickLine={false} 
-                tick={{ fontSize: 10, fontWeight: 700, fill: '#94a3b8' }} 
+              <XAxis
+                dataKey="year"
+                axisLine={false}
+                tickLine={false}
+                tick={{ fontSize: 10, fontWeight: 700, fill: '#94a3b8' }}
                 dy={10}
               />
-              <YAxis 
-                domain={[0, 100]} 
-                hide 
+              <YAxis
+                domain={[0, 100]}
+                hide
               />
-              <Tooltip 
+              <Tooltip
                 contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }}
                 labelStyle={{ fontWeight: 800, color: '#1A237E' }}
               />
-              <Line 
-                type="monotone" 
-                dataKey="score" 
-                stroke="#1A237E" 
-                strokeWidth={4} 
+              <Line
+                type="monotone"
+                dataKey="score"
+                stroke="#1A237E"
+                strokeWidth={4}
                 dot={{ r: 6, fill: '#1A237E', strokeWidth: 2, stroke: '#fff' }}
                 activeDot={{ r: 8 }}
               />
@@ -416,13 +428,13 @@ const CountryDetail = ({ country, onBack }: { country: CountryData, onBack: () =
           </div>
           <div className="h-24 w-full flex items-end gap-1">
             {[20, 35, 45, 60, 85, 70].map((h, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className={cn(
                   "flex-1 rounded-t-sm transition-all duration-500",
                   i >= 4 ? "bg-red-400" : "bg-navy-900/10"
-                )} 
-                style={{ height: `${h}%` }} 
+                )}
+                style={{ height: `${h}%` }}
               />
             ))}
           </div>
@@ -436,7 +448,7 @@ const CountryDetail = ({ country, onBack }: { country: CountryData, onBack: () =
           <div className="flex-1 space-y-4 relative z-10">
             <h3 className="text-lg font-bold font-manrope">Comparative Pulse</h3>
             <p className="text-sm opacity-80 leading-relaxed">
-              {country.name}'s current trajectory closely mirrors historical patterns observed in regions undergoing rapid institutional capture. 
+              {country.name}'s current trajectory closely mirrors historical patterns observed in regions undergoing rapid institutional capture.
               The simultaneous decline in judicial oversight and media independence is a high-confidence indicator of democratic stress.
             </p>
             <div className="flex gap-4">
@@ -462,7 +474,12 @@ const CountryDetail = ({ country, onBack }: { country: CountryData, onBack: () =
   );
 };
 
-export default function App() {
+// ---------------------------------------------------------------------------
+// LegacyAppContent — Sprint 1 tab-based shell.
+// Rendered on the "/" route so existing App.test.tsx assertions continue to pass.
+// ---------------------------------------------------------------------------
+
+function LegacyAppContent() {
   const [activeTab, setActiveTab] = useState('overview');
   const [selectedCountry, setSelectedCountry] = useState<CountryData | null>(null);
 
@@ -479,13 +496,13 @@ export default function App() {
   return (
     <div className="flex min-h-screen bg-[#f9f9f9]">
       <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
-      
+
       <main className="flex-1 ml-64 min-h-screen">
-        <TopBar 
-          title={activeTab === 'country-detail' ? 'Democratic Stress' : 'Global Overview'} 
-          subtitle={activeTab === 'country-detail' ? selectedCountry?.name : 'Institutional Archive'} 
+        <TopBar
+          title={activeTab === 'country-detail' ? 'Democratic Stress' : 'Global Overview'}
+          subtitle={activeTab === 'country-detail' ? selectedCountry?.name : 'Institutional Archive'}
         />
-        
+
         <div className="p-8 max-w-7xl mx-auto">
           <AnimatePresence mode="wait">
             {activeTab === 'overview' && (
@@ -540,5 +557,40 @@ export default function App() {
         <Share2 size={24} />
       </button>
     </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// App — root component.
+// Fetches public/data.json and provides it via DataContext.
+// BrowserRouter routes:
+//   /               → Sprint 1 legacy monolith (LegacyAppContent)
+//   /country/:iso   → Sprint 2 CountryPage
+// ---------------------------------------------------------------------------
+
+export default function App() {
+  const [data, setData] = useState<DataJson | null>(null);
+
+  useEffect(() => {
+    fetch('/data.json')
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json() as Promise<DataJson>;
+      })
+      .then((json) => setData(json))
+      .catch(() => {
+        // Data load failure is non-fatal; Sprint 2 pages handle null DataContext gracefully.
+      });
+  }, []);
+
+  return (
+    <BrowserRouter>
+      <DataContext.Provider value={data}>
+        <Routes>
+          <Route path="/" element={<LegacyAppContent />} />
+          <Route path="/country/:iso" element={<CountryPageRoute />} />
+        </Routes>
+      </DataContext.Provider>
+    </BrowserRouter>
   );
 }
