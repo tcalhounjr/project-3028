@@ -2,21 +2,14 @@ import React from 'react'
 import { Calendar } from 'lucide-react'
 import type { CountryData, CountryEvent } from '../../types/country'
 import { INDICATOR_LABELS } from '../../constants/indicators'
+import { toW40Url } from '../../utils/flagUrl'
 
 // ---------------------------------------------------------------------------
-// URL safety guard — only permit http(s) hrefs to prevent javascript: XSS.
+// URL safety guard — only permit https: hrefs to prevent javascript: XSS.
 // Defined outside JSX so it is not recreated on every render.
 // ---------------------------------------------------------------------------
 
 const isSafeUrl = (url: string) => /^https:\/\//.test(url)
-
-// ---------------------------------------------------------------------------
-// toW40Url
-// ---------------------------------------------------------------------------
-
-function toW40Url(flagUrl: string): string {
-  return flagUrl.replace('/w80/', '/w40/')
-}
 
 // ---------------------------------------------------------------------------
 // Merged event shape — event + originating country metadata

@@ -217,11 +217,11 @@ export default function CompareTimeline({ countries }: CompareTimelineProps) {
 
               {/* Band overlays — cast to any to work around recharts 3.x generic inference */}
               {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-              <ReferenceArea y1={0} y2={40} {...{ fill: '#FFEBEE', fillOpacity: 0.5, ifOverflow: 'extendDomain' } as any} />
+              <ReferenceArea y1={0} y2={41} {...{ fill: '#FFEBEE', fillOpacity: 0.5, ifOverflow: 'extendDomain' } as any} />
               {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-              <ReferenceArea y1={41} y2={65} {...{ fill: '#FFFDE7', fillOpacity: 0.5, ifOverflow: 'extendDomain' } as any} />
+              <ReferenceArea y1={40} y2={66} {...{ fill: '#FFFDE7', fillOpacity: 0.5, ifOverflow: 'extendDomain' } as any} />
               {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-              <ReferenceArea y1={66} y2={100} {...{ fill: '#ECEFF1', fillOpacity: 0.5, ifOverflow: 'extendDomain' } as any} />
+              <ReferenceArea y1={65} y2={100} {...{ fill: '#ECEFF1', fillOpacity: 0.5, ifOverflow: 'extendDomain' } as any} />
 
               <Tooltip content={<CompareTooltip />} />
 

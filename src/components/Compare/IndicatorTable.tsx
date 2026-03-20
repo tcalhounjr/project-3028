@@ -1,14 +1,7 @@
 import React from 'react'
 import type { CountryData } from '../../types/country'
 import { INDICATOR_LABELS } from '../../constants/indicators'
-
-// ---------------------------------------------------------------------------
-// toW40Url — convert w80 flag_url to w40 variant.
-// ---------------------------------------------------------------------------
-
-function toW40Url(flagUrl: string): string {
-  return flagUrl.replace('/w80/', '/w40/')
-}
+import { toW40Url } from '../../utils/flagUrl'
 
 // ---------------------------------------------------------------------------
 // getCurrentValue — latest snapshot value for a given indicator.
@@ -230,19 +223,19 @@ export default function IndicatorTable({ countries }: IndicatorTableProps) {
                       {value !== null ? value.toFixed(1) : '—'}
                     </div>
 
-                    {/* Delta */}
-                    {delta !== null && (
+                    {/* Delta — only render when non-zero */}
+                    {delta !== null && delta !== 0 && (
                       <div
-                        className={deltaPositive ? 'delta-positive-green' : deltaNegative ? 'delta-negative-red' : undefined}
+                        className={deltaPositive ? 'delta-positive-green' : 'delta-negative-red'}
                         style={{
                           fontSize: '11px',
                           fontWeight: 700,
-                          color: deltaPositive ? '#2E7D32' : deltaNegative ? '#C62828' : '#6C6C70',
+                          color: deltaPositive ? '#2E7D32' : '#C62828',
                           letterSpacing: '0.4px',
                         }}
                         aria-label={`${deltaPositive ? 'Up' : 'Down'} ${Math.abs(delta).toFixed(1)} from prior year`}
                       >
-                        {deltaPositive ? '↑' : deltaNegative ? '↓' : ''}
+                        {deltaPositive ? '↑' : '↓'}
                         {deltaPositive ? '+' : ''}
                         {delta.toFixed(1)}
                       </div>

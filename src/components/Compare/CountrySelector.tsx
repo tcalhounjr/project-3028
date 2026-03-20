@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { DataContext } from '../../App'
+import { toW40Url } from '../../utils/flagUrl'
 
 // ---------------------------------------------------------------------------
 // Seed country list — fallback when DataContext is null (e.g. in tests or
@@ -18,14 +19,6 @@ const SEED_COUNTRIES: Array<{ iso: string; name: string; flagUrl: string }> = [
   { iso: 'BRA', name: 'Brazil', flagUrl: 'https://flagcdn.com/w40/br.png' },
   { iso: 'USA', name: 'United States', flagUrl: 'https://flagcdn.com/w40/us.png' },
 ]
-
-// ---------------------------------------------------------------------------
-// toW40Url — convert w80 flag_url to w40 variant.
-// ---------------------------------------------------------------------------
-
-function toW40Url(flagUrl: string): string {
-  return flagUrl.replace('/w80/', '/w40/')
-}
 
 // ---------------------------------------------------------------------------
 // Props
@@ -62,7 +55,6 @@ export default function CountrySelector({ onConfirm }: CountrySelectorProps) {
       : SEED_COUNTRIES
 
   const atMax = selected.length >= 3
-  const atMin = selected.length <= 2
   const canConfirm = selected.length >= 2
 
   function handleToggle(iso: string) {
