@@ -25,9 +25,7 @@ critical branch coverage risk — branches were at 80.34%, only 0.34% above the 
 Thirteen new targeted branch tests were written for the internal tooltip components of
 StressTimeline and IndicatorBreakdown, lifting branch coverage to 90.39%. All 215 tests now pass.
 
-Sprint health is Green. The feature branch sprint-3/feature/test-fixes-and-polish is committed
-and pushed. PR is ready for configuration-manager to open against main. The staging deployment
-(PRO-22) is the remaining Sprint 3 item, pending PR merge.
+Sprint health is Green. All three planned stories are Done. PR #1 was merged (d85bc06), establishing the first performance baseline for the release: 609ms SPA navigation and 982–1,288ms home dashboard load — both well below the 2s DoD threshold. A vercel.json SPA rewrite (d0b8705) resolved a direct-URL 404 on /country/:iso. All DoD gates for v0.1.0 are now met.
 
 ---
 
@@ -36,19 +34,18 @@ and pushed. PR is ready for configuration-manager to open against main. The stag
 | Metric | Value |
 |--------|-------|
 | Planned stories | 3 (PRO-21, PRO-22, PRO-23) |
-| Completed stories | 2 (PRO-21, PRO-23) |
-| In Progress | 1 (PRO-22 — awaiting PR merge) |
+| Completed stories | 3 (PRO-21, PRO-22, PRO-23) |
 | Sprint duration planned | 7 days |
 | Sprint duration actual | 1 day |
 | Technical debt carry rate (this sprint) | 0.0% |
 | Cumulative carry rate (all sprints) | 0.0% |
-| Staging deployments | 0 |
-| Production deployments | 0 |
+| Staging deployments | 1 |
+| Production deployments | 0 (staging only — production deploy is Sprint 4 scope) |
 | Rollbacks | 0 |
 
-Note: PRO-22 (staging deployment) is in progress — pending PR merge to main. Carry rate
-calculated against PRO-21 and PRO-23 which were the executable stories this session.
-PRO-22 transitions to Sprint 4 or completes once configuration-manager merges and deploys.
+Note: All three planned stories are Done. Technical debt carry rate: 0.0%. PRO-22 completed
+after sprint close session — PR #1 merged (d85bc06), vercel.json deployed (d0b8705), performance
+gate measured and passed.
 
 ---
 
@@ -144,6 +141,32 @@ for the Tooltip component, never invoking the content prop passed by the applica
 | Functions | 87.50% | 88.77% | 80% |
 | Lines | 89.21% | 92.97% | 80% |
 
+### PRO-22 — S3-02: PR merge to main and first staging deployment (performance baseline)
+
+**Acceptance criteria status:** Met — PR merged, staging deployed, performance gate passed
+
+**Events:**
+1. PR #1 opened against main for sprint-3/feature/test-fixes-and-polish
+2. PR merged via merge commit d85bc06; feature branch deleted locally and remotely
+3. Direct URL routing issue identified: /country/:iso returned 404 on hard refresh due to
+   missing SPA rewrite rule in Vercel
+4. vercel.json committed (d0b8705) with SPA rewrite: all routes → /index.html
+5. Vercel deployment confirmed live at https://project-3028.vercel.app/
+
+**Performance gate results — PASS (DoD A5/B1 threshold: < 2s):**
+
+| Metric | Measured | Threshold | Status |
+|--------|----------|-----------|--------|
+| SPA navigation to country page | 609ms | < 2,000ms | PASS |
+| Home dashboard load | 982–1,288ms | < 2,000ms | PASS |
+| Direct URL /country/:iso | Fixed (was 404) | Must resolve | PASS |
+
+**Implementation decision:** The 404 on direct URL access was caused by Vercel serving the SPA
+from the CDN edge without a catch-all rewrite. Adding vercel.json with a catch-all rewrite
+(source: /* destination: /index.html) is the standard fix for React Router SPAs on Vercel.
+This was committed as a targeted production config fix separate from the feature branch.
+
+
 ---
 
 ## Issues and Resolutions
@@ -216,11 +239,17 @@ a precarious 0.34% margin to a solid 10.39% margin.
 
 ### Smoke Tests
 
-Not applicable — no staging deployment this sprint.
+Performance gate measured at staging deployment (Vercel). No automated smoke test suite — manual navigation measurements taken by configuration-manager.
+
+| Check | Result |
+|-------|--------|
+| SPA navigation — country page | 609ms — PASS |
+| Home dashboard load | 982–1,288ms — PASS |
+| Direct URL /country/:iso | Fixed via vercel.json — PASS |
 
 ### Integration Tests
 
-Not applicable — no staging deployment this sprint.
+Not applicable — no automated integration test suite for this sprint.
 
 ### Missing Secrets
 
@@ -230,13 +259,22 @@ None. No CI/CD secrets required for Sprint 3 work.
 
 ## Performance Baseline Report
 
-No staging or production deployments were performed this sprint. PRO-22 (staging deployment)
-is deferred pending PR merge.
+PRO-22 completed after the sprint close session, establishing the first performance baseline
+for the release. All metrics are below the DoD A5/B1 threshold.
 
-The DoD A5/B1 threshold (country page < 2s on standard broadband) has not yet been measured.
-Sprint 4 or the PRO-22 completion event will establish the first performance baseline.
+### Sprint 3 Performance Measurements (first baseline)
 
-**Performance baseline trend:** No data. Baseline will be established at first staging deployment.
+| Metric | Measured | Threshold | Status |
+|--------|----------|-----------|--------|
+| SPA navigation to country page | 609ms | < 2,000ms | PASS |
+| Home dashboard load | 982–1,288ms | < 2,000ms | PASS |
+| Direct URL /country/:iso | Fixed (was 404) | Must resolve | PASS |
+
+**Performance baseline trend:** First measurement. 609ms SPA navigation provides 1,391ms margin
+below the DoD hard gate. Home dashboard at the high end of the range (1,288ms) has 712ms margin.
+Both are comfortable for the PoC. No warning zone occurrences this sprint.
+
+**Sprint-over-sprint trend:** Not applicable — first baseline. Trend tracking begins Sprint 4.
 
 ---
 
@@ -244,14 +282,15 @@ Sprint 4 or the PRO-22 completion event will establish the first performance bas
 
 | Event | Count | Result |
 |-------|-------|--------|
-| Staging deployments | 0 | N/A |
-| Production deployments | 0 | N/A |
+| Staging deployments | 1 | PASS — all performance gates cleared |
+| Production deployments | 0 | N/A — staging only this sprint |
 | Rollbacks | 0 | N/A |
 
 **Current status:**
-- Feature branch: sprint-3/feature/test-fixes-and-polish — committed (43e1b0d), pushed
-- PR: Ready for configuration-manager to open against main (gh CLI not installed in environment)
-- Sprint 2 PR (sprint-2/feature/country-page): Still open, can be merged first or after Sprint 3
+- PR #1: sprint-3/feature/test-fixes-and-polish → main — MERGED (d85bc06). Branch deleted.
+- vercel.json: Committed (d0b8705) — SPA rewrite for /country/:iso direct URL access
+- Vercel deployment: Live at https://project-3028.vercel.app/
+- All Sprint 3 stories: Done
 
 ---
 
@@ -297,24 +336,28 @@ mouse events that trigger Recharts tooltips.
 **Implication:** The content-capture pattern is now the established approach for testing any
 Recharts custom tooltip component in this codebase. Document this pattern in decisions.md.
 
-### Decision 3 — Accept PRO-22 (staging deployment) as Sprint 4 carry-forward
+### Decision 3 — vercel.json SPA rewrite to fix direct URL routing
 
-**Context:** The PR merge is a prerequisite for the staging deployment. The gh CLI is not
-installed in the agent environment and no GitHub token is available for API PR creation.
+**Context:** After PR merge and Vercel deployment, direct navigation to /country/:iso returned
+a 404. Vercel CDN serves the built SPA from edge nodes; without a catch-all rewrite rule,
+non-root paths return 404 instead of serving index.html and letting React Router handle routing.
 
-**Decision:** Log PRO-22 as in-progress and carry it to Sprint 4 (or close it when the PR
-is merged via the GitHub web interface). This is not a technical debt item — it is a dependency
-on an external process.
+**Decision:** Add vercel.json with a catch-all rewrite rule (source: /* destination: /index.html) committed as a targeted production config fix (d0b8705). No feature branch change required.
 
-**Implication:** The first performance baseline measurement will occur in Sprint 4 post-merge.
+**Alternatives considered:**
+(a) Use Vercel project settings for rewrites. Rejected — file-based config is version-controlled
+and portable; project settings are not visible in the repo.
+(b) Use a _redirects file. Rejected — that is a Netlify convention, not Vercel.
+
+**Implication:** vercel.json is now the authoritative routing config for the deployment.
+Future routes added in React Router are automatically handled by the catch-all.
 
 ---
 
 ## Next Sprint Preview
 
 **Sprint 4 — Planned scope:**
-- PRO-22 completion: PR merge + staging deployment + performance baseline measurement
-  (requires configuration-manager to open and merge the PR, then trigger staging deploy)
+- PRO-22: Complete — first performance baseline established (609ms SPA navigation, 982–1,288ms home dashboard)
 - Compare Mode initial implementation (PRD §5.3):
   - Country selector (2–3 countries)
   - Overlaid composite score timeline
@@ -322,11 +365,11 @@ on an external process.
 - Any staging deployment remediation items
 
 **Known risks going into Sprint 4:**
-- Performance baseline not yet measured — DoD A5/B1 (< 2s country page load) still unvalidated
+- Performance baseline established — DoD A5/B1 cleared at 609ms SPA navigation
 - Compare Mode is the last major PRD feature; its complexity may require 2 sprints
 - Branch coverage is now healthy at 90.39% — adding new conditional components in Compare Mode
   must be accompanied by branch tests or coverage may slip
 
 **Dependencies:**
-- PR merge requires manual GitHub action (configuration-manager or @thomas via web UI)
-- Staging deployment requires configuration-manager to have environment credentials
+- No outstanding dependencies from Sprint 3
+- Compare Mode implementation is the last major PRD feature before release close
