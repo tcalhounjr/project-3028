@@ -1,11 +1,14 @@
-import { CountryData } from "./services/geminiService";
+// ---------------------------------------------------------------------------
+// Legacy Sprint 1 prototype data — used only by LegacyAppContent in App.tsx.
+// This file is not imported by any Sprint 2 components.
+// ---------------------------------------------------------------------------
 
-export const MOCK_COUNTRIES: CountryData[] = [
+export const MOCK_COUNTRIES = [
   {
     name: "Brazil",
     isoCode: "BRA",
     currentScore: 58,
-    status: "Elevated",
+    status: "Elevated" as const,
     indicators: {
       mediaFreedom: 55,
       judicialIndependence: 62,
@@ -26,16 +29,16 @@ export const MOCK_COUNTRIES: CountryData[] = [
       { year: 2024, score: 58 },
     ],
     events: [
-      { date: "Oct 2023", title: "Supreme Court powers curtailed", description: "Legislative amendment passed limiting individual justice injunctions.", type: "legal" },
-      { date: "June 2023", title: "Mass anti-corruption protests", description: "Public demonstrations in 14 cities highlighting institutional trust erosion.", type: "protest" },
-      { date: "Jan 2023", title: "New Transparency Law", description: "Executive order mandating real-time budget disclosure for municipalities.", type: "legal" },
+      { date: "Oct 2023", title: "Supreme Court powers curtailed", description: "Legislative amendment passed limiting individual justice injunctions.", type: "legal" as const },
+      { date: "June 2023", title: "Mass anti-corruption protests", description: "Public demonstrations in 14 cities highlighting institutional trust erosion.", type: "protest" as const },
+      { date: "Jan 2023", title: "New Transparency Law", description: "Executive order mandating real-time budget disclosure for municipalities.", type: "legal" as const },
     ],
   },
   {
     name: "Norway",
     isoCode: "NOR",
     currentScore: 94,
-    status: "Stable",
+    status: "Stable" as const,
     indicators: {
       mediaFreedom: 98,
       judicialIndependence: 95,
@@ -52,14 +55,14 @@ export const MOCK_COUNTRIES: CountryData[] = [
       { year: 2024, score: 94 },
     ],
     events: [
-      { date: "Dec 2023", title: "Freedom of Press Award", description: "National media association recognized for investigative excellence.", type: "political" },
+      { date: "Dec 2023", title: "Freedom of Press Award", description: "National media association recognized for investigative excellence.", type: "political" as const },
     ],
   },
   {
     name: "Hungary",
     isoCode: "HUN",
     currentScore: 34,
-    status: "Critical",
+    status: "Critical" as const,
     indicators: {
       mediaFreedom: 18,
       judicialIndependence: 12,
@@ -80,15 +83,15 @@ export const MOCK_COUNTRIES: CountryData[] = [
       { year: 2024, score: 34 },
     ],
     events: [
-      { date: "Nov 2023", title: "Sovereignty Protection Act", description: "New law targeting foreign funding for NGOs and media outlets.", type: "legal" },
-      { date: "Sept 2023", title: "Judicial Council Restructuring", description: "Government-appointed members now hold majority in key oversight body.", type: "legal" },
+      { date: "Nov 2023", title: "Sovereignty Protection Act", description: "New law targeting foreign funding for NGOs and media outlets.", type: "legal" as const },
+      { date: "Sept 2023", title: "Judicial Council Restructuring", description: "Government-appointed members now hold majority in key oversight body.", type: "legal" as const },
     ],
   },
   {
     name: "India",
     isoCode: "IND",
     currentScore: 52,
-    status: "Elevated",
+    status: "Elevated" as const,
     indicators: {
       mediaFreedom: 41,
       judicialIndependence: 58,
@@ -105,7 +108,7 @@ export const MOCK_COUNTRIES: CountryData[] = [
       { year: 2024, score: 52 },
     ],
     events: [
-      { date: "Aug 2023", title: "Digital Personal Data Protection Act", description: "Concerns raised over government exemptions for data access.", type: "legal" },
+      { date: "Aug 2023", title: "Digital Personal Data Protection Act", description: "Concerns raised over government exemptions for data access.", type: "legal" as const },
     ],
   },
 ];

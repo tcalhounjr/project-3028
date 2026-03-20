@@ -38,10 +38,31 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 import { Sidebar, TopBar, StatusBadge, ScoreDisplay, cn } from './components/Layout';
 import { MOCK_COUNTRIES } from './mockData';
-import { generateNarrativeSummary, CountryData } from './services/geminiService';
 import GlobalOverviewPage from './pages/GlobalOverview';
 import CountryPageRoute from './pages/CountryPage';
 import type { DataJson } from './types/country';
+
+// ---------------------------------------------------------------------------
+// CountryData — prototype-only shape used by LegacyAppContent and its children.
+// The canonical data shape is CountryData in src/types/country.ts (snake_case).
+// ---------------------------------------------------------------------------
+export interface CountryData {
+  name: string;
+  isoCode: string;
+  currentScore: number;
+  status: 'Stable' | 'Elevated' | 'Critical';
+  indicators: {
+    mediaFreedom: number;
+    judicialIndependence: number;
+    civilSociety: number;
+    electionQuality: number;
+    executiveConstraints: number;
+    rhetoricRadar: number;
+    civicProtests: number;
+  };
+  history: { year: number; score: number }[];
+  events: { date: string; title: string; description: string; type: 'legal' | 'political' | 'protest' }[];
+}
 
 // ---------------------------------------------------------------------------
 // DataContext — named export consumed by Sprint 2 pages (GlobalOverview.tsx,
@@ -250,16 +271,13 @@ const GlobalOverview = ({ onSelectCountry }: { onSelectCountry: (c: CountryData)
 };
 
 const CountryDetail = ({ country, onBack }: { country: CountryData, onBack: () => void }) => {
-  const [summary, setSummary] = useState<string>("Analyzing democratic indicators...");
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    setIsLoading(true);
-    generateNarrativeSummary(country).then(res => {
-      setSummary(res);
-      setIsLoading(false);
-    });
-  }, [country]);
+  // AI narrative summary — served by the mock aiInsightsService in the real Sprint 2 flow.
+  // In this legacy prototype the summary is derived statically from country data;
+  // no API key or external service is required.
+  const summary =
+    country.status === 'Critical'
+      ? `Democratic stress: Critical and deteriorating due to compounding institutional pressures in ${country.name}. Judicial independence and media freedom indicators have declined sharply. Continued erosion of executive constraints represents the highest-confidence risk signal.`
+      : `Democratic stress: ${country.status} with mixed institutional signals in ${country.name}. Core indicators remain within monitored thresholds. Ongoing civil society activity provides a partial stabilizing counterweight.`;
 
   const radarData = [
     { subject: 'Media', A: country.indicators.mediaFreedom, fullMark: 100 },
@@ -300,10 +318,7 @@ const CountryDetail = ({ country, onBack }: { country: CountryData, onBack: () =
             </div>
             <div className="space-y-2">
               <h3 className="text-[10px] font-bold uppercase tracking-widest text-slate-400">AI Narrative Summary</h3>
-              <p className={cn(
-                "text-xl font-medium leading-relaxed text-navy-900 transition-opacity duration-500",
-                isLoading ? "opacity-40" : "opacity-100"
-              )}>
+              <p className="text-xl font-medium leading-relaxed text-navy-900">
                 {summary}
               </p>
             </div>
