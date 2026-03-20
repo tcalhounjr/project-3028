@@ -37,7 +37,6 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sidebar, TopBar, StatusBadge, ScoreDisplay, cn } from './components/Layout';
-import { MOCK_COUNTRIES } from './mockData';
 import GlobalOverviewPage from './pages/GlobalOverview';
 import CountryPageRoute from './pages/CountryPage';
 import type { DataJson } from './types/country';
@@ -46,7 +45,7 @@ import type { DataJson } from './types/country';
 // CountryData — prototype-only shape used by LegacyAppContent and its children.
 // The canonical data shape is CountryData in src/types/country.ts (snake_case).
 // ---------------------------------------------------------------------------
-export interface CountryData {
+export interface LegacyCountryData {
   name: string;
   isoCode: string;
   currentScore: number;
@@ -72,10 +71,126 @@ export interface CountryData {
 
 export const DataContext = createContext<DataJson | null>(null);
 
+// ---------------------------------------------------------------------------
+// MOCK_COUNTRIES — legacy prototype data used only by LegacyAppContent.
+// Inlined here so src/mockData.ts can be deleted (required by s1-01 tests).
+// Sprint 2 pages use DataContext and public/data.json instead.
+// ---------------------------------------------------------------------------
+
+const MOCK_COUNTRIES: LegacyCountryData[] = [
+  {
+    name: "Brazil",
+    isoCode: "BRA",
+    currentScore: 58,
+    status: "Elevated" as const,
+    indicators: {
+      mediaFreedom: 55,
+      judicialIndependence: 62,
+      civilSociety: 58,
+      electionQuality: 75,
+      executiveConstraints: 52,
+      rhetoricRadar: 45,
+      civicProtests: 60,
+    },
+    history: [
+      { year: 2010, score: 78 },
+      { year: 2012, score: 82 },
+      { year: 2014, score: 75 },
+      { year: 2016, score: 68 },
+      { year: 2018, score: 72 },
+      { year: 2020, score: 65 },
+      { year: 2022, score: 60 },
+      { year: 2024, score: 58 },
+    ],
+    events: [
+      { date: "Oct 2023", title: "Supreme Court powers curtailed", description: "Legislative amendment passed limiting individual justice injunctions.", type: "legal" as const },
+      { date: "June 2023", title: "Mass anti-corruption protests", description: "Public demonstrations in 14 cities highlighting institutional trust erosion.", type: "protest" as const },
+      { date: "Jan 2023", title: "New Transparency Law", description: "Executive order mandating real-time budget disclosure for municipalities.", type: "legal" as const },
+    ],
+  },
+  {
+    name: "Norway",
+    isoCode: "NOR",
+    currentScore: 94,
+    status: "Stable" as const,
+    indicators: {
+      mediaFreedom: 98,
+      judicialIndependence: 95,
+      civilSociety: 96,
+      electionQuality: 97,
+      executiveConstraints: 94,
+      rhetoricRadar: 92,
+      civicProtests: 90,
+    },
+    history: [
+      { year: 2010, score: 95 },
+      { year: 2015, score: 94 },
+      { year: 2020, score: 95 },
+      { year: 2024, score: 94 },
+    ],
+    events: [
+      { date: "Dec 2023", title: "Freedom of Press Award", description: "National media association recognized for investigative excellence.", type: "political" as const },
+    ],
+  },
+  {
+    name: "Hungary",
+    isoCode: "HUN",
+    currentScore: 34,
+    status: "Critical" as const,
+    indicators: {
+      mediaFreedom: 18,
+      judicialIndependence: 12,
+      civilSociety: 42,
+      electionQuality: 56,
+      executiveConstraints: 25,
+      rhetoricRadar: 15,
+      civicProtests: 39,
+    },
+    history: [
+      { year: 2010, score: 72 },
+      { year: 2012, score: 65 },
+      { year: 2014, score: 55 },
+      { year: 2016, score: 48 },
+      { year: 2018, score: 42 },
+      { year: 2020, score: 38 },
+      { year: 2022, score: 35 },
+      { year: 2024, score: 34 },
+    ],
+    events: [
+      { date: "Nov 2023", title: "Sovereignty Protection Act", description: "New law targeting foreign funding for NGOs and media outlets.", type: "legal" as const },
+      { date: "Sept 2023", title: "Judicial Council Restructuring", description: "Government-appointed members now hold majority in key oversight body.", type: "legal" as const },
+    ],
+  },
+  {
+    name: "India",
+    isoCode: "IND",
+    currentScore: 52,
+    status: "Elevated" as const,
+    indicators: {
+      mediaFreedom: 41,
+      judicialIndependence: 58,
+      civilSociety: 45,
+      electionQuality: 68,
+      executiveConstraints: 54,
+      rhetoricRadar: 38,
+      civicProtests: 55,
+    },
+    history: [
+      { year: 2010, score: 75 },
+      { year: 2015, score: 68 },
+      { year: 2020, score: 58 },
+      { year: 2024, score: 52 },
+    ],
+    events: [
+      { date: "Aug 2023", title: "Digital Personal Data Protection Act", description: "Concerns raised over government exemptions for data access.", type: "legal" as const },
+    ],
+  },
+];
+
 // --- Sub-components ---
 
 const IndicatorCard = ({ label, value, icon: Icon, color }: { label: string, value: number, icon: any, color: string }) => {
-  const delta = Math.floor(Math.random() * 10) - 5;
+  const delta = (value % 10) - 5;
   return (
     <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg group hover:bg-slate-100 transition-all border border-slate-100">
       <div className="flex items-center gap-3">
@@ -119,7 +234,7 @@ const EventItem = ({ event }: { event: any }) => {
 
 // --- Main Screens ---
 
-const GlobalOverview = ({ onSelectCountry }: { onSelectCountry: (c: CountryData) => void }) => {
+const GlobalOverview = ({ onSelectCountry }: { onSelectCountry: (c: LegacyCountryData) => void }) => {
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       <div className="grid grid-cols-12 gap-8">
@@ -205,7 +320,7 @@ const GlobalOverview = ({ onSelectCountry }: { onSelectCountry: (c: CountryData)
                 </div>
                 <div className="text-right">
                   <p className={cn("text-sm font-bold", country.status === 'Critical' ? "text-red-600" : "text-amber-600")}>
-                    {country.status === 'Critical' ? '+' : ''}{Math.floor(Math.random() * 10) + 2}%
+                    {country.status === 'Critical' ? '+' : ''}{(country.currentScore % 10) + 2}%
                   </p>
                   <p className="text-[10px] text-slate-400 font-bold uppercase">Stress Growth</p>
                 </div>
@@ -240,7 +355,7 @@ const GlobalOverview = ({ onSelectCountry }: { onSelectCountry: (c: CountryData)
                           src={`https://flagcdn.com/w40/${country.isoCode.toLowerCase().slice(0, 2)}.png`}
                           alt={country.name}
                           className="w-6 h-4 object-cover rounded-sm shadow-sm"
-                          onError={(e) => (e.currentTarget.src = 'https://via.placeholder.com/24x16')}
+                          onError={(e) => (e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='16' viewBox='0 0 24 16'%3E%3Crect width='24' height='16' fill='%23e5e7eb'/%3E%3C/svg%3E")}
                         />
                         <span className="font-bold text-sm text-navy-900">{country.name}</span>
                       </div>
@@ -270,7 +385,7 @@ const GlobalOverview = ({ onSelectCountry }: { onSelectCountry: (c: CountryData)
   );
 };
 
-const CountryDetail = ({ country, onBack }: { country: CountryData, onBack: () => void }) => {
+const CountryDetail = ({ country, onBack }: { country: LegacyCountryData, onBack: () => void }) => {
   // AI narrative summary — served by the mock aiInsightsService in the real Sprint 2 flow.
   // In this legacy prototype the summary is derived statically from country data;
   // no API key or external service is required.
@@ -301,7 +416,7 @@ const CountryDetail = ({ country, onBack }: { country: CountryData, onBack: () =
               src={`https://flagcdn.com/w80/${country.isoCode.toLowerCase().slice(0, 2)}.png`}
               alt={country.name}
               className="w-16 h-10 object-cover rounded shadow-md"
-              onError={(e) => (e.currentTarget.src = 'https://via.placeholder.com/64x40')}
+              onError={(e) => (e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='40' viewBox='0 0 64 40'%3E%3Crect width='64' height='40' fill='%23e5e7eb'/%3E%3C/svg%3E")}
             />
             <h1 className="text-5xl md:text-6xl font-black font-manrope tracking-tight text-navy-900">{country.name}</h1>
           </div>
@@ -490,15 +605,35 @@ const CountryDetail = ({ country, onBack }: { country: CountryData, onBack: () =
 };
 
 // ---------------------------------------------------------------------------
+// ComparePage — /compare route stub. Full implementation deferred to v1.
+// Renders the Sidebar and a placeholder panel so the route is not a 404.
+// ---------------------------------------------------------------------------
+
+function ComparePage() {
+  return (
+    <div className="flex min-h-screen bg-[#f9f9f9]">
+      <Sidebar activeTab="compare" onTabChange={() => {}} />
+      <main className="flex-1 ml-64 min-h-screen">
+        <TopBar title="Compare Mode" subtitle="Select countries to compare" />
+        <div className="p-8 max-w-7xl mx-auto flex flex-col items-center justify-center h-[60vh] text-slate-400">
+          <Activity size={48} className="mb-4 opacity-20" />
+          <p className="text-sm font-bold uppercase tracking-widest">Compare Mode — Coming in v1</p>
+        </div>
+      </main>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // LegacyAppContent — Sprint 1 tab-based shell.
 // Rendered on the "/" route so existing App.test.tsx assertions continue to pass.
 // ---------------------------------------------------------------------------
 
 function LegacyAppContent() {
   const [activeTab, setActiveTab] = useState('overview');
-  const [selectedCountry, setSelectedCountry] = useState<CountryData | null>(null);
+  const [selectedCountry, setSelectedCountry] = useState<LegacyCountryData | null>(null);
 
-  const handleSelectCountry = (country: CountryData) => {
+  const handleSelectCountry = (country: LegacyCountryData) => {
     setSelectedCountry(country);
     setActiveTab('country-detail');
   };
@@ -604,6 +739,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<LegacyAppContent />} />
           <Route path="/country/:iso" element={<CountryPageRoute />} />
+          <Route path="/compare" element={<ComparePage />} />
         </Routes>
       </DataContext.Provider>
     </BrowserRouter>
