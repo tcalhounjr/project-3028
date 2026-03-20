@@ -58,6 +58,14 @@ function sortCountries(countries: CountryData[], sort: SortState): CountryData[]
 }
 
 // ---------------------------------------------------------------------------
+// PRO-29: flag URL helper — data.json stores w80; table displays at 40px width.
+// ---------------------------------------------------------------------------
+
+function toW40Url(flagUrl: string): string {
+  return flagUrl.replace('/w80/', '/w40/')
+}
+
+// ---------------------------------------------------------------------------
 // Props
 // ---------------------------------------------------------------------------
 
@@ -96,7 +104,7 @@ export default function CountryTable({ countries }: CountryTableProps) {
         style={{
           width: '100%',
           borderCollapse: 'collapse',
-          fontFamily: 'Manrope, ui-sans-serif, system-ui, sans-serif',
+          fontFamily: 'Manrope, Inter, ui-sans-serif, system-ui, sans-serif',
         }}
         aria-label="Country stress scores"
       >
@@ -124,7 +132,7 @@ export default function CountryTable({ countries }: CountryTableProps) {
                     lineHeight: 1.2,
                     letterSpacing: '0.8px',
                     textTransform: 'uppercase',
-                    color: isActive ? '#1A237E' : '#6C6C70',
+                    color: isActive ? '#1A237E' : '#78909C',
                     borderBottom: '1px solid #F2F2F7',
                     cursor: 'pointer',
                     userSelect: 'none',
@@ -144,7 +152,12 @@ export default function CountryTable({ countries }: CountryTableProps) {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '4px',
-                      justifyContent: col.align === 'right' ? 'flex-end' : col.align === 'center' ? 'center' : 'flex-start',
+                      justifyContent:
+                        col.align === 'right'
+                          ? 'flex-end'
+                          : col.align === 'center'
+                          ? 'center'
+                          : 'flex-start',
                       width: '100%',
                     }}
                   >
@@ -164,6 +177,22 @@ export default function CountryTable({ countries }: CountryTableProps) {
         </thead>
 
         <tbody>
+          {sorted.length === 0 && (
+            <tr>
+              <td
+                colSpan={COLUMNS.length}
+                style={{
+                  padding: '48px 16px',
+                  textAlign: 'center',
+                  fontFamily: 'Manrope, Inter, ui-sans-serif, system-ui, sans-serif',
+                  fontSize: '14px',
+                  color: '#78909C',
+                }}
+              >
+                No countries match the selected filters.
+              </td>
+            </tr>
+          )}
           {sorted.map((country, idx) => {
             const isEven = idx % 2 === 0
             const changeSign = country.one_year_change >= 0 ? '+' : ''
@@ -174,7 +203,7 @@ export default function CountryTable({ countries }: CountryTableProps) {
               <tr
                 key={country.iso}
                 style={{
-                  backgroundColor: isEven ? '#FFFFFF' : '#F2F2F7',
+                  backgroundColor: isEven ? '#FFFFFF' : '#F5F7FA',
                   height: '52px',
                   transition: 'background-color 100ms ease',
                 }}
@@ -182,14 +211,15 @@ export default function CountryTable({ countries }: CountryTableProps) {
                   ;(e.currentTarget as HTMLTableRowElement).style.backgroundColor = 'rgba(26,35,126,0.04)'
                 }}
                 onMouseLeave={(e) => {
-                  ;(e.currentTarget as HTMLTableRowElement).style.backgroundColor = isEven ? '#FFFFFF' : '#F2F2F7'
+                  ;(e.currentTarget as HTMLTableRowElement).style.backgroundColor = isEven ? '#FFFFFF' : '#F5F7FA'
                 }}
               >
-                {/* Country column: flag + name (linked to country page) */}
+                {/* Country column: flag (w40) + name (linked to country page) */}
                 <td style={{ padding: '0 16px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    {/* PRO-29: display flag at w40 */}
                     <img
-                      src={country.flag_url}
+                      src={toW40Url(country.flag_url)}
                       alt={`Flag of ${country.name}`}
                       width={40}
                       style={{

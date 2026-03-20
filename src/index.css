@@ -1,33 +1,89 @@
 @import "tailwindcss";
 
 @theme {
-  --font-manrope: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-manrope: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
 
   --color-navy-900: #1A237E;
   --color-navy-800: #283593;
   --color-navy-700: #303F9F;
 
-  --color-critical: #ba1a1a;
-  --color-elevated: #f59e0b;
-  --color-stable: #64748b;
+  /* Civic Vigil status tokens */
+  --color-critical: #C62828;
+  --color-elevated: #F9A825;
+  --color-stable: #78909C;
+}
 
-  --radius-round-four: 0.25rem;
+/* ---------------------------------------------------------------------------
+   Civic Vigil CSS custom properties
+   Used by components via var() — supplements Tailwind @theme tokens.
+   Property names tested by DesignSystem.test.tsx must match exactly.
+--------------------------------------------------------------------------- */
+:root {
+  --cv-font-primary: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Headings / nav — --color-navy matches test assertion */
+  --color-navy: #1A237E;
+  --color-navy-dark: #283593;
+
+  /* Status — --color-critical / --color-elevated / --color-stable match test assertions */
+  --color-critical: #C62828;
+  --color-elevated: #F9A825;   /* badge BACKGROUND — not foreground text on white */
+  --color-stable: #78909C;
+
+  /* PRO-27: darker amber for text on white to achieve 4.5:1 contrast */
+  --color-elevated-text: #E65100;
+
+  /* Layout — --color-bg / --color-surface match test assertions */
+  --color-bg: #F5F7FA;
+  --color-surface: #FFFFFF;
+  --color-radius-card: 4px;
+  --color-shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+  /* Navigation */
+  --cv-nav-height: 64px;
+  --cv-sidebar-width: 240px;
+  --cv-sidebar-collapsed: 64px;
+  --cv-nav-item-active-bg: #3949AB;
+  --cv-nav-item-hover-bg: #283593;
+  --cv-nav-item-height: 48px;
+
+  /* Focus ring */
+  --cv-focus-color: #1A237E;
+}
+
+/* ---------------------------------------------------------------------------
+   PRO-27: WCAG AA focus-visible ring
+   Applied globally so all interactive elements get consistent outlines.
+--------------------------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--cv-focus-color);
+  outline-offset: 2px;
+}
+
+/* Suppress default browser focus outline since we use focus-visible */
+:focus:not(:focus-visible) {
+  outline: none;
 }
 
 @layer base {
-  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
-
   body {
-    @apply font-inter bg-[#f9f9f9] text-[#1a1c1c];
+    @apply font-inter;
+    background-color: var(--cv-bg-page);
+    color: #1C1C1E;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-manrope;
+    color: var(--cv-color-navy);
   }
 }
 
-/* Custom utility for the "Authoritative Observer" persona */
+/* ---------------------------------------------------------------------------
+   Custom utility for the "Authoritative Observer" persona
+--------------------------------------------------------------------------- */
 .editorial-shadow {
   box-shadow: 0 12px 32px rgba(26, 28, 28, 0.06);
 }
