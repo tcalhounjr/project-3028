@@ -10,6 +10,7 @@ import IndicatorBreakdown from '../components/CountryPage/IndicatorBreakdown'
 import EventsWidget from '../components/CountryPage/EventsWidget'
 import MLScoreGauge from '../components/CountryPage/MLScoreGauge'
 import AIInsightsPanel from '../components/CountryPage/AIInsightsPanel'
+import useIsMobile from '../hooks/useIsMobile'
 
 // ---------------------------------------------------------------------------
 // Card surface style (shared across sections)
@@ -25,26 +26,28 @@ const cardStyle: React.CSSProperties = {
 
 // ---------------------------------------------------------------------------
 // Country Page
+// PRO-43: single column on mobile, responsive header typography and padding.
 // ---------------------------------------------------------------------------
-
-const shell = (title: string, subtitle: string, content: React.ReactNode) => (
-  <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#F5F7FA' }}>
-    <Sidebar />
-    <div style={{ flex: 1, marginLeft: '240px', minHeight: '100vh' }}>
-      <TopBar title={title} subtitle={subtitle} />
-      {content}
-    </div>
-  </div>
-)
 
 export default function CountryPage() {
   const { iso } = useParams<{ iso: string }>()
   const data = useContext(DataContext) as DataJson | null
+  const isMobile = useIsMobile()
+
+  const shell = (title: string, subtitle: string, content: React.ReactNode) => (
+    <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#F5F7FA' }}>
+      <Sidebar />
+      <div style={{ flex: 1, marginLeft: isMobile ? 0 : '240px', minHeight: '100vh' }}>
+        <TopBar title={title} subtitle={subtitle} />
+        {content}
+      </div>
+    </div>
+  )
 
   if (!data) {
     return shell('Country', 'Democratic Stress Dashboard',
       <main aria-labelledby="page-heading-country" aria-busy="true"
-        style={{ fontFamily: 'Manrope, ui-sans-serif, system-ui, sans-serif', padding: '32px' }}>
+        style={{ fontFamily: 'Manrope, ui-sans-serif, system-ui, sans-serif', padding: isMobile ? '16px' : '32px' }}>
         <p style={{ color: '#6C6C70', fontSize: '14px' }}>Loading data…</p>
       </main>
     )
@@ -74,11 +77,12 @@ export default function CountryPage() {
       aria-labelledby="page-heading-country"
       style={{
         fontFamily: 'Manrope, ui-sans-serif, system-ui, sans-serif',
-        padding: '32px',
+        // PRO-43: 32px desktop → 16px mobile
+        padding: isMobile ? '16px' : '32px',
         maxWidth: '1600px',
       }}
     >
-      {/* Back navigation */}
+      {/* Back navigation — stays at top on both layouts */}
       <Link
         to="/"
         style={{
@@ -89,6 +93,8 @@ export default function CountryPage() {
           fontSize: '14px',
           textDecoration: 'none',
           marginBottom: '20px',
+          // PRO-45: 44px minimum tap target height on mobile
+          minHeight: isMobile ? '44px' : undefined,
         }}
         onMouseEnter={(e) => {
           ;(e.currentTarget as HTMLAnchorElement).style.color = '#1A237E'
@@ -101,8 +107,18 @@ export default function CountryPage() {
         Global Overview
       </Link>
 
-      {/* Country Header */}
-      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '24px', marginBottom: '24px' }}>
+      {/* Country Header
+          PRO-43: flag + name + score stack vertically on mobile */}
+      <div
+        style={{
+          display: 'flex',
+          // PRO-43: column on mobile, row on desktop
+          flexDirection: isMobile ? 'column' : 'row',
+          alignItems: isMobile ? 'flex-start' : 'flex-start',
+          gap: isMobile ? '16px' : '24px',
+          marginBottom: '24px',
+        }}
+      >
         <img
           src={country.flag_url.replace('/w80/', '/w160/')}
           alt={`${country.name} flag`}
@@ -119,7 +135,8 @@ export default function CountryPage() {
           <h1
             id="page-heading-country"
             style={{
-              fontSize: '32px',
+              // PRO-43: 32px desktop → 24px mobile
+              fontSize: isMobile ? '24px' : '32px',
               fontWeight: 700,
               lineHeight: 1.2,
               letterSpacing: '-0.5px',
@@ -130,11 +147,12 @@ export default function CountryPage() {
             {country.name}
           </h1>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
             <span
               style={{
                 fontFamily: 'JetBrains Mono, Fira Code, monospace',
-                fontSize: '48px',
+                // PRO-43: 48px desktop → 36px mobile
+                fontSize: isMobile ? '36px' : '48px',
                 fontWeight: 400,
                 color: '#1C1C1E',
                 lineHeight: 1.1,
@@ -275,11 +293,12 @@ export default function CountryPage() {
         <IndicatorBreakdown indicators={country.indicators} timeline={country.timeline} />
       </div>
 
-      {/* Events Widget + ML Score Gauge — two-column grid */}
+      {/* Events Widget + ML Score Gauge
+          PRO-43: two-column grid on desktop → single column on mobile */}
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
+          gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
           gap: '24px',
           marginBottom: '24px',
         }}
@@ -290,4 +309,3 @@ export default function CountryPage() {
     </main>
   )
 }
-

@@ -113,17 +113,19 @@ function TierLegend() {
 
 interface MapProps {
   countries: CountryData[]
+  /** Map container height in pixels. Defaults to 420. Pass 260 for mobile. */
+  height?: number
 }
 
 // ---------------------------------------------------------------------------
 // Map component
 // ---------------------------------------------------------------------------
 
-export default function Map({ countries }: MapProps) {
+export default function Map({ countries, height = 420 }: MapProps) {
   const navigate = useNavigate()
 
   return (
-    <div style={{ position: 'relative', height: '420px', borderRadius: '4px', overflow: 'hidden' }}>
+    <div style={{ position: 'relative', height: `${height}px`, borderRadius: '4px', overflow: 'hidden' }}>
       <MapContainer
         center={[20, 10]}
         zoom={2}
