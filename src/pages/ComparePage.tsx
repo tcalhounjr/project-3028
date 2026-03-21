@@ -5,6 +5,7 @@ import CountrySelector from '../components/Compare/CountrySelector'
 import CompareTimeline from '../components/Compare/CompareTimeline'
 import IndicatorTable from '../components/Compare/IndicatorTable'
 import SharedEventLog from '../components/Compare/SharedEventLog'
+import useIsMobile from '../hooks/useIsMobile'
 import type { CountryData } from '../types/country'
 
 // ---------------------------------------------------------------------------
@@ -12,11 +13,13 @@ import type { CountryData } from '../types/country'
 // Hosts CountrySelector and all Compare Mode sub-components.
 // Country selection is confirmed via CountrySelector's onConfirm callback,
 // which updates the downstream components simultaneously.
+// PRO-44: single-column layout on mobile; horizontal scroll for wide tables.
 // ---------------------------------------------------------------------------
 
 export default function ComparePage() {
   const data = useContext(DataContext)
   const [selectedCountries, setSelectedCountries] = useState<CountryData[]>([])
+  const isMobile = useIsMobile()
 
   function handleConfirm(isos: string[]) {
     if (!data) return
@@ -40,14 +43,14 @@ export default function ComparePage() {
       <Sidebar />
 
       <main
-        style={{ flex: 1, marginLeft: '240px', minHeight: '100vh' }}
+        style={{ flex: 1, marginLeft: isMobile ? 0 : '240px', minHeight: '100vh' }}
         aria-labelledby="compare-page-heading"
       >
         <TopBar title="Compare Mode" subtitle="Side-by-side country analysis" />
 
         <div
           style={{
-            padding: '32px',
+            padding: isMobile ? '16px' : '32px',
             maxWidth: '1280px',
             margin: '0 auto',
           }}
@@ -67,15 +70,16 @@ export default function ComparePage() {
             Compare Mode
           </h1>
 
+          {/* PRO-44: 2-column grid on desktop → single column on mobile */}
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: '280px 1fr',
+              gridTemplateColumns: isMobile ? '1fr' : '280px 1fr',
               gap: '24px',
               alignItems: 'start',
             }}
           >
-            {/* Left column: CountrySelector */}
+            {/* CountrySelector — stacks above results on mobile */}
             <div>
               <CountrySelector onConfirm={handleConfirm} />
             </div>
@@ -137,10 +141,14 @@ export default function ComparePage() {
                 </div>
               ) : (
                 <>
-                  {/* PRO-33: Overlaid Composite Score Timeline */}
-                  <CompareTimeline countries={selectedCountries} />
+                  {/* PRO-33: Overlaid Composite Score Timeline
+                      PRO-44: wrap in overflow-x:auto on mobile */}
+                  <div style={isMobile ? { overflowX: 'auto' } : undefined}>
+                    <CompareTimeline countries={selectedCountries} />
+                  </div>
 
-                  {/* PRO-34: Indicator Comparison Table */}
+                  {/* PRO-34: Indicator Comparison Table
+                      PRO-44: wrap in overflow-x:auto on mobile */}
                   <div>
                     <h2
                       style={{
@@ -154,7 +162,9 @@ export default function ComparePage() {
                     >
                       Indicator Comparison
                     </h2>
-                    <IndicatorTable countries={selectedCountries} />
+                    <div style={isMobile ? { overflowX: 'auto' } : undefined}>
+                      <IndicatorTable countries={selectedCountries} />
+                    </div>
                   </div>
 
                   {/* PRO-35: Shared Event Log */}

@@ -6,6 +6,7 @@ import Map from '../components/GlobalOverview/Map'
 import TopMovers from '../components/GlobalOverview/TopMovers'
 import CountryTable from '../components/GlobalOverview/CountryTable'
 import FilterBar from '../components/GlobalOverview/FilterBar'
+import useIsMobile from '../hooks/useIsMobile'
 import {
   FilterContext,
   ISO_REGION_MAP,
@@ -19,10 +20,12 @@ import {
 // GlobalOverview page — composes map, top movers, and country table.
 // PRO-28: provides filter state via FilterContext; filtered countries
 // are derived and passed to Map and CountryTable.
+// PRO-42: fully responsive — single column on mobile (<768px).
 // ---------------------------------------------------------------------------
 
 export default function GlobalOverview() {
   const data = useContext(DataContext) as DataJson | null
+  const isMobile = useIsMobile()
 
   // ---------------------------------------------------------------------------
   // Filter state — lifted here so Map and CountryTable share the same source.
@@ -50,7 +53,7 @@ export default function GlobalOverview() {
   const shell = (content: React.ReactNode) => (
     <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#F5F7FA' }}>
       <Sidebar />
-      <div style={{ flex: 1, marginLeft: '240px', minHeight: '100vh' }}>
+      <div style={{ flex: 1, marginLeft: isMobile ? 0 : '240px', minHeight: '100vh' }}>
         <TopBar title="Global Overview" subtitle="Democratic Stress Dashboard" />
         {content}
       </div>
@@ -63,7 +66,7 @@ export default function GlobalOverview() {
         className="p-6"
         aria-labelledby="page-heading-overview"
         aria-busy="true"
-        style={{ fontFamily: 'Manrope, Inter, ui-sans-serif, system-ui, sans-serif', padding: '32px' }}
+        style={{ fontFamily: 'Manrope, Inter, ui-sans-serif, system-ui, sans-serif', padding: isMobile ? '16px' : '32px' }}
       >
         <p style={{ color: '#6C6C70', fontSize: '14px' }}>Loading data…</p>
       </main>
@@ -78,8 +81,9 @@ export default function GlobalOverview() {
         aria-labelledby="page-heading-overview"
         style={{
           fontFamily: 'Manrope, Inter, ui-sans-serif, system-ui, sans-serif',
-          padding: '32px',
-          maxWidth: '1600px',
+          padding: isMobile ? '16px' : '32px',
+          // maxWidth removed on mobile; kept on desktop
+          maxWidth: isMobile ? undefined : '1600px',
         }}
       >
         <h1
@@ -123,7 +127,8 @@ export default function GlobalOverview() {
           >
             Stress Map
           </h2>
-          <Map countries={filteredCountries} />
+          {/* PRO-42: Map height 420px desktop → 260px mobile */}
+          <Map countries={filteredCountries} height={isMobile ? 260 : 420} />
         </section>
 
         {/* Top Movers — full dataset, not filtered (shows overall movement context) */}
