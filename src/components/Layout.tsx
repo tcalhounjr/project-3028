@@ -277,7 +277,7 @@ export const Sidebar = ({ activeTab: _activeTabProp, onTabChange: _onTabChange }
 
   return (
     <aside
-      aria-hidden={isMobile ? 'true' : undefined}
+      aria-hidden={isMobile ? true : undefined}
       style={{
         position: 'fixed',
         left: 0,
@@ -310,6 +310,7 @@ interface MobileDrawerProps {
 function MobileDrawer({ isOpen, onClose, triggerRef }: MobileDrawerProps) {
   const drawerRef = useRef<HTMLDivElement>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   // Fix 2b: move focus into the drawer when it opens
   useEffect(() => {
@@ -351,6 +352,8 @@ function MobileDrawer({ isOpen, onClose, triggerRef }: MobileDrawerProps) {
         role="dialog"
         aria-modal="true"
         aria-label="Navigation menu"
+        aria-hidden={!isOpen}
+        tabIndex={isOpen ? undefined : -1}
         onKeyDown={handleKeyDown}
         style={{
           position: 'fixed',
@@ -364,7 +367,7 @@ function MobileDrawer({ isOpen, onClose, triggerRef }: MobileDrawerProps) {
           padding: '0',
           zIndex: 50,
           transform: isOpen ? 'translateX(0)' : 'translateX(-100%)',
-          transition: 'transform 250ms ease-in-out',
+          transition: prefersReducedMotion ? 'none' : 'transform 250ms ease-in-out',
         }}
       >
         {/* Close button — Fix 2a: ref for initial focus */}
